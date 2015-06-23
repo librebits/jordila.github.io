@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Cloud | Librebits - jordila_@i-ching:~/]]></title>
+  <link href="http://jordila.github.io/blog/categories/cloud/atom.xml" rel="self"/>
+  <link href="http://jordila.github.io/"/>
+  <updated>2015-06-23T18:06:26-04:00</updated>
+  <id>http://jordila.github.io/</id>
+  <author>
+    <name><![CDATA[jordila_]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[miNube Con OwnCloud : Bye,bye Dropbox !]]></title>
+    <link href="http://jordila.github.io/blog/2015/06/18/minube-con-owncloud-bye/"/>
+    <updated>2015-06-18T12:08:27-04:00</updated>
+    <id>http://jordila.github.io/blog/2015/06/18/minube-con-owncloud-bye</id>
+    <content type="html"><![CDATA[<p>En una anterior nota técnica en este blog hablábamos de <em>La fanfarria del Cloud Computing o la última trending technology</em> &hellip;
+Convengamos que ese mismo concepto que criticamos constructivamente ha facilitado una mejor conviencia entre dispositivos computacionales de diferente naturaleza ( PC, Tablet, teléfono <em>smartphone</em> , etc&hellip; )</p>
+
+<p>El objetivo de este artículo es, desde lo paráctico, desmitificar la idea de <em>la nube</em> como algo etéreo e  <em>inasible</em> . Bajándolo a la tierra. Veremos lo sencillo que resulta liberarnos de servicios que pueden atentar contra la <a href="https://owncloud.com/why-on-premise/">seguridad  y privacidad de nuestros datos</a>, como es el caso de <em>Dropbox</em> , el servicio de computación <em>cloud</em>  más popular.</p>
+
+<p>Como reza Wikipedia <a href="https://es.wikipedia.org/wiki/Owncloud">OwnCloud</a> es una aplicación de <em>software libre</em> del tipo Servicio de alojamiento de archivos, que permite el almacenamiento en línea y aplicaciones en línea (cloud computing)</p>
+
+<p>Vayamos con las manos a la masa, y tratemos de instalar <em>nuestra nube</em> en nuestro propio servidor Debian GNU / Linux :</p>
+
+<p>```</p>
+
+<h1>Descargamos primero la llave asociada al software  ownCloud :</h1>
+
+<p>wget <a href="http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_7.0/Release.key">http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_7.0/Release.key</a>
+```</p>
+
+<p>(NOTA: Interesante sinergia acá, entre openSuse y Debian, en este caso&hellip; en la familia <em>Linux</em> )</p>
+
+<p>```</p>
+
+<h1>Agregamos la llave a apt para que pueda validar los ficheros :</h1>
+
+<p>sudo apt-key add &ndash; &lt; Release.key</p>
+
+<h1>añadimos los  repositorios ownCloud al servicio de builds de openSUSE  a nuestro apt <em>source lists</em> al teclear :</h1>
+
+<p>echo &lsquo;deb <a href="http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_7.0/">http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_7.0/</a> /&rsquo; | sudo tee -a /etc/apt/sources.list.d/owncloud.list
+```</p>
+
+<p>```</p>
+
+<h1>Finalmente, actualizamos la base de datos de paquetes e instalamos ownCloud y MySQL:</h1>
+
+<p>sudo apt-get update
+sudo apt-get install owncloud mysql-server</p>
+
+<p>```</p>
+
+<h3>Configuración MySQL</h3>
+
+<p>Vamos a configurar nuestro servidor ownCloud para que disfrute de una base de datos MySQL más robusta, en vez de la implementación SQLite por defecto. Para ello debemos configurar MySQL en primera instancia.</p>
+
+<p>Teclear los siguientes comando para inicializar la base de datos y hacer más seguro el sistema:</p>
+
+<p><code>
+sudo mysql_install_db
+sudo mysql_secure_installation
+</code></p>
+
+<p>Deberás introducir la clave de administración seleccionada durante la instalación de MySQL. Entonces se te preguntará por los ajustes de seguridad. Presiona <em>Enter</em> y selecciona <em>yes</em> para todos los parámetros excepto el primero (relativo a cambiar de nuevo la contraseña <em>root</em>)</p>
+
+<p>Ahora, identificate en  MySQL como usuario <em>root</em> tecleando:</p>
+
+<p><code>
+mysql -u root -p
+</code></p>
+
+<p>De nuevo, serás preguntado por la contraseña de administración MySQL.</p>
+
+<p>Crea una base de datos mediante el comando :</p>
+
+<p><code>
+CREATE DATABASE owncloud;
+</code></p>
+
+<p>Crea y asigna privilegios al nuevo usuario MySQL para manejar la base de datos de operaciones de  ownCloud:</p>
+
+<p><code>
+GRANT ALL ON owncloud.* to 'owncloud'@'localhost' IDENTIFIED BY 'select_database_password';
+</code></p>
+
+<p>Salir de MySQL tecleando:</p>
+
+<p><code>
+exit
+</code></p>
+
+<p>Sólo queda proceder a la instalación guiada, accediendo a la carpeta ( <em>DocumentRoot</em> ) que alberga <em>tu nube</em> ownCloud</p>
+
+<p>Que lo disfrutes libremente y sin chusmeos.</p>
+
+<h3>Recursos :</h3>
+
+<ul>
+<li><p>Documentación en <a href="http://owncloud.com">Owncloud</a></p></li>
+<li><p><a href="https://www.digitalocean.com/community/tutorials/how-to-install-owncloud-and-configure-owncloud-apps-on-an-ubuntu-12-04-vps">How To Install OwnCloud and Configure OwnCloud Apps on an Ubuntu 12.04 VPS</a></p></li>
+</ul>
+
+
+<h3>Bonus:</h3>
+
+<p>No nos queda más que instalar certificados SSL (si no lo habíamos hecho ya) que nos faciliten un diálogo seguro con nuestro servidor OwnCloud, mediante <em>https</em> &hellip; pero eso ya será probablemente motivo de otro post / nota técnica en este mismo blog.</p>
+]]></content>
+  </entry>
+  
+</feed>

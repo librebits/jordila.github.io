@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>GNU/Linux: A Vueltas Con El Espacio en Disco, Y Su Liberación - Librebits - jordila_@i-ching:~/</title>
+  <meta name="author" content="jordila_">
+
+  
+  <meta name="description" content="Mmhhh&hellip; ¿qué cuanto espacio en disco me queda? 1
+2
+3
+$ df $ df -h Salida de ejemplo 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+jordi@i-ching:~$ df -h
+Filesystem Size &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jordila.github.io/blog/2014/07/31/gnu-slash-linux-a-vueltas-con-el-espacio-en-disco">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Librebits - jordila_@i-ching:~/" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Librebits - jordila_@i-ching:~/</a></h1>
+  
+    <h2>Bits aleatorios de Software Libre / Libre Software ...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">GNU/Linux: A Vueltas Con El Espacio en Disco, Y Su Liberación</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-31T02:34:15-04:00" pubdate data-updated="true">Jul 31<sup>st</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h3>Mmhhh&hellip;</h3>
+
+<p><em>¿qué cuanto espacio en disco me queda?</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ df
+</span><span class='line'>
+</span><span class='line'>$ df -h</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Salida de ejemplo</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>jordi@i-ching:~$ df -h
+</span><span class='line'>Filesystem                                              Size  Used Avail Use% Mounted on
+</span><span class='line'>rootfs                                                  8.9G  8.2G  193M  98% /
+</span><span class='line'>udev                                                     10M     0   10M   0% /dev
+</span><span class='line'>tmpfs                                                   201M  900K  200M   1% /run
+</span><span class='line'>/dev/disk/by-uuid/1e7fdf9f-7123-43f4-8ec9-32c4b19057c5  8.9G  8.2G  193M  98% /
+</span><span class='line'>tmpfs                                                   5.0M     0  5.0M   0% /run/lock
+</span><span class='line'>tmpfs                                                   811M     0  811M   0% /run/shm
+</span><span class='line'>/dev/sda5                                                12G   11G  543M  96% /home
+</span><span class='line'>/dev/sda3                                                88G   80G  4.0G  96% /media/DATA
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p><em>:&ndash;/ estoy agotando el espacio en la partición de sistema&hellip;(!)</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get autoclean
+</span><span class='line'>
+</span><span class='line'>$ sudo apt-get clean
+</span><span class='line'>
+</span><span class='line'>// comandos que eliminan paquetes sin usar o en caché..., con varios matices
+</span><span class='line'>
+</span><span class='line'>$ sudo apt-get autoremove
+</span><span class='line'>
+</span><span class='line'>// eliminando  paquetes de dependencias que quedaron sin usar
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Ecología : el espacio en disco duro es un bien escaso&hellip;</p>
+
+<p><em>Bonus</em>: más elaborada es la eliminación de paquetes <em>huérfanos</em> en caso de <em>Debian</em> <a href="http://www.waveguide.se/?article=how-to-quickly-remove-all-unused-packages-under-debian">mediante <em>deborphan</em> y un script</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">jordila_</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-31T02:34:15-04:00" pubdate data-updated="true">Jul 31<sup>st</sup>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/devops/'>devops</a>, <a class='category' href='/blog/categories/gnu-slash-linux/'>gnu/linux,</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jordila.github.io/blog/2014/07/31/gnu-slash-linux-a-vueltas-con-el-espacio-en-disco/" data-via="jordila_" data-counturl="http://jordila.github.io/blog/2014/07/31/gnu-slash-linux-a-vueltas-con-el-espacio-en-disco/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/07/29/git-sacando-partido-al-archivo-log/" title="Previous Post: Git: sacando partido al archivo log">&laquo; Git: sacando partido al archivo log</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/08/02/git-comparar-cambios-con-diff/" title="Next Post: Git: comparar cambios con diff">Git: comparar cambios con diff &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>...as in freedom</h1>
+  <a href="http://www.fsf.org/register_form?referrer=12001"><img
+src="http://static.fsf.org/nosvn/associate/fsf-12001.png" alt="[FSF
+Associate Member]" /></a>
+</section>
+
+<section>
+ <img style="margin:0px auto; display:block"  src="https://dl.dropboxusercontent.com/u/18889627/Twitter-avatar_100x.png" alt="jordila + GNU/Linux" />
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/18/minube-con-owncloud-bye/">miNube Con OwnCloud : Bye,bye Dropbox !</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash/">En Un Principio Fue La Linea De comandos-...GNU/Linux-Bash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii/">A Vueltas Con LinuX Containers (LXC) II</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/24/openshift-paas/">Openshift PaaS, Drupal CMS Y Git</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere/">Multiplica Las Posibilidades De Drupal CMS : Proyectos Sandbox (Ej.: 'Bootstrap Everywhere'</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/jordila">@jordila</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jordila',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+    - jordila_ -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

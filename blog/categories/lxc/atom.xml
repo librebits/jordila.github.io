@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Lxc | Librebits - jordila_@i-ching:~/]]></title>
+  <link href="http://jordila.github.io/blog/categories/lxc/atom.xml" rel="self"/>
+  <link href="http://jordila.github.io/"/>
+  <updated>2015-06-23T18:06:26-04:00</updated>
+  <id>http://jordila.github.io/</id>
+  <author>
+    <name><![CDATA[jordila_]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A Vueltas Con LinuX Containers (LXC) II]]></title>
+    <link href="http://jordila.github.io/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii/"/>
+    <updated>2014-12-04T11:50:00-05:00</updated>
+    <id>http://jordila.github.io/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii</id>
+    <content type="html"><![CDATA[<p><code>
+"Los servidores lo tuvieron todo. Los clientes, nada. Bienvenido al Cloud Computing"
+(Eben Moglen , Free Software Foundation)
+</code></p>
+
+<p><em>Lo prometido es deuda</em> &hellip; reza el dicho popular.</p>
+
+<p>En un <a href="https://jordila.github.io/blog/2014/11/02/a-vueltas-con-linux-containers-lxc-i/">post anterior</a> nos zambullimos en la tecnología de virtualización ( subyacente a la <em>trendy</em>  y  cacareada   <em>Cloud</em> )
+En otras palabras, la Internet de siempre con una capa de abstracción de hardware : <em>LinuX Containers LXC</em> .</p>
+
+<h2>La fanfarria del <em>Cloud Computing</em>  o la última <em>trending technology</em></h2>
+
+<p>Con ese mero argumento, una vez más las grandes corporaciones (que conozco por experiencia) del sector infocomunicacional  <em>venden</em> servicios que realmente los clientes no necesitan. Les encadenan a sus servidores, que se acumulan en campos de concentración de hardware, ventilados, aislados y con las máximas medidas de seguridad. Es la economía de escala &hellip; la misma que está agotando al Planeta que habitamos.</p>
+
+<p>En Canadá algunas empresas se jactan de mantener esas granjas de servidores virtualizados de forma sostenible y limpia (!). Sin derroche de energía (que consumen cientos o miles de procesadores corriendo en paralelo). Aprovechan, dicen, las corrientes de aire frío (ártico). En fin.</p>
+
+<h2>(pseudo)Virtualizando Debian en un  Debian GNU/Linux (host)</h2>
+
+<p>Disquisiciones aparte. Tratemos de crear un contenedor <em>Debian</em> albergado en nuestro <em>Debian GNU/Linux</em> (host del contenedor), o computadora-laptop de trabajo.</p>
+
+<p>Por no repetir lo que viene detallado en los tutoriales referenciados, solo diré que he encontrado problemas con <em>LXC</em> en mi Debian <em>GNU/Linux</em> Jessie , siguiendo los pasos de la <a href="https://wiki.debian.org/LXC#Installation">Wiki de Debian</a>.</p>
+
+<p>Problemas que también encontró el autor de <a href="http://feeding.cloud.geek.nz/posts/lxc-setup-on-debian-jessie/">LXC setup on Debian Jessie</a>, gracias al cual pude por fin cumplir mi promesa de hacer correr mis máquinas (pseudo)virtuales no sólo en <em>Ubuntu</em> , sino también en mi <em>Debian GNU/Linux</em>(a continuación me fijaré en la parte que más útil me fue). A él mi agradecimiento.</p>
+
+<p>```
+// Crear un  contenedor Debian (en /var/lib/lxc/) es simple:</p>
+
+<h1>sudo MIRROR=<a href="http://http.debian.net/debian">http://http.debian.net/debian</a> lxc-create -n sid64 -t debian &mdash; -r sid -a amd64</h1>
+
+<p>// Inicia o para el contenedor de la siguiente forma :</p>
+
+<h1>sudo lxc-start -n sid64 -d</h1>
+
+<h1>sudo lxc-stop -n sid64</h1>
+
+<p>// Puedes encontrar la dirección IP asignada al contenedor, recibida por el Servidor  DHCP tecleando, y su estado</p>
+
+<h1>sudo lxc-ls &mdash;fancy</h1>
+
+<p>..</p>
+
+<p>```</p>
+
+<p>A partir de aquí podemos seguir manejando nuestros LinuX Containers, <a href="https://jordila.github.io/blog/2014/11/02/a-vueltas-con-linux-containers-lxc-i/">como veníamos haciendo en el anterior post relacionado</a></p>
+
+<h2><em>Docker</em> ?  &ldquo;It&rsquo;s LinuX Containers , stupid !&rdquo;</h2>
+
+<p>En lo práctico,    pongamos que para desarrollar una aplicación web determinada necesitamos un <em>stack</em> de software    (p.ej.: el clásico Linux+Apache+MySQL &ndash;  LAMP) en unas versiones determinadas, por requisitos del entorno (p.ej.: <em>PHP 5.3 y  MySQL 5.1</em> ).    Y sólo puede ser de este modo. En vez de tener que rehacer  todo el stack de nuestro servidor de pruebas nos bastará con generar un <em>LinuX Container</em> que cumpla esos requisitos. El único condicionante es la base del stack. Está sujeta al <em>kernel</em> del sistema host (en mi caso, el de Debian 8 <em>GNU/Linux</em> )  Además, podré desarrollar  cómodamente de forma <em>ágile</em> (ligera e iterativa), pues puedo usar para ello el comando <em>lxc-clone</em> para armar tantas maquetas o prototipos como requiera. Por ejemplo,</p>
+
+<ul>
+<li><p>container LXCO = Debian GNU/Linux server</p></li>
+<li><p>container LXC1 =  Debian GNU/Linux server + AMP</p></li>
+</ul>
+
+
+<p>(que podré clonar para otras aplicaciones que necesiten el mismo <em>stack</em> , p,ej. el <em>LMS Moodle</em> , <em>Drupal CMS</em> &hellip;)</p>
+
+<ul>
+<li><p>container LXC2= LAMP + CMS Drupal</p></li>
+<li><p>etc &hellip; (así sucesivamente)</p></li>
+</ul>
+
+
+<p><em>BONUS</em> : De paso he podido hacer una primera prueba satisfactoria con <em>Docker</em> , que me permitiría importar y exportar fácilmente aplicaciones a partir de un <em>LinuX Container</em> y bla,bla&hellip;  pero de eso quizás hablemos en otro nota de este blog más adelante&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A Vueltas Con LinuX Containers ( LXC ) I]]></title>
+    <link href="http://jordila.github.io/blog/2014/11/02/a-vueltas-con-linux-containers-lxc-i/"/>
+    <updated>2014-11-02T16:00:04-05:00</updated>
+    <id>http://jordila.github.io/blog/2014/11/02/a-vueltas-con-linux-containers-lxc-i</id>
+    <content type="html"><![CDATA[<p>Tras unos días de vacaciones hemos vuelto a los teclados cono energías y fuerzas renovadas.</p>
+
+<p>Esta vez vamos a emprender el viaje a la virtualización de entornos. Hasta ahora nuestra experiencia se reducía a algunos contactos con <em>VirtualBox</em>. Así lograbas una  completa máquina virtual en la que correr otros sistemas operativos y/o entornos, que podrían ser diferentes al tuyo (Host).</p>
+
+<p>La experiencia fue agridulce, pues si bien es un adelanto poder disponer de &lsquo;entornos virtuales&rsquo; en tu computadora, se hacía bastante pesado, el proceso de creación de la máquina virtual (consumiendo muchos recursos), por no hablar del proceso de exportar luego el trabajo realizado en ello.</p>
+
+<p>Últimamente se habla mucho en la red de redes de <a href="http://www.docker.com">Docker</a>, que como reza la entrada correspondiente en Wikipedia <em>es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores software, proveyendo de una capa adicional de abstracción y automatización de virtualización del sistema operativo en Linux</em></p>
+
+<p>Mmh&hellip; what? Pues que ahora podemos fácilmente empaquetar en contenedores nuestros entornos de desarrollo (virtualizados) e intercambiarlos sencillamente como cromos entre servidor-PC- portátil etc, crearlos, clonarlos, destruirlos con una línea de comando&hellip; ? Veamos&hellip;</p>
+
+<p>El caso es que <em>Docker</em> basa su potencia en <a href="http://es.wikipedia.org/wiki/LXC">LXC</a> :<em>LinuX</em> <em>Containers</em>. Así que &hellip; principiemos por el principio.</p>
+
+<p>Mi agradable sorpresa ha sido el comprobar como sencillamente puedo crear una máquina (pseudo) virtual , con unos pocos comandos, en mi computadora. Esa (pseudo) máquina hábilmente, gracias a <em>LXC</em> reutiliza el mismo <em>Kernel</em> de la máquina que la alberga (Host). Ecología de recursos. De ahí lo de <em>pseudo</em> .</p>
+
+<p>El caso es que uno de los pocos contras del proceso con <em>LXC</em>  es que el nuevo sistema (pseudo) virtualizado (obviamente) debe basarse en el mismo Kernel de la máquina Host.</p>
+
+<p>El primero que me habó de <em>LXC</em> fue mi amigo <em>hk</em> &hellip; compartiendo conmigo el concepto de como uno puede usar esta técnica para correr diferentes servicios interconectados entre sí via IP (paralelamente en el mismo Host).</p>
+
+<p>Seguiré los pasos de <a href="https://www.stgraber.org/2013/12/20/lxc-1-0-your-first-ubuntu-container/">Stéphane Graber</a> para, este vez desde Ubuntu 14.04 (el <em>hijo</em> díscolo ) en vez de Debian Jessie (su <em>padre</em>), por comodidad.</p>
+
+<p>En un alarde de originalidad, copio y pego los comandos, y los adapto a mi gusto, traduciendo los comentarios que clarifican los pasos a dar .</p>
+
+<p>Inspiramos.</p>
+
+<p>```</p>
+
+<h1>Crear &ldquo;p1&rdquo; : container usando el template &ldquo;ubuntu&rdquo; y la version de Ubuntu</h1>
+
+<h1>and architecture as the Host (mi compu _real- ). Con &ldquo;&mdash; &mdash;help&rdquo; listamos todas las opciones all available options.</h1>
+
+<p>$ sudo lxc-create -t ubuntu -n p1</p>
+
+<h1>Iniciar el container (en background)</h1>
+
+<p>$ sudo lxc-start -n p1 -d</p>
+
+<h1>Entrar al container en una de los siguientes formas</h1>
+
+<h2>&lsquo;Attach&rsquo; a la consola del container' (ctrl-a + q para detach)</h2>
+
+<p>$ sudo lxc-console -n p1</p>
+
+<h2>Bash directamente en el container (cortocircuitando el login de consola), requiere >= 3.8 kernel</h2>
+
+<p>$ sudo lxc-attach -n p1</p>
+
+<h2>via SSH</h2>
+
+<p>$ sudo lxc-info -n p1
+$ ssh ubuntu@<ip según lxc-info></p>
+
+<h1>Stop container, de una de las siguientes formas</h1>
+
+<h2>Stop desde él mismo</h2>
+
+<p>$ sudo poweroff</p>
+
+<h2>Stop limpiamente desde &lsquo;fuera&rsquo;</h2>
+
+<p>$ sudo lxc-stop -n p1</p>
+
+<h2>Kill desde &lsquo;fuera&rsquo;</h2>
+
+<p>$ sudo lxc-stop -n p1 -k
+```</p>
+
+<p>Bien..
+Expiramos.
+Ya armamos nuestro primer, simple y ligero contenedor Linux &ndash; <em>LXC</em> .</p>
+
+<p>Como dice Stéphane,  &ldquo;habrás notado que habiualmente todo funciona tal cual en Ubuntu (en Debian GNU/Linux hay que usar algunos comandos más&hellip; parece, para los <em>cgroups</em> y la parte de red&hellip; )&rdquo;
+&ldquo;los kernels Ubuntu soportan todas las facilidades que requiere <em>LXC</em> , y los paquetes configuran un <em>bridge</em> y servidor <em>DHCP</em> que los containers usan por defecto&rdquo; &hellip; Todo ello, obvio, configurable y bla,bla&hellip;</p>
+
+<p>Parece que trabaja en Canonical&hellip; ;&ndash;)
+(más adelante trataremos de repetir el proceso en Debian GNU / Linux (!), pero eso será en otro <em>post</em> &hellip; )</p>
+
+<p>Vayamos por segundo <em>container</em> que albergue querido Debian. Básicamente lo que haremos será usar otro <em>template</em> de container.
+Es decir :</p>
+
+<p>```</p>
+
+<h2>creamos el container debian, forzando la arquitectura</h2>
+
+<p>$ sudo lxc-create -t debian -n p2 &mdash; -a i386</p>
+
+<h2>iniciamos el container debian 32bits</h2>
+
+<p>$ sudo lxc-start -n p2 -d</p>
+
+<h2>lo chequeamos,</h2>
+
+<p>$ sudo lxc-info -n p2
+Name:           p2
+State:          RUNNING
+PID:            5828
+IP:             10.0.3.118
+CPU use:        1.88 seconds
+BlkIO use:      49.66 MiB
+Memory use:     85.56 MiB
+KMem use:       0 bytes
+Link:           vethV01VLC
+ TX bytes:      1.79 KiB
+ RX bytes:      5.69 KiB
+ Total bytes:   7.48 KiB</p>
+
+<h2>notar que, para acceder a él si es necesario por esta via, obtenemos su dirección IP</h2>
+
+<p>```
+NOTA: los diferentes <em>containers</em> , dijimos, tendrán siempre de base el mismo Kernel, que comparte con el Host que los alberga. En nuestro caso</p>
+
+<p>```</p>
+
+<h2>Verificamos el sistema y Kernel del Host (común a los containers)</h2>
+
+<p>$ uname &mdash;all
+Linux RainbowWarrior 3.13.0-37-generic #64 [&hellip;]
+```</p>
+
+<p>Bla,bla &hellip; para mi uso y propósito personal, instalaré la pila &ndash; <em>stack</em>  LAMP (Linux+Apache+MySQL+Php). Voilà.
+Ya tengo mi servidor Web personal de bolsillo ultraligero&hellip;</p>
+
+<p>NOTA2: en línea lo siguiente más simple probablemente sea la Raspberry Pi con <a href="http://www.raspbian.org/">Raspbian</a>  ;&ndash;)</p>
+
+<p>Es por ello que nos viene como un guante el siguiente comando para procesar un clon.</p>
+
+<p>```</p>
+
+<h2>pre-condición al clonar : el <em>container</em> a clonar deber estar en stop</h2>
+
+<p>$ sudo lxc-stop -n p2</p>
+
+<h2>clonamos &lsquo;p2&rsquo; , nuestro 2º container Debian mínimo con LAMP</h2>
+
+<p>$ sudo lxc-clone -o <container original: 'p2'> -n <nombre del nuevo container></p>
+
+<h2>en nuestro caso, parametrizando lo anterior &hellip;, y lo llamamos lamp1</h2>
+
+<p>$ sudo lxc-clone -o p2 -n lamp2
+```</p>
+
+<p>A estas alturas del partido&hellip; tenemos 3 instancias <em>LXC</em> en juego</p>
+
+<p> 1.&ndash; p1     :  Ubuntu  clon del sistema <em>Host</em> común</p>
+
+<p> 2.&ndash; p2     :  Debian GNU/Linux</p>
+
+<p> 3.&ndash; lamp2  :  Debian GNU/Linux + LAMPhp + phpMyAdmin &hellip;</p>
+
+<p>```</p>
+
+<h2>podemos comprobar el estado operativo de cada container LXC</h2>
+
+<p>$ lxc-ls &mdash;fancy
+```</p>
+
+<p>&hellip; al que, por ejemplo, puedo acceder en</p>
+
+<p><code>
+http://10.0.3.85/phpmyadmin/
+</code></p>
+
+<p>Voilà.</p>
+
+<p>:&ndash;)</p>
+
+<p>BONUS : <a href="http://lxc-webpanel.github.io">LXC Web Panel para Ubuntu</a> desde el que poder cómodamente gestionar todos los containers LXC &hellip;</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Openshift | Librebits - jordila_@i-ching:~/]]></title>
+  <link href="http://jordila.github.io/blog/categories/openshift/atom.xml" rel="self"/>
+  <link href="http://jordila.github.io/"/>
+  <updated>2015-06-23T18:06:26-04:00</updated>
+  <id>http://jordila.github.io/</id>
+  <author>
+    <name><![CDATA[jordila_]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Openshift PaaS, Drupal CMS Y Git]]></title>
+    <link href="http://jordila.github.io/blog/2014/11/24/openshift-paas/"/>
+    <updated>2014-11-24T10:19:37-05:00</updated>
+    <id>http://jordila.github.io/blog/2014/11/24/openshift-paas</id>
+    <content type="html"><![CDATA[<p>Vamos a bucear un poco más en la PaaS de Red Hat Cloud (RHC).Openshift, El &lsquo;Cloud&rsquo; libre para todos y todas (?).</p>
+
+<p>Para ello hemos de cicunscribirnos a los parámetros del entorno que nos ofrece actualmente, a efectos de versionado, etc&hellip;
+Para lo  que nos ocupa, una típica instalación LAMP (Linux+Apache+MySQL+Php) como es <em>Drupal CMS</em>, esto es :</p>
+
+<p><code>
+Php v.5.4
+MySQL v.5.5 ...
+</code>
+que es lo que <em>RHC</em> nos ofrece al momento de escribir estas palabras. Recordar que podemos disfrutar de tres instancias <em>libre y gratuitas</em> en  nuestra cuenta <em>Openshift</em> . Sí, para siempre.</p>
+
+<p>Vamos seguido el paso a paso de creación de la cuenta (remota) en el servidor RHC y la instalación de la herramienta (CLI) cliente <em>rhc</em> en local (bien detallado en el tutoria oficial).</p>
+
+<p>Sigamos ahora los pasos del <a href="https://github.com/openshift/drupal-quickstart">Drupal Quickstart para RHC oficial</a> &hellip; A ver si somos capaces de encajar las piezas del puzzle.</p>
+
+<p>[..]</p>
+
+<p>Sea como fuere, cómodamente desde el panel de control de <em>Openshift(RHCloud)</em> , o mediante nuestro nuevo flamante <em>CLI</em> <em>rhc</em> en <em>Bash</em></p>
+
+<p>```
+//  Drupal-quickstart  &ndash; CLI rhc</p>
+
+<h1>rhc app create drupal php-5.4 mysql-5.5 cron</h1>
+
+<p>```</p>
+
+<p>Nos permite disponer de un completo entorno de desarrollo ( soporta <em>Git</em> por defecto) de forma rápida y sencilla. En mi caso por ejemplo, armé rápidamente una instancia de <em>Drupal8</em> para ir &lsquo;jugando&rsquo; &hellip; en cuestión de minutos.</p>
+
+<p>KISS &ndash; Keep it Simple Stupid</p>
+
+<p>Bonus : Cómodamente también puedes &lsquo;mapear&rsquo; de forma remota la carpeta con el código de tu desarrollo&hellip; gracias a sFTP, directamente en tu Navegador de archivos preferido ( Nautilus, Thunar&hellip;)</p>
+
+<p>RECURSOS:</p>
+
+<p><a href="https://austin2014.drupal.org/session/openshift-and-drupal-story-true-open-source-collaboration-and-innovation">&ldquo;Openshift and Drupal story true open-source collaboration and innovation&rdquo;</a></p>
+
+<p><a href="https://www.openshift.com/quickstarts/drupal-7">&ldquo;Drupal 7 | Openshift &rdquo;</a></p>
+
+<p><a href="https://github.com/openshift/drupal-quickstart">&ldquo;Drupal-quickstart | Github &rdquo;</a></p>
+]]></content>
+  </entry>
+  
+</feed>

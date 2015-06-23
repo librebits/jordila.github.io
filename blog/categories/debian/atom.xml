@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Debian | Librebits - jordila_@i-ching:~/]]></title>
+  <link href="http://jordila.github.io/blog/categories/debian/atom.xml" rel="self"/>
+  <link href="http://jordila.github.io/"/>
+  <updated>2015-06-23T18:06:26-04:00</updated>
+  <id>http://jordila.github.io/</id>
+  <author>
+    <name><![CDATA[jordila_]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A Vueltas Con LinuX Containers (LXC) II]]></title>
+    <link href="http://jordila.github.io/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii/"/>
+    <updated>2014-12-04T11:50:00-05:00</updated>
+    <id>http://jordila.github.io/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii</id>
+    <content type="html"><![CDATA[<p><code>
+"Los servidores lo tuvieron todo. Los clientes, nada. Bienvenido al Cloud Computing"
+(Eben Moglen , Free Software Foundation)
+</code></p>
+
+<p><em>Lo prometido es deuda</em> &hellip; reza el dicho popular.</p>
+
+<p>En un <a href="https://jordila.github.io/blog/2014/11/02/a-vueltas-con-linux-containers-lxc-i/">post anterior</a> nos zambullimos en la tecnología de virtualización ( subyacente a la <em>trendy</em>  y  cacareada   <em>Cloud</em> )
+En otras palabras, la Internet de siempre con una capa de abstracción de hardware : <em>LinuX Containers LXC</em> .</p>
+
+<h2>La fanfarria del <em>Cloud Computing</em>  o la última <em>trending technology</em></h2>
+
+<p>Con ese mero argumento, una vez más las grandes corporaciones (que conozco por experiencia) del sector infocomunicacional  <em>venden</em> servicios que realmente los clientes no necesitan. Les encadenan a sus servidores, que se acumulan en campos de concentración de hardware, ventilados, aislados y con las máximas medidas de seguridad. Es la economía de escala &hellip; la misma que está agotando al Planeta que habitamos.</p>
+
+<p>En Canadá algunas empresas se jactan de mantener esas granjas de servidores virtualizados de forma sostenible y limpia (!). Sin derroche de energía (que consumen cientos o miles de procesadores corriendo en paralelo). Aprovechan, dicen, las corrientes de aire frío (ártico). En fin.</p>
+
+<h2>(pseudo)Virtualizando Debian en un  Debian GNU/Linux (host)</h2>
+
+<p>Disquisiciones aparte. Tratemos de crear un contenedor <em>Debian</em> albergado en nuestro <em>Debian GNU/Linux</em> (host del contenedor), o computadora-laptop de trabajo.</p>
+
+<p>Por no repetir lo que viene detallado en los tutoriales referenciados, solo diré que he encontrado problemas con <em>LXC</em> en mi Debian <em>GNU/Linux</em> Jessie , siguiendo los pasos de la <a href="https://wiki.debian.org/LXC#Installation">Wiki de Debian</a>.</p>
+
+<p>Problemas que también encontró el autor de <a href="http://feeding.cloud.geek.nz/posts/lxc-setup-on-debian-jessie/">LXC setup on Debian Jessie</a>, gracias al cual pude por fin cumplir mi promesa de hacer correr mis máquinas (pseudo)virtuales no sólo en <em>Ubuntu</em> , sino también en mi <em>Debian GNU/Linux</em>(a continuación me fijaré en la parte que más útil me fue). A él mi agradecimiento.</p>
+
+<p>```
+// Crear un  contenedor Debian (en /var/lib/lxc/) es simple:</p>
+
+<h1>sudo MIRROR=<a href="http://http.debian.net/debian">http://http.debian.net/debian</a> lxc-create -n sid64 -t debian &mdash; -r sid -a amd64</h1>
+
+<p>// Inicia o para el contenedor de la siguiente forma :</p>
+
+<h1>sudo lxc-start -n sid64 -d</h1>
+
+<h1>sudo lxc-stop -n sid64</h1>
+
+<p>// Puedes encontrar la dirección IP asignada al contenedor, recibida por el Servidor  DHCP tecleando, y su estado</p>
+
+<h1>sudo lxc-ls &mdash;fancy</h1>
+
+<p>..</p>
+
+<p>```</p>
+
+<p>A partir de aquí podemos seguir manejando nuestros LinuX Containers, <a href="https://jordila.github.io/blog/2014/11/02/a-vueltas-con-linux-containers-lxc-i/">como veníamos haciendo en el anterior post relacionado</a></p>
+
+<h2><em>Docker</em> ?  &ldquo;It&rsquo;s LinuX Containers , stupid !&rdquo;</h2>
+
+<p>En lo práctico,    pongamos que para desarrollar una aplicación web determinada necesitamos un <em>stack</em> de software    (p.ej.: el clásico Linux+Apache+MySQL &ndash;  LAMP) en unas versiones determinadas, por requisitos del entorno (p.ej.: <em>PHP 5.3 y  MySQL 5.1</em> ).    Y sólo puede ser de este modo. En vez de tener que rehacer  todo el stack de nuestro servidor de pruebas nos bastará con generar un <em>LinuX Container</em> que cumpla esos requisitos. El único condicionante es la base del stack. Está sujeta al <em>kernel</em> del sistema host (en mi caso, el de Debian 8 <em>GNU/Linux</em> )  Además, podré desarrollar  cómodamente de forma <em>ágile</em> (ligera e iterativa), pues puedo usar para ello el comando <em>lxc-clone</em> para armar tantas maquetas o prototipos como requiera. Por ejemplo,</p>
+
+<ul>
+<li><p>container LXCO = Debian GNU/Linux server</p></li>
+<li><p>container LXC1 =  Debian GNU/Linux server + AMP</p></li>
+</ul>
+
+
+<p>(que podré clonar para otras aplicaciones que necesiten el mismo <em>stack</em> , p,ej. el <em>LMS Moodle</em> , <em>Drupal CMS</em> &hellip;)</p>
+
+<ul>
+<li><p>container LXC2= LAMP + CMS Drupal</p></li>
+<li><p>etc &hellip; (así sucesivamente)</p></li>
+</ul>
+
+
+<p><em>BONUS</em> : De paso he podido hacer una primera prueba satisfactoria con <em>Docker</em> , que me permitiría importar y exportar fácilmente aplicaciones a partir de un <em>LinuX Container</em> y bla,bla&hellip;  pero de eso quizás hablemos en otro nota de este blog más adelante&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Aprendizajes De Una Actualización Remota De Sistema Fallida: 'Screen']]></title>
+    <link href="http://jordila.github.io/blog/2014/11/10/aprendizajes-de-una-actualizacion-remota-de-sistema-fallida-screen/"/>
+    <updated>2014-11-10T07:58:05-05:00</updated>
+    <id>http://jordila.github.io/blog/2014/11/10/aprendizajes-de-una-actualizacion-remota-de-sistema-fallida-screen</id>
+    <content type="html"><![CDATA[<p>Estamos conectados al servidor remoto en producción por sesión <em>SSH</em> .</p>
+
+<p>Decidimos que es hora de actualizar los paquetes de nuestro sistema servidor ( Debian GNU / Linux ) en el que alojamos los flamantes últimos desarrollos web de nuestros clientes para disfrute del gran público internauta.</p>
+
+<p>```
+//secuencia actualización de repositorios fuente y paquetes</p>
+
+<h1>apt-get update &amp;&amp; upgrade</h1>
+
+<p>```</p>
+
+<p>El sensible proceso en lote se inicia normalmente&hellip;</p>
+
+<p>CRASH! Ocurre&hellip; <em>Broken</em> <em>pipe</em> , por el motivo que fuera perdimos la conexión remota en el peor momento.</p>
+
+<p>Tardamos un tiempo en recuperar la conexión <em>SSH</em> , lo que hace que se vea afectado el proceso en el momento de la interacción: que nos solicitaba si queríamos mantener no determinados archivos de configuración del sistema servidor Web  <em>LAMP</em> , justo en el momento del CRASH! .</p>
+
+<p>En la reconexión algo ,se ve enseguida, no anduvo . Chequeamos la disponibilidad de los servicios web alojados: <em>NOT FOUND</em> . Desastre confirmado.
+En un primer diagnóstico quedaron afectados (desconfigurados) los paquetes <em>MySQLServer</em> &hellip; bla,bla.</p>
+
+<p>Inspiramos.Expiramos.</p>
+
+<p>Acudimos a la comunidad, como no&hellip; via IRC. En <em>#Debian</em> lo primero que nos sugieren es que deberíamos usar <em>siempre</em> la utilidad <a href="http://rz0r.blogspot.com.ar/2007/12/screen-otra-util-herramienta-en-linux.html">screen</a> para este tipo de operaciones <em>( apt-get upgrade )</em> críticas.</p>
+
+<p>Lección aprendida.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Xfce | Librebits - jordila_@i-ching:~/]]></title>
+  <link href="http://jordila.github.io/blog/categories/xfce/atom.xml" rel="self"/>
+  <link href="http://jordila.github.io/"/>
+  <updated>2015-06-23T18:06:26-04:00</updated>
+  <id>http://jordila.github.io/</id>
+  <author>
+    <name><![CDATA[jordila_]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Debian GNU/Linux: Reflexiones en Cuanto a (Re)instalación Y Mantenimiento...]]></title>
+    <link href="http://jordila.github.io/blog/2014/08/05/debian-gnu-slash-linux-reflexiones-en-cuanto-a-re-instalacion-y-mantenimiento-dot-dot-dot/"/>
+    <updated>2014-08-05T11:26:35-04:00</updated>
+    <id>http://jordila.github.io/blog/2014/08/05/debian-gnu-slash-linux-reflexiones-en-cuanto-a-re-instalacion-y-mantenimiento-dot-dot-dot</id>
+    <content type="html"><![CDATA[<p>Recientemente incurrí en un garrafal error en mi <em>Debian GNU/Linux</em> &hellip; que me llevó a &lsquo;pisar&rsquo; con otros archivos, ni más ni menos que el directorio raíz : sí, sí&hellip; <strong>/</strong> .</p>
+
+<p>En fin, de todo se aprende&hellip; como <em>via rapida</em> de solución decidí optar por hacer <em>backup</em> y reinstalar la partición de sistema. Estoy en el curso de un desarrollo que no puede demorar&hellip; Acá van mis reflexiones tras casi dos día de vaivenes en mis sistemas. Vaya, en mis herramientas de trabajo.</p>
+
+<h3>Nunca hagas en el sistema nada crítico en un estado anímico/físico bajo&hellip;</h3>
+
+<p>Un amigo una vez me comentó en una ocasión&hellip;</p>
+
+<p><em>&ndash; Nunca discutas con tu pareja bajo situación de cansancio, falta de sueño&hellip;.El resultado puede ser explosivo!</em></p>
+
+<p>Efectivamente, con el tiempo uno aprende que es mejor una <em>retirada</em> que una victoria <em>pírrica</em> en esos instantes. Nuestro estado en ese momento no puede más que derivar en un círculo vicioso de irritabilidad, que nos llevá a una mayor irascibilidad, que nos llevá a los gritos&hellip; y vuelta a empezar.</p>
+
+<p>En síntesis, eso me ocurrió ayer&hellip; no con mi pareja, sino con mi compañera de trabajo : mi computadora. <em>[me ahorro los detalles]</em></p>
+
+<p>El caso es que en 48h fui capaza de tumbar yo solito las 2 computadoras que usamos en casa&hellip; Voilà!</p>
+
+<h3>Operación Ave Fénix</h3>
+
+<p>Tras los momentos de desesperación&hellip; es importante revertir la situación. Recuperar el estado de ánimo es crucial para ser capaz de <em>levantar los sistemas</em> en la mayor brevedad de tiempo. Y sobre todo, dejar de autoinculparse. Eso nos meterría en otro circulo vicioso. <em>Resiliencia</em> es la palabra.</p>
+
+<p>En adelante, más que dar los detalles, simplemente haré un par de consideraciones que a mí me sirvieron para que el proceso fuera lo más ágil y menos traumático posible.</p>
+
+<ul>
+<li>crucial: tener copia de las credenciales de seguridad / encriptación : llaves <em>SSH</em> y <em>GPG</em> . Lo contrario es jugar con fuego. Digo una obviedad&hellip;</li>
+<li>el hecho de tener diferenciadas las partciones de <em>sistema</em> y <em>datos</em> (pongamos <strong>/</strong> y <strong>home</strong> &hellip; hay quén añade otras&hellip; <strong>/var</strong> ) ayudó mucho, como se verá &hellip;</li>
+<li>lo anterior me permitió que, sin necesidad de <em>backup</em> en el momento, al reinstalar el sistema de nuevo en <strong>/</strong>, y re-ubicando <strong>/home</strong> en el lugar correspondiente, avisando al instalador ( <em>mantener datos, no borrar</em>), las aplicaciones volvieran a funcionar como antes sin esfuerzo.</li>
+</ul>
+
+
+<p>La explicación del último punto: para volver a sentirse uno de nuevo como en su &ldquo;ciber-casa&rdquo; cuanto antes es que por ejemplo el navegador Firefox guarda los parámetros particulares en una carpeta <em>oculta</em> , precedida con un <strong>.</strong> como corresponde a su condiciçon <em>oculta</em> :</p>
+
+<p>```
+jordi@i-ching:~/.mozilla$</p>
+
+<p>```</p>
+
+<p>y así sucesivamente la mayoría de las aplicaciones. Ello permite que, tras la reinstalación, se retomen por parte de la aplicación determinada su correspondiente carpeta de parámetros del usuario en esa apliación particular (en este caso marcadores, plugins, etc&hellip; )</p>
+
+<p>Para acabar, sistemas operativos como <em>Arch Linux</em> o su alternativa  <a href="https://en.wikipedia.org/wiki/Parabola_Linux">Parábola Linux-Libre</a> usan una filosofía que difiere de la de <em>Ubuntu</em> o su <em>padre, Debian</em> . En vez de publicar <em>releases</em> cada determinado tiempo (LTS, etc&hellip;), basta con actualizar regularmente los paquetes&hellip; y rara vez vas a tener necesidad de re-instalar por completo el sistema. Siempre y cuando no seas tan bruto y torpe a la vez, como conté al principio&hellip; !</p>
+
+<p>KISS : Keep It Simple</p>
+
+<p><em>Bonus</em> : en mis sistema aproveché la ocasión para volver al entorno de escritorio (<em>desktop</em>) <a href="https://es.wikipedia.org/wiki/Xfce">Xfce</a>&hellip; tras un tiempo con  <a href="https://es.wikipedia.org/wiki/Xfce">Lxde</a>. Si bien este último es el más liviano que nunca he probado, por un inapreciable mayor consumo de  capacidad del procesador tienes un entorno mucho más versátil. Con el tiempo se ha convertido en mi preferido. &hellip; Que le pregunten a <em>Linus Torvalds</em> .</p>
+]]></content>
+  </entry>
+  
+</feed>

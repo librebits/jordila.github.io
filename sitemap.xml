@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2015/06/18/minube-con-owncloud-bye/</loc>
+    <lastmod>2015-06-18T12:08:27-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash/</loc>
+    <lastmod>2015-05-09T06:35:47-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii/</loc>
+    <lastmod>2014-12-04T11:50:00-05:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/11/24/openshift-paas/</loc>
+    <lastmod>2014-11-24T10:19:37-05:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere/</loc>
+    <lastmod>2014-11-11T08:30:29-05:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/11/10/aprendizajes-de-una-actualizacion-remota-de-sistema-fallida-screen/</loc>
+    <lastmod>2014-11-10T07:58:05-05:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/11/02/a-vueltas-con-linux-containers-lxc-i/</loc>
+    <lastmod>2014-11-02T16:00:04-05:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/10/03/un-buscador-para-mi-sitio-web-estatico/</loc>
+    <lastmod>2014-10-03T09:31:57-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/09/26/drupal-harmonizando-los-modulos-panels/</loc>
+    <lastmod>2014-09-26T06:47:48-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/09/21/gh-pages-publicar-sencillamente-muestras-de-tu-proyecto/</loc>
+    <lastmod>2014-09-21T06:52:42-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/09/09/de-desarrollo-drupal-colaborativo/</loc>
+    <lastmod>2014-09-09T06:43:19-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/08/24/drupal-drush-instalar-una-instancia-con-una-linea-de-comando/</loc>
+    <lastmod>2014-08-24T17:51:32-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/08/20/git-diff/</loc>
+    <lastmod>2014-08-20T09:49:20-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/08/19/video-a-vueltas-con-el-estado-del-arte-en-html5-formatos-dot-dot-dot/</loc>
+    <lastmod>2014-08-19T09:55:14-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/08/17/git-un-sencillo-flujo-de-trabajo-workflow-ii/</loc>
+    <lastmod>2014-08-17T03:55:00-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/08/07/gnu-como-escoger-una-licencia-para-tu-propia-obra/</loc>
+    <lastmod>2014-08-07T17:24:28-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/08/05/debian-gnu-slash-linux-reflexiones-en-cuanto-a-re-instalacion-y-mantenimiento-dot-dot-dot/</loc>
+    <lastmod>2014-08-05T11:26:35-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/08/02/git-comparar-cambios-con-diff/</loc>
+    <lastmod>2014-08-02T03:11:55-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/07/31/gnu-slash-linux-a-vueltas-con-el-espacio-en-disco/</loc>
+    <lastmod>2014-07-31T02:34:15-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/07/29/git-sacando-partido-al-archivo-log/</loc>
+    <lastmod>2014-07-29T14:37:55-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/07/26/emancipacion-soberania-tecnologica/</loc>
+    <lastmod>2014-07-26T03:19:52-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/07/24/git-un-sencillo-flujo-de-trabajo-workflow/</loc>
+    <lastmod>2014-07-24T00:55:00-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/07/22/git-deshacer-cambios-undo/</loc>
+    <lastmod>2014-07-22T15:25:15-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/blog/2014/07/22/por-que/</loc>
+    <lastmod>2014-07-22T00:40:55-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  
+  <url>
+    <loc>http://jordila.github.io/blog/archives/</loc>
+    <lastmod>2015-06-23T18:06:26-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/</loc>
+    <lastmod>2015-06-23T18:06:26-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://jordila.github.io/about/</loc>
+    <lastmod>2015-06-23T18:06:26-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+</urlset>

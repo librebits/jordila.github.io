@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Bash | Librebits - jordila_@i-ching:~/]]></title>
+  <link href="http://jordila.github.io/blog/categories/bash/atom.xml" rel="self"/>
+  <link href="http://jordila.github.io/"/>
+  <updated>2015-06-23T18:06:26-04:00</updated>
+  <id>http://jordila.github.io/</id>
+  <author>
+    <name><![CDATA[jordila_]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[En Un Principio Fue La Linea De comandos-...GNU/Linux-Bash]]></title>
+    <link href="http://jordila.github.io/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash/"/>
+    <updated>2015-05-09T06:35:47-04:00</updated>
+    <id>http://jordila.github.io/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash</id>
+    <content type="html"><![CDATA[<p>Estos días he aprovechado cierto receso para enriquecer mi relación con mi sistema GNU / Linux . Esto es, hablarle, preguntarle&hellip; más y hacer menos <em>click</em> . Buscando una comunicación más fluida y harmoniosa.</p>
+
+<p>Este proceso de enriquecimiento de la interacción se produce tras la inspiradora lectura de <a href="https://es.wikipedia.org/wiki/En_el_principio_fue_la_l%C3%ADnea_de_comandos">&ldquo;En un principio fue la línea de comandos&rdquo;</a></p>
+
+<p>Nos da la clave de como algunos sistemas operativos (privativos, principalmente) nos han querido hacer creer que la terminal o línea de comando ( CLI ) era un vestigio del pasado. Con atractivos ( o no tanto) interfaces gráficos, bajo ese prisma, se quiere ocultar lo innegable: los sistemas computacionales son complejos. Como dice Eben Moglen,en cierto modo , el abuso del uso del ratón ( <em>mouse</em> ) deriva en una espasmódica relación del usuario con el sistema. <em>A golpe de ratón</em> .
+La interacción está, en ese caso, mediada por una capa de abstracción que no es posible más que mediante la asunción ( imposición? ) de ciertos valores y parámetros por defecto. El diseñador de la interfaz gráfica (GUI) ha tenido que, necesariamente, simplificar y realizar bastantes suposiciones para asumir <em>valores por defecto</em> .</p>
+
+<p>Al dejar de controlar esos detalles en pro de la simplicidad, de &ldquo;hacernos la vida más fácil&rdquo; como usuarios, estamos renunciando no sólo a todo el potencial de nuestro (?) sistema, sino también a la posibilidad de una interacción libre de intermediarios.</p>
+
+<p>Cuando era adolescente y cayó en mis manos el primer teclado <em>Unix</em> no en entendía nada, sentí temor&hellip; quería salir corriendo a por mi ratón! j,aj! Éste ha sido un hermoso proceso,&hellip; de reencuentro y reconciliación. a hablarle a mi computadora GNU / Linux&hellip; Pasé de hablarle con gruñidos a base de click, a susurrarle en la línea de comandos (Bash). Sintiendo el latido y el repiqueteo de las teclas&hellip;</p>
+
+<p>Se encuentra fácilmente en la red de redes,  LinuxCommand-TLCL.pdf, muy inspirador, ya en lo práctico, en este sentido. Estoy leyendo y practicando con él. Bienvenidos al apasionante mundo del GNU / Linux <em>Bash</em> <em>Shell</em> .</p>
+
+<p>BONUS : por ejemplo, acabo de aprender como navegar más fácilmente entre directorios desde la línea de comandos,</p>
+
+<p>Teclear toda la ruta del directorio con <em>cd</em> consume tiempo. Puedes simplemente usar <em>pushd</em> o <em>popd</em> para commutar hacia y desde dos directorios.
+Cuando estás en en un cierto directorio y deseas commutar a otro directorio, en vez de <em>cd</em> usa <em>pushd</em></p>
+
+<p><code>
+$ pushd /path/to/new/directory
+</code></p>
+
+<p>Usando este comando, la ruta del directorio original será recordada para usar de vuelta mediante <em>popd</em> .Al acabar de trabajar en el nuevo directorio, para volver al directorio original, simplemente teclea :</p>
+
+<p><code>
+$ popd
+</code></p>
+
+<p>Fuente: <a href="http://www.linuxandlife.com/2013/04/some-tips-to-use-command-line-faster.html">http://www.linuxandlife.com/2013/04/some-tips-to-use-command-line-faster.html</a></p>
+
+<p>Bonus :</p>
+
+<p>Mejor no hacer como yo &hellip; no esperar a la edad adulta computacional para aprender a manejarse en la línea de comandos, ja,ja! Aquí tienen un par de pdfs de intro y con los motivos por los que es buena cosa aprender a manejarse en las “pantallas negras” de buen principio</p>
+
+<p><a href="https://elbinario.net/wp-content/uploads/2015/01/001-Intro.pdf">001-Intro.pdf</a></p>
+
+<p><a href="https://elbinario.net/wp-content/uploads/2015/01/002-Motivos.pdf">002-Motivos.pdf</a></p>
+
+<p>Cortesía de <a href="http://elbinario.net">Elbinario.net</a></p>
+]]></content>
+  </entry>
+  
+</feed>

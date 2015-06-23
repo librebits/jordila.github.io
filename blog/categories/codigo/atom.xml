@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Codigo | Librebits - jordila_@i-ching:~/]]></title>
+  <link href="http://jordila.github.io/blog/categories/codigo/atom.xml" rel="self"/>
+  <link href="http://jordila.github.io/"/>
+  <updated>2015-06-23T18:06:26-04:00</updated>
+  <id>http://jordila.github.io/</id>
+  <author>
+    <name><![CDATA[jordila_]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Git: Deshacer Cambios - Undo]]></title>
+    <link href="http://jordila.github.io/blog/2014/07/22/git-deshacer-cambios-undo/"/>
+    <updated>2014-07-22T15:25:15-04:00</updated>
+    <id>http://jordila.github.io/blog/2014/07/22/git-deshacer-cambios-undo</id>
+    <content type="html"><![CDATA[<h2>Git &lsquo;deshacer&rsquo; &ndash; undo, marcha atrás &hellip;</h2>
+
+<p>// deshacer ultimo commit &hellip;</p>
+
+<p><code>
+$ git reset --hard HEAD~1
+</code></p>
+
+<p>&hellip; y en general, volver el enésimo commit, prescindiendo de n cambios</p>
+
+<p>```
+$ git reset &mdash;hard HEAD~n</p>
+
+<p>```</p>
+
+<p><em>¿Como vuelvo atrás un repositorio git y &lsquo;reseteo&rsquo; hasta un determinado &lsquo;commit?</em></p>
+
+<p>```
+$ git reset &mdash;hard <em><tag/branch/commit id></em></p>
+
+<p>```</p>
+
+<p>p.ej.:  si el commit al que quiero &lsquo;volver deshaciendo lo andado" tiene el id : <em>0cf5a8b</em></p>
+
+<p>```
+$ git reset &mdash;hard 0cf5a8b</p>
+
+<p>```</p>
+
+<p>me devuelve al estado del repositorio cuando se realizó el commit id <em>0cf5a8b</em> .</p>
+
+<p><em>Fuente</em> : <a href="http://blog.ainixon.me/how-to-remove-changes-from-git">http://blog.ainixon.me/how-to-remove-changes-from-git</a></p>
+
+<p>Thanks Ashraful Islam</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Multiplica Las Posibilidades De Drupal CMS : Proyectos Sandbox (Ej.: 'Bootstrap Everywhere' - Librebits - jordila_@i-ching:~/</title>
+  <meta name="author" content="jordila_">
+
+  
+  <meta name="description" content="Intro Lo maravilloso de la mundial y activa comunidad Drupal son cosas como las que siguen&hellip; Estamos iniciando un proyecto Drupal7 en el que &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jordila.github.io/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Librebits - jordila_@i-ching:~/" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Librebits - jordila_@i-ching:~/</a></h1>
+  
+    <h2>Bits aleatorios de Software Libre / Libre Software ...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Multiplica Las Posibilidades De Drupal CMS : Proyectos Sandbox (Ej.: 'Bootstrap Everywhere'</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-11T08:30:29-05:00" pubdate data-updated="true">Nov 11<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h3>Intro</h3>
+
+<p>Lo maravilloso de la mundial y activa comunidad Drupal son cosas como las que siguen&hellip;</p>
+
+<p>Estamos iniciando un proyecto <em>Drupal7</em> en el que <em>Bootstrap</em> theme  puede servirnos
+Hay otros temas más <em>propios</em> de <em>Drupal</em> como <em>Omega</em> , <em>Zen</em> , etc&hellip; que bien podrían servirnos.</p>
+
+<p>Lo interesante de Bootstrap en este caso es, entre otras cosas, que lo hemos manejado en el equipo en otros contextos, y facilita un <em>lenguaje</em> <em>común</em> para las tareas de <em>Theming</em> .</p>
+
+<p> En las que, desde el principio, queremos que nuestro Tema elegido mantenga compatibilidad con módulos <em>Panels</em> y <em>Panel</em> <em>Everywhere</em> .</p>
+
+<p>Pero&hellip; ay! Parece que Bootstrap no la ofrece.</p>
+
+<p>Acudimos entonces a la contribución de <em>mpv</em> , que elaboró una <em>Sandbox</em> para solventar precisamente esta cuestión : <a href="https://www.drupal.org/sandbox/mpv/1719916">Bootstrap Everywhere</a></p>
+
+<p>(un proyecto <em>Sandbox</em> no es más que código Drupal alternativo, que no ha sido empaquetado en un <em>módulo</em> como tal )</p>
+
+<p>Veamos si somos capaces de encajar la piezas del <em>puzzle</em> &hellip;</p>
+
+<h3>Dev</h3>
+
+<p>Drupal 7 Bootstrap Everyhwere sandbox](<a href="https://www.drupal.org/project/1719916">https://www.drupal.org/project/1719916</a>)</p>
+
+<p>by mpv</p>
+
+<p>0.&ndash; En nuestro caso, los pre-requisitos son disponer de <a href="https://www.drupal.org/project/Bootstrap">Bootstrap 2 theme,(ojo, no la v3!)</a> instalado previemente, que es con el cual el proyecto <em>Sandbox</em> _Bootstrap es compatible.</p>
+
+<p>1.&ndash; Así pues  Bootstrap theme   ( las versiones se alinean con las del popular <em>framework</em> , ej.: 7.x-2.2 &lt;&mdash;> Bootstrap 2.3.2 )
+  (activamos &mdash;> default theme , o creamos un sub-theme)</p>
+
+<p>2.&ndash;  habilitamos los módulos <em>Panels</em> y <em>Panels</em> <em>Everywhere</em>  cómodamente via &lsquo;drush dl <module>&rsquo; y &lsquo;drush en <module>&rsquo;</p>
+
+<p>// así tenemos un sitio &lsquo;operativo&rsquo; con contenido aleatorio para test, previamente instalado el módulo <em>devel</em>
+3.&ndash; drush devel generate 20</p>
+
+<p>3.&ndash; seguimos las indicaciones de mpv para instalar, como un tema más,<a href="https://www.drupal.org/sandbox/mpv/1719916">Bootstrap Everywhere</a>
+básicamente el comando &lsquo;git clone &lt;&hellip;>&rsquo;</p>
+
+<h3>Epílogo</h3>
+
+<p>El extenso y rico ecosistema de software y módulos de <em>Drupal</em> <em>CMS</em> se ve multiplicado por los proyectos <em>Sandbox</em> . De esta forma, el Content Management Systema se construye por capas :</p>
+
+<p>1.&ndash; core  &ndash; núcleo  ( <em>Do no hack the core!</em> )
+2.&ndash; contrib modules ( los más populares, como <em>Views</em> acaban integrándose en el core )
+3.&ndash; proyectos Sandbox , &lsquo;no modularizados&rsquo;&hellip; que acaban multiplicando las posibilidades</p>
+
+<p>Gracias <em>mpv</em></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">jordila_</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-11T08:30:29-05:00" pubdate data-updated="true">Nov 11<sup>th</sup>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bootstrap/'>bootstrap</a>, <a class='category' href='/blog/categories/devops/'>devops</a>, <a class='category' href='/blog/categories/drupal/'>drupal</a>, <a class='category' href='/blog/categories/sandbox/'>sandbox</a>, <a class='category' href='/blog/categories/theming/'>theming</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jordila.github.io/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere/" data-via="jordila_" data-counturl="http://jordila.github.io/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/11/10/aprendizajes-de-una-actualizacion-remota-de-sistema-fallida-screen/" title="Previous Post: Aprendizajes de una actualización remota de sistema fallida: 'screen'">&laquo; Aprendizajes de una actualización remota de sistema fallida: 'screen'</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/11/24/openshift-paas/" title="Next Post: Openshift PaaS, Drupal CMS y Git">Openshift PaaS, Drupal CMS y Git &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>...as in freedom</h1>
+  <a href="http://www.fsf.org/register_form?referrer=12001"><img
+src="http://static.fsf.org/nosvn/associate/fsf-12001.png" alt="[FSF
+Associate Member]" /></a>
+</section>
+
+<section>
+ <img style="margin:0px auto; display:block"  src="https://dl.dropboxusercontent.com/u/18889627/Twitter-avatar_100x.png" alt="jordila + GNU/Linux" />
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/18/minube-con-owncloud-bye/">miNube Con OwnCloud : Bye,bye Dropbox !</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash/">En Un Principio Fue La Linea De comandos-...GNU/Linux-Bash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii/">A Vueltas Con LinuX Containers (LXC) II</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/24/openshift-paas/">Openshift PaaS, Drupal CMS Y Git</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere/">Multiplica Las Posibilidades De Drupal CMS : Proyectos Sandbox (Ej.: 'Bootstrap Everywhere'</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/jordila">@jordila</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jordila',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+    - jordila_ -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

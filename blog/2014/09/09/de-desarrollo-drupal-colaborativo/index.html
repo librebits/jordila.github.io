@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>De Desarrollo Drupal Colaborativo, Git, PaaS .. Y Otros - Librebits - jordila_@i-ching:~/</title>
+  <meta name="author" content="jordila_">
+
+  
+  <meta name="description" content="En los inicios de mis desarrollos con Drupal CMS , mi flujo de trabajo (Workflow) era bien rudimentario. Se basaba en, de forma iterativa, ir &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jordila.github.io/blog/2014/09/09/de-desarrollo-drupal-colaborativo">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Librebits - jordila_@i-ching:~/" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Librebits - jordila_@i-ching:~/</a></h1>
+  
+    <h2>Bits aleatorios de Software Libre / Libre Software ...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">De Desarrollo Drupal Colaborativo, Git, PaaS .. Y Otros</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-09T06:43:19-04:00" pubdate data-updated="true">Sep 9<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>En los inicios de mis desarrollos con <em>Drupal CMS</em> , mi flujo de trabajo (Workflow) era bien rudimentario. Se basaba en, de forma iterativa, ir ensayando las diferentes funcionalidades requeridas, generando así múltiples maquetas que se iban acumulando en mi disco duro.</p>
+
+<p>El hecho de que <em>Drupal</em> tiene el defecto de no hacer una distinción práctica de código, configuración y datos (estos últimos comparten la base de datos) complica más las cosas. La buena noticia es que esto parece cambiar con la nueva versión 8, que sería liberada en unos meses.</p>
+
+<p>Todo ello resultaba en un galimatías monumental, en el que, por no mezclar configuraciones&hellip;acaba teniendo decenas de maquetas, en las que se contenía UNA funcionalidad específica&hellip; Para colmo, a veces las distintas funcionalidades acaban implentadas en módulos con versiones que difieren entre las maquetas.</p>
+
+<p>Decidido a poner fin a semejante disparate: conocí el módulo <em>Features</em> , que te permite <em>encapsular</em> una determinada funcionalidad&hellip; en otro módulo. De ahí te lo puedes llevar en el bolsillo a donde quieras, reutilizarlo&hellip; y más. Por otro lado, ya venía practicando las bondades de un sistema de versionado como <em>Git</em> (en el que se fundamenta el desarrolla el Linux Kernel ). A reorganizar la forma de trabajo se ha dicho.
+En fin, para lo específico a Drupal, os dejo sin más <a href="http://vimeo.com/54306049">con el revelador video de Ramón Vilar</a>, que un encuentro-charla reveló los entresijos y la arquitectura del workflow de un potente equipo de desarrollo <em>Drupal</em> como el suyo. Imprescindible.</p>
+
+<p>Por otro lado, ya puestos, podemos investigar un poco sobre algunas herramientas en la tan cacareada <em>nube</em> que también van en esa misma línea, facilitar la tarea al desarrollador(<em>¿ a qué precio?</em>). Vaya por delante, que pienso que el abuso del concepto <em>Cloud</em> creo que nos retrotrae a la época medieval de Internet : en la que grandes supercomputadoras (en lo general en manos de bancos y alguna universidad) abastecen de servicios a terminales <em>tontos</em> (ligeros) remotos. La verticalidad autoritaria, en detrimento de la horizontalidad autogestiva avanza. <em>¿Es esa la red de redes que queremos?</em> Pero, en fin, eso da para un debate en sí&hellip; (Atención acá al <em><a href="https://www.gnu.org/philosophy/who-does-that-server-really-serve.es.html">punto de vista de RMS sobre los peligros en particular de SaaS</a> en relación a las libertades del software) . Con las precauciones necesarias&hellip; veamos que se esconde tras las </em>nubes_ cibernéticas.</p>
+
+<h3>Pantheon</h3>
+
+<p>Volviendo a lo que nos ocupa, comentar que la comunidad Drupal ha sabido dotarse de una herramienta como <a href="http://getpantheon.com%20(que%20descubr%C3%AD%20via%20el%20inefable%20@vkane">Pantheon</a>, adaptada las necesidades de workflow Drupal. En esencia facilita el control de versiones de código y base datos; desarrollándose en tres escenarios ( test , dev y live ).</p>
+
+<p><img src="/images/myimg/Drupal-developement-workflow.png"></p>
+
+<p>Estoy haciendo algunas pruebas&hellip; Parece prometedor . Lo único que me inquieta es que, por ahora, no se ha licenciado como software libre, siendo una <em>caja negra</em> .</p>
+
+<h3>OpenShift</h3>
+
+<p>Esto último no ocurre con la plataforma <em>OpenShift</em> de Red Hat. La verdad es que impresiona la potencia de la orquestación de todos una gama de servicios puestos a disposición del desarrollador, con un interfaz Web sencillo y elegante a la vez. Hasta puedes instalar en local un paquete de herramientas para gestionar todo ello desde tu línea de comandos (CLI).</p>
+
+<p>Cubre las principales herramientas y frameworks de desarrollo actuales.Por ejemplo, instalar una nuevas instancia Drupal, gestionable con <em>Git</em> en unos pocos clicks&hellip; obteniendo gratuitamente tu dominio</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>http://miDrupal-rhcloud.com</span></code></pre></td></tr></table></div></figure>
+
+
+<p>&hellip; además, actualmente permite disponer de 3 instancias de aplicaciones <em>cloud</em> libre y gratuitamente, además de las opciones premium de pago. Parece que se están orientado claramente a la comunidad&hellip; con su canal chat <em>IRC</em> , etc&hellip;</p>
+
+<p>[ Aunque suene paradójico&hellip; ¿Bienvenidos al Cloud computing <em>libre</em> ? ]</p>
+
+<p>No termina acá. Si quieres, y puedes puedes instalar y gestionar tu RHCloud en tus propios servidores de <em>software libre</em> . El software está disponible en <em>Github.com</em> .</p>
+
+<h3>Gandi.net</h3>
+
+<p>Ah! &hellip; y sin darme cuenta, más allá de los acrónimos, vengo usando otra plataforma PaaS&hellip; donde alojo mis proyectos últimamente.<a href="http://gandi.net">Gandi.net</a>. Hasta ahora me ha dado más satisfacciones que problemas de servicio en el servidor privado virtual (VPS) que tengo contratado. Me gustan especialmente varios aspectos de este tradicional proveedor Hosting  :</p>
+
+<ul>
+<li><p>disponen de canal propio IRC para soporte&hellip; (me encanta recibir Soporte <em>chat</em> amigablemente )</p></li>
+<li><p>usan Debian GNU/Linux: dan apoyo y financiación al proyecto como tal&hellip;así como a Wikimedia (Wikipedia)</p></li>
+</ul>
+
+
+<p>&hellip; con un poco de paciencia, y con la línea de comandos, tú también puedes crearte tu propia plataforma de servicios.</p>
+
+<p><em>Bonus</em> : atención en el futuro a tecnologías como <em>LXC</em> , y servicios relacionados como <em>Docker</em>  me dicen en <em>Gandi</em></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">jordila_</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-09T06:43:19-04:00" pubdate data-updated="true">Sep 9<sup>th</sup>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/drupal/'>drupal</a>, <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/paas/'>paas</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jordila.github.io/blog/2014/09/09/de-desarrollo-drupal-colaborativo/" data-via="jordila_" data-counturl="http://jordila.github.io/blog/2014/09/09/de-desarrollo-drupal-colaborativo/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/08/24/drupal-drush-instalar-una-instancia-con-una-linea-de-comando/" title="Previous Post: Drupal drush : instalar una instancia con una línea de comando">&laquo; Drupal drush : instalar una instancia con una línea de comando</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/09/21/gh-pages-publicar-sencillamente-muestras-de-tu-proyecto/" title="Next Post: Gh-pages : publicar sencillamente muestras de tu proyecto">Gh-pages : publicar sencillamente muestras de tu proyecto &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>...as in freedom</h1>
+  <a href="http://www.fsf.org/register_form?referrer=12001"><img
+src="http://static.fsf.org/nosvn/associate/fsf-12001.png" alt="[FSF
+Associate Member]" /></a>
+</section>
+
+<section>
+ <img style="margin:0px auto; display:block"  src="https://dl.dropboxusercontent.com/u/18889627/Twitter-avatar_100x.png" alt="jordila + GNU/Linux" />
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/18/minube-con-owncloud-bye/">miNube Con OwnCloud : Bye,bye Dropbox !</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash/">En Un Principio Fue La Linea De comandos-...GNU/Linux-Bash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii/">A Vueltas Con LinuX Containers (LXC) II</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/24/openshift-paas/">Openshift PaaS, Drupal CMS Y Git</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere/">Multiplica Las Posibilidades De Drupal CMS : Proyectos Sandbox (Ej.: 'Bootstrap Everywhere'</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/jordila">@jordila</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jordila',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+    - jordila_ -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

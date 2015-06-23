@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>En Un Principio Fue La Linea De comandos-...GNU/Linux-Bash - Librebits - jordila_@i-ching:~/</title>
+  <meta name="author" content="jordila_">
+
+  
+  <meta name="description" content="Estos días he aprovechado cierto receso para enriquecer mi relación con mi sistema GNU / Linux . Esto es, hablarle, preguntarle&hellip; más y hacer &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jordila.github.io/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Librebits - jordila_@i-ching:~/" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Librebits - jordila_@i-ching:~/</a></h1>
+  
+    <h2>Bits aleatorios de Software Libre / Libre Software ...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">En Un Principio Fue La Linea De comandos-...GNU/Linux-Bash</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-05-09T06:35:47-04:00" pubdate data-updated="true">May 9<sup>th</sup>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Estos días he aprovechado cierto receso para enriquecer mi relación con mi sistema GNU / Linux . Esto es, hablarle, preguntarle&hellip; más y hacer menos <em>click</em> . Buscando una comunicación más fluida y harmoniosa.</p>
+
+<p>Este proceso de enriquecimiento de la interacción se produce tras la inspiradora lectura de <a href="https://es.wikipedia.org/wiki/En_el_principio_fue_la_l%C3%ADnea_de_comandos">&ldquo;En un principio fue la línea de comandos&rdquo;</a></p>
+
+<p>Nos da la clave de como algunos sistemas operativos (privativos, principalmente) nos han querido hacer creer que la terminal o línea de comando ( CLI ) era un vestigio del pasado. Con atractivos ( o no tanto) interfaces gráficos, bajo ese prisma, se quiere ocultar lo innegable: los sistemas computacionales son complejos. Como dice Eben Moglen,en cierto modo , el abuso del uso del ratón ( <em>mouse</em> ) deriva en una espasmódica relación del usuario con el sistema. <em>A golpe de ratón</em> .
+La interacción está, en ese caso, mediada por una capa de abstracción que no es posible más que mediante la asunción ( imposición? ) de ciertos valores y parámetros por defecto. El diseñador de la interfaz gráfica (GUI) ha tenido que, necesariamente, simplificar y realizar bastantes suposiciones para asumir <em>valores por defecto</em> .</p>
+
+<p>Al dejar de controlar esos detalles en pro de la simplicidad, de &ldquo;hacernos la vida más fácil&rdquo; como usuarios, estamos renunciando no sólo a todo el potencial de nuestro (?) sistema, sino también a la posibilidad de una interacción libre de intermediarios.</p>
+
+<p>Cuando era adolescente y cayó en mis manos el primer teclado <em>Unix</em> no en entendía nada, sentí temor&hellip; quería salir corriendo a por mi ratón! j,aj! Éste ha sido un hermoso proceso,&hellip; de reencuentro y reconciliación. a hablarle a mi computadora GNU / Linux&hellip; Pasé de hablarle con gruñidos a base de click, a susurrarle en la línea de comandos (Bash). Sintiendo el latido y el repiqueteo de las teclas&hellip;</p>
+
+<p>Se encuentra fácilmente en la red de redes,  LinuxCommand-TLCL.pdf, muy inspirador, ya en lo práctico, en este sentido. Estoy leyendo y practicando con él. Bienvenidos al apasionante mundo del GNU / Linux <em>Bash</em> <em>Shell</em> .</p>
+
+<p>BONUS : por ejemplo, acabo de aprender como navegar más fácilmente entre directorios desde la línea de comandos,</p>
+
+<p>Teclear toda la ruta del directorio con <em>cd</em> consume tiempo. Puedes simplemente usar <em>pushd</em> o <em>popd</em> para commutar hacia y desde dos directorios.
+Cuando estás en en un cierto directorio y deseas commutar a otro directorio, en vez de <em>cd</em> usa <em>pushd</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ pushd /path/to/new/directory</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Usando este comando, la ruta del directorio original será recordada para usar de vuelta mediante <em>popd</em> .Al acabar de trabajar en el nuevo directorio, para volver al directorio original, simplemente teclea :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ popd</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Fuente: <a href="http://www.linuxandlife.com/2013/04/some-tips-to-use-command-line-faster.html">http://www.linuxandlife.com/2013/04/some-tips-to-use-command-line-faster.html</a></p>
+
+<p>Bonus :</p>
+
+<p>Mejor no hacer como yo &hellip; no esperar a la edad adulta computacional para aprender a manejarse en la línea de comandos, ja,ja! Aquí tienen un par de pdfs de intro y con los motivos por los que es buena cosa aprender a manejarse en las “pantallas negras” de buen principio</p>
+
+<p><a href="https://elbinario.net/wp-content/uploads/2015/01/001-Intro.pdf">001-Intro.pdf</a></p>
+
+<p><a href="https://elbinario.net/wp-content/uploads/2015/01/002-Motivos.pdf">002-Motivos.pdf</a></p>
+
+<p>Cortesía de <a href="http://elbinario.net">Elbinario.net</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">jordila_</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-05-09T06:35:47-04:00" pubdate data-updated="true">May 9<sup>th</sup>, 2015</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bash/'>bash</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jordila.github.io/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash/" data-via="jordila_" data-counturl="http://jordila.github.io/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii/" title="Previous Post: A vueltas con LinuX Containers (LXC) II">&laquo; A vueltas con LinuX Containers (LXC) II</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2015/06/18/minube-con-owncloud-bye/" title="Next Post: miNube con OwnCloud : bye,bye Dropbox !">miNube con OwnCloud : bye,bye Dropbox ! &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>...as in freedom</h1>
+  <a href="http://www.fsf.org/register_form?referrer=12001"><img
+src="http://static.fsf.org/nosvn/associate/fsf-12001.png" alt="[FSF
+Associate Member]" /></a>
+</section>
+
+<section>
+ <img style="margin:0px auto; display:block"  src="https://dl.dropboxusercontent.com/u/18889627/Twitter-avatar_100x.png" alt="jordila + GNU/Linux" />
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/18/minube-con-owncloud-bye/">miNube Con OwnCloud : Bye,bye Dropbox !</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash/">En Un Principio Fue La Linea De comandos-...GNU/Linux-Bash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii/">A Vueltas Con LinuX Containers (LXC) II</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/24/openshift-paas/">Openshift PaaS, Drupal CMS Y Git</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere/">Multiplica Las Posibilidades De Drupal CMS : Proyectos Sandbox (Ej.: 'Bootstrap Everywhere'</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/jordila">@jordila</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jordila',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+    - jordila_ -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

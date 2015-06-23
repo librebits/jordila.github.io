@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Drupal | Librebits - jordila_@i-ching:~/]]></title>
+  <link href="http://jordila.github.io/blog/categories/drupal/atom.xml" rel="self"/>
+  <link href="http://jordila.github.io/"/>
+  <updated>2015-06-23T18:06:26-04:00</updated>
+  <id>http://jordila.github.io/</id>
+  <author>
+    <name><![CDATA[jordila_]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Openshift PaaS, Drupal CMS Y Git]]></title>
+    <link href="http://jordila.github.io/blog/2014/11/24/openshift-paas/"/>
+    <updated>2014-11-24T10:19:37-05:00</updated>
+    <id>http://jordila.github.io/blog/2014/11/24/openshift-paas</id>
+    <content type="html"><![CDATA[<p>Vamos a bucear un poco más en la PaaS de Red Hat Cloud (RHC).Openshift, El &lsquo;Cloud&rsquo; libre para todos y todas (?).</p>
+
+<p>Para ello hemos de cicunscribirnos a los parámetros del entorno que nos ofrece actualmente, a efectos de versionado, etc&hellip;
+Para lo  que nos ocupa, una típica instalación LAMP (Linux+Apache+MySQL+Php) como es <em>Drupal CMS</em>, esto es :</p>
+
+<p><code>
+Php v.5.4
+MySQL v.5.5 ...
+</code>
+que es lo que <em>RHC</em> nos ofrece al momento de escribir estas palabras. Recordar que podemos disfrutar de tres instancias <em>libre y gratuitas</em> en  nuestra cuenta <em>Openshift</em> . Sí, para siempre.</p>
+
+<p>Vamos seguido el paso a paso de creación de la cuenta (remota) en el servidor RHC y la instalación de la herramienta (CLI) cliente <em>rhc</em> en local (bien detallado en el tutoria oficial).</p>
+
+<p>Sigamos ahora los pasos del <a href="https://github.com/openshift/drupal-quickstart">Drupal Quickstart para RHC oficial</a> &hellip; A ver si somos capaces de encajar las piezas del puzzle.</p>
+
+<p>[..]</p>
+
+<p>Sea como fuere, cómodamente desde el panel de control de <em>Openshift(RHCloud)</em> , o mediante nuestro nuevo flamante <em>CLI</em> <em>rhc</em> en <em>Bash</em></p>
+
+<p>```
+//  Drupal-quickstart  &ndash; CLI rhc</p>
+
+<h1>rhc app create drupal php-5.4 mysql-5.5 cron</h1>
+
+<p>```</p>
+
+<p>Nos permite disponer de un completo entorno de desarrollo ( soporta <em>Git</em> por defecto) de forma rápida y sencilla. En mi caso por ejemplo, armé rápidamente una instancia de <em>Drupal8</em> para ir &lsquo;jugando&rsquo; &hellip; en cuestión de minutos.</p>
+
+<p>KISS &ndash; Keep it Simple Stupid</p>
+
+<p>Bonus : Cómodamente también puedes &lsquo;mapear&rsquo; de forma remota la carpeta con el código de tu desarrollo&hellip; gracias a sFTP, directamente en tu Navegador de archivos preferido ( Nautilus, Thunar&hellip;)</p>
+
+<p>RECURSOS:</p>
+
+<p><a href="https://austin2014.drupal.org/session/openshift-and-drupal-story-true-open-source-collaboration-and-innovation">&ldquo;Openshift and Drupal story true open-source collaboration and innovation&rdquo;</a></p>
+
+<p><a href="https://www.openshift.com/quickstarts/drupal-7">&ldquo;Drupal 7 | Openshift &rdquo;</a></p>
+
+<p><a href="https://github.com/openshift/drupal-quickstart">&ldquo;Drupal-quickstart | Github &rdquo;</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Multiplica Las Posibilidades De Drupal CMS : Proyectos Sandbox (Ej.: 'Bootstrap Everywhere']]></title>
+    <link href="http://jordila.github.io/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere/"/>
+    <updated>2014-11-11T08:30:29-05:00</updated>
+    <id>http://jordila.github.io/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere</id>
+    <content type="html"><![CDATA[<h3>Intro</h3>
+
+<p>Lo maravilloso de la mundial y activa comunidad Drupal son cosas como las que siguen&hellip;</p>
+
+<p>Estamos iniciando un proyecto <em>Drupal7</em> en el que <em>Bootstrap</em> theme  puede servirnos
+Hay otros temas más <em>propios</em> de <em>Drupal</em> como <em>Omega</em> , <em>Zen</em> , etc&hellip; que bien podrían servirnos.</p>
+
+<p>Lo interesante de Bootstrap en este caso es, entre otras cosas, que lo hemos manejado en el equipo en otros contextos, y facilita un <em>lenguaje</em> <em>común</em> para las tareas de <em>Theming</em> .</p>
+
+<p> En las que, desde el principio, queremos que nuestro Tema elegido mantenga compatibilidad con módulos <em>Panels</em> y <em>Panel</em> <em>Everywhere</em> .</p>
+
+<p>Pero&hellip; ay! Parece que Bootstrap no la ofrece.</p>
+
+<p>Acudimos entonces a la contribución de <em>mpv</em> , que elaboró una <em>Sandbox</em> para solventar precisamente esta cuestión : <a href="https://www.drupal.org/sandbox/mpv/1719916">Bootstrap Everywhere</a></p>
+
+<p>(un proyecto <em>Sandbox</em> no es más que código Drupal alternativo, que no ha sido empaquetado en un <em>módulo</em> como tal )</p>
+
+<p>Veamos si somos capaces de encajar la piezas del <em>puzzle</em> &hellip;</p>
+
+<h3>Dev</h3>
+
+<p>Drupal 7 Bootstrap Everyhwere sandbox](<a href="https://www.drupal.org/project/1719916">https://www.drupal.org/project/1719916</a>)</p>
+
+<p>by mpv</p>
+
+<p>0.&ndash; En nuestro caso, los pre-requisitos son disponer de <a href="https://www.drupal.org/project/Bootstrap">Bootstrap 2 theme,(ojo, no la v3!)</a> instalado previemente, que es con el cual el proyecto <em>Sandbox</em> _Bootstrap es compatible.</p>
+
+<p>1.&ndash; Así pues  Bootstrap theme   ( las versiones se alinean con las del popular <em>framework</em> , ej.: 7.x-2.2 &lt;&mdash;> Bootstrap 2.3.2 )
+  (activamos &mdash;> default theme , o creamos un sub-theme)</p>
+
+<p>2.&ndash;  habilitamos los módulos <em>Panels</em> y <em>Panels</em> <em>Everywhere</em>  cómodamente via &lsquo;drush dl <module>&rsquo; y &lsquo;drush en <module>&rsquo;</p>
+
+<p>// así tenemos un sitio &lsquo;operativo&rsquo; con contenido aleatorio para test, previamente instalado el módulo <em>devel</em>
+3.&ndash; drush devel generate 20</p>
+
+<p>3.&ndash; seguimos las indicaciones de mpv para instalar, como un tema más,<a href="https://www.drupal.org/sandbox/mpv/1719916">Bootstrap Everywhere</a>
+básicamente el comando &lsquo;git clone &lt;&hellip;>&rsquo;</p>
+
+<h3>Epílogo</h3>
+
+<p>El extenso y rico ecosistema de software y módulos de <em>Drupal</em> <em>CMS</em> se ve multiplicado por los proyectos <em>Sandbox</em> . De esta forma, el Content Management Systema se construye por capas :</p>
+
+<p>1.&ndash; core  &ndash; núcleo  ( <em>Do no hack the core!</em> )
+2.&ndash; contrib modules ( los más populares, como <em>Views</em> acaban integrándose en el core )
+3.&ndash; proyectos Sandbox , &lsquo;no modularizados&rsquo;&hellip; que acaban multiplicando las posibilidades</p>
+
+<p>Gracias <em>mpv</em></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Drupal : Harmonizando Los Módulos Panels]]></title>
+    <link href="http://jordila.github.io/blog/2014/09/26/drupal-harmonizando-los-modulos-panels/"/>
+    <updated>2014-09-26T06:47:48-04:00</updated>
+    <id>http://jordila.github.io/blog/2014/09/26/drupal-harmonizando-los-modulos-panels</id>
+    <content type="html"><![CDATA[<p>Iniciamos un nuevo proyecto Web.</p>
+
+<p>En este caso nos decantamos por Drupal, dado que el cliente debe ser capaz de autogestionar la edición de contenidos del sitio con cierta facilidad. Convengamos que en un escenario así, Drupal sobresale por su interfaz. Ello nos facilita la decisión estratégica en este caso, por encima de otras consideraciones, como la <em>ligereza</em> y <em>agilidad</em> de las herramientas de desarrollo escogidas.</p>
+
+<p>Bien, adelante con Drupal CMS. Y en que entorno&hellip; Surje la propuesta de usar Bootstrap, en cuanto al <em>theming</em>  (diseño)&hellip;por aquello  de trabajar en un <em>lugar común</em> en el equipo. Usaremos también los módulos Drupal <em>Panels</em> y <em>PanelEverywhere</em> . No tengo experiencia en ellos&hellip; así que me despierta la curiosidad su funcionamiento. Parece que facilitan enormemente el maquetado web, y de forma muy visual.</p>
+
+<p>Mmh&hellip; y como se cocina todo esto en su conjunto ?</p>
+
+<p>La apasionada comunidad drupal (una vez más) acude a nustro rescate. Los compañeros de <a href="http://gcoop.coop">Gcoop</a> parece que han trabajado este tema precisamente, a fondo. Creándose su propio  Bootstrap-Panels-Everywhere&hellip;</p>
+
+<p>En chat reciente me cuentan que siguen usándolo casi un año después&hellip; Desde nuesra ignorancia, como <em>novatos</em> que somos, veamos pues si logramos que nos sea de utilidad a nosotros también. Tendremos que poner todo nuestro empeño.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[De Desarrollo Drupal Colaborativo, Git, PaaS .. Y Otros]]></title>
+    <link href="http://jordila.github.io/blog/2014/09/09/de-desarrollo-drupal-colaborativo/"/>
+    <updated>2014-09-09T06:43:19-04:00</updated>
+    <id>http://jordila.github.io/blog/2014/09/09/de-desarrollo-drupal-colaborativo</id>
+    <content type="html"><![CDATA[<p>En los inicios de mis desarrollos con <em>Drupal CMS</em> , mi flujo de trabajo (Workflow) era bien rudimentario. Se basaba en, de forma iterativa, ir ensayando las diferentes funcionalidades requeridas, generando así múltiples maquetas que se iban acumulando en mi disco duro.</p>
+
+<p>El hecho de que <em>Drupal</em> tiene el defecto de no hacer una distinción práctica de código, configuración y datos (estos últimos comparten la base de datos) complica más las cosas. La buena noticia es que esto parece cambiar con la nueva versión 8, que sería liberada en unos meses.</p>
+
+<p>Todo ello resultaba en un galimatías monumental, en el que, por no mezclar configuraciones&hellip;acaba teniendo decenas de maquetas, en las que se contenía UNA funcionalidad específica&hellip; Para colmo, a veces las distintas funcionalidades acaban implentadas en módulos con versiones que difieren entre las maquetas.</p>
+
+<p>Decidido a poner fin a semejante disparate: conocí el módulo <em>Features</em> , que te permite <em>encapsular</em> una determinada funcionalidad&hellip; en otro módulo. De ahí te lo puedes llevar en el bolsillo a donde quieras, reutilizarlo&hellip; y más. Por otro lado, ya venía practicando las bondades de un sistema de versionado como <em>Git</em> (en el que se fundamenta el desarrolla el Linux Kernel ). A reorganizar la forma de trabajo se ha dicho.
+En fin, para lo específico a Drupal, os dejo sin más <a href="http://vimeo.com/54306049">con el revelador video de Ramón Vilar</a>, que un encuentro-charla reveló los entresijos y la arquitectura del workflow de un potente equipo de desarrollo <em>Drupal</em> como el suyo. Imprescindible.</p>
+
+<p>Por otro lado, ya puestos, podemos investigar un poco sobre algunas herramientas en la tan cacareada <em>nube</em> que también van en esa misma línea, facilitar la tarea al desarrollador(<em>¿ a qué precio?</em>). Vaya por delante, que pienso que el abuso del concepto <em>Cloud</em> creo que nos retrotrae a la época medieval de Internet : en la que grandes supercomputadoras (en lo general en manos de bancos y alguna universidad) abastecen de servicios a terminales <em>tontos</em> (ligeros) remotos. La verticalidad autoritaria, en detrimento de la horizontalidad autogestiva avanza. <em>¿Es esa la red de redes que queremos?</em> Pero, en fin, eso da para un debate en sí&hellip; (Atención acá al <em><a href="https://www.gnu.org/philosophy/who-does-that-server-really-serve.es.html">punto de vista de RMS sobre los peligros en particular de SaaS</a> en relación a las libertades del software) . Con las precauciones necesarias&hellip; veamos que se esconde tras las </em>nubes_ cibernéticas.</p>
+
+<h3>Pantheon</h3>
+
+<p>Volviendo a lo que nos ocupa, comentar que la comunidad Drupal ha sabido dotarse de una herramienta como <a href="http://getpantheon.com%20(que%20descubr%C3%AD%20via%20el%20inefable%20@vkane">Pantheon</a>, adaptada las necesidades de workflow Drupal. En esencia facilita el control de versiones de código y base datos; desarrollándose en tres escenarios ( test , dev y live ).</p>
+
+<p><img src="/images/myimg/Drupal-developement-workflow.png"></p>
+
+<p>Estoy haciendo algunas pruebas&hellip; Parece prometedor . Lo único que me inquieta es que, por ahora, no se ha licenciado como software libre, siendo una <em>caja negra</em> .</p>
+
+<h3>OpenShift</h3>
+
+<p>Esto último no ocurre con la plataforma <em>OpenShift</em> de Red Hat. La verdad es que impresiona la potencia de la orquestación de todos una gama de servicios puestos a disposición del desarrollador, con un interfaz Web sencillo y elegante a la vez. Hasta puedes instalar en local un paquete de herramientas para gestionar todo ello desde tu línea de comandos (CLI).</p>
+
+<p>Cubre las principales herramientas y frameworks de desarrollo actuales.Por ejemplo, instalar una nuevas instancia Drupal, gestionable con <em>Git</em> en unos pocos clicks&hellip; obteniendo gratuitamente tu dominio
+<code>
+http://miDrupal-rhcloud.com
+</code>
+&hellip; además, actualmente permite disponer de 3 instancias de aplicaciones <em>cloud</em> libre y gratuitamente, además de las opciones premium de pago. Parece que se están orientado claramente a la comunidad&hellip; con su canal chat <em>IRC</em> , etc&hellip;</p>
+
+<p>[ Aunque suene paradójico&hellip; ¿Bienvenidos al Cloud computing <em>libre</em> ? ]</p>
+
+<p>No termina acá. Si quieres, y puedes puedes instalar y gestionar tu RHCloud en tus propios servidores de <em>software libre</em> . El software está disponible en <em>Github.com</em> .</p>
+
+<h3>Gandi.net</h3>
+
+<p>Ah! &hellip; y sin darme cuenta, más allá de los acrónimos, vengo usando otra plataforma PaaS&hellip; donde alojo mis proyectos últimamente.<a href="http://gandi.net">Gandi.net</a>. Hasta ahora me ha dado más satisfacciones que problemas de servicio en el servidor privado virtual (VPS) que tengo contratado. Me gustan especialmente varios aspectos de este tradicional proveedor Hosting  :</p>
+
+<ul>
+<li><p>disponen de canal propio IRC para soporte&hellip; (me encanta recibir Soporte <em>chat</em> amigablemente )</p></li>
+<li><p>usan Debian GNU/Linux: dan apoyo y financiación al proyecto como tal&hellip;así como a Wikimedia (Wikipedia)</p></li>
+</ul>
+
+
+<p>&hellip; con un poco de paciencia, y con la línea de comandos, tú también puedes crearte tu propia plataforma de servicios.</p>
+
+<p><em>Bonus</em> : atención en el futuro a tecnologías como <em>LXC</em> , y servicios relacionados como <em>Docker</em>  me dicen en <em>Gandi</em></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Drupal Drush : Instalar Una Instancia Con Una Línea De Comando]]></title>
+    <link href="http://jordila.github.io/blog/2014/08/24/drupal-drush-instalar-una-instancia-con-una-linea-de-comando/"/>
+    <updated>2014-08-24T17:51:32-04:00</updated>
+    <id>http://jordila.github.io/blog/2014/08/24/drupal-drush-instalar-una-instancia-con-una-linea-de-comando</id>
+    <content type="html"><![CDATA[<p>&hellip; convengamos que el proceso de instalación de una instancia Drupal es tedioso. Hay que crear la base de datos, descargar e instalar código, configurarlo&hellip;etc.</p>
+
+<p>La potencia de <em>drush</em> nos facilita el proceso enormemente.</p>
+
+<p><code>
+$ drush dl drupal --drupal-project-rename=example
+$ cd example
+$ drush site-install standard --db-url=mysql://[db_user]:[db_pass]@localhost/[db_name] --site-name=Example
+</code>
+Listo.</p>
+
+<p><em>Lo bueno, si breve, dos veces bueno</em></p>
+
+<p>Fuente:<a href="https://www.drupal.org/documentation/install/developers">&lsquo;Quick install for developers&rsquo;</a></p>
+
+<p><em>BONUS</em> : agregando</p>
+
+<p><code>
+... --account-name=admin --account-pass=[contraseña]
+</code></p>
+
+<p>a la línea de comandos anterior dejamos configurado <em>admin / contraseña</em> para el  acceso .</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>A Vueltas Con LinuX Containers (LXC) II - Librebits - jordila_@i-ching:~/</title>
+  <meta name="author" content="jordila_">
+
+  
+  <meta name="description" content="1
+2
+"Los servidores lo tuvieron todo. Los clientes, nada. Bienvenido al Cloud Computing"
+(Eben Moglen , Free Software Foundation) Lo prometido es &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jordila.github.io/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Librebits - jordila_@i-ching:~/" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Librebits - jordila_@i-ching:~/</a></h1>
+  
+    <h2>Bits aleatorios de Software Libre / Libre Software ...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">A Vueltas Con LinuX Containers (LXC) II</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-04T11:50:00-05:00" pubdate data-updated="true">Dec 4<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"Los servidores lo tuvieron todo. Los clientes, nada. Bienvenido al Cloud Computing"
+</span><span class='line'>(Eben Moglen , Free Software Foundation)</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Lo prometido es deuda</em> &hellip; reza el dicho popular.</p>
+
+<p>En un <a href="https://jordila.github.io/blog/2014/11/02/a-vueltas-con-linux-containers-lxc-i/">post anterior</a> nos zambullimos en la tecnología de virtualización ( subyacente a la <em>trendy</em>  y  cacareada   <em>Cloud</em> )
+En otras palabras, la Internet de siempre con una capa de abstracción de hardware : <em>LinuX Containers LXC</em> .</p>
+
+<h2>La fanfarria del <em>Cloud Computing</em>  o la última <em>trending technology</em></h2>
+
+<p>Con ese mero argumento, una vez más las grandes corporaciones (que conozco por experiencia) del sector infocomunicacional  <em>venden</em> servicios que realmente los clientes no necesitan. Les encadenan a sus servidores, que se acumulan en campos de concentración de hardware, ventilados, aislados y con las máximas medidas de seguridad. Es la economía de escala &hellip; la misma que está agotando al Planeta que habitamos.</p>
+
+<p>En Canadá algunas empresas se jactan de mantener esas granjas de servidores virtualizados de forma sostenible y limpia (!). Sin derroche de energía (que consumen cientos o miles de procesadores corriendo en paralelo). Aprovechan, dicen, las corrientes de aire frío (ártico). En fin.</p>
+
+<h2>(pseudo)Virtualizando Debian en un  Debian GNU/Linux (host)</h2>
+
+<p>Disquisiciones aparte. Tratemos de crear un contenedor <em>Debian</em> albergado en nuestro <em>Debian GNU/Linux</em> (host del contenedor), o computadora-laptop de trabajo.</p>
+
+<p>Por no repetir lo que viene detallado en los tutoriales referenciados, solo diré que he encontrado problemas con <em>LXC</em> en mi Debian <em>GNU/Linux</em> Jessie , siguiendo los pasos de la <a href="https://wiki.debian.org/LXC#Installation">Wiki de Debian</a>.</p>
+
+<p>Problemas que también encontró el autor de <a href="http://feeding.cloud.geek.nz/posts/lxc-setup-on-debian-jessie/">LXC setup on Debian Jessie</a>, gracias al cual pude por fin cumplir mi promesa de hacer correr mis máquinas (pseudo)virtuales no sólo en <em>Ubuntu</em> , sino también en mi <em>Debian GNU/Linux</em>(a continuación me fijaré en la parte que más útil me fue). A él mi agradecimiento.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>// Crear un  contenedor Debian (en /var/lib/lxc/) es simple:
+</span><span class='line'>
+</span><span class='line'># sudo MIRROR=http://http.debian.net/debian lxc-create -n sid64 -t debian -- -r sid -a amd64
+</span><span class='line'>
+</span><span class='line'>// Inicia o para el contenedor de la siguiente forma :
+</span><span class='line'>
+</span><span class='line'># sudo lxc-start -n sid64 -d
+</span><span class='line'>
+</span><span class='line'># sudo lxc-stop -n sid64
+</span><span class='line'>
+</span><span class='line'>// Puedes encontrar la dirección IP asignada al contenedor, recibida por el Servidor  DHCP tecleando, y su estado 
+</span><span class='line'>
+</span><span class='line'># sudo lxc-ls --fancy
+</span><span class='line'>
+</span><span class='line'>..
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>A partir de aquí podemos seguir manejando nuestros LinuX Containers, <a href="https://jordila.github.io/blog/2014/11/02/a-vueltas-con-linux-containers-lxc-i/">como veníamos haciendo en el anterior post relacionado</a></p>
+
+<h2><em>Docker</em> ?  &ldquo;It&rsquo;s LinuX Containers , stupid !&rdquo;</h2>
+
+<p>En lo práctico,    pongamos que para desarrollar una aplicación web determinada necesitamos un <em>stack</em> de software    (p.ej.: el clásico Linux+Apache+MySQL &ndash;  LAMP) en unas versiones determinadas, por requisitos del entorno (p.ej.: <em>PHP 5.3 y  MySQL 5.1</em> ).    Y sólo puede ser de este modo. En vez de tener que rehacer  todo el stack de nuestro servidor de pruebas nos bastará con generar un <em>LinuX Container</em> que cumpla esos requisitos. El único condicionante es la base del stack. Está sujeta al <em>kernel</em> del sistema host (en mi caso, el de Debian 8 <em>GNU/Linux</em> )  Además, podré desarrollar  cómodamente de forma <em>ágile</em> (ligera e iterativa), pues puedo usar para ello el comando <em>lxc-clone</em> para armar tantas maquetas o prototipos como requiera. Por ejemplo,</p>
+
+<ul>
+<li><p>container LXCO = Debian GNU/Linux server</p></li>
+<li><p>container LXC1 =  Debian GNU/Linux server + AMP</p></li>
+</ul>
+
+
+<p>(que podré clonar para otras aplicaciones que necesiten el mismo <em>stack</em> , p,ej. el <em>LMS Moodle</em> , <em>Drupal CMS</em> &hellip;)</p>
+
+<ul>
+<li><p>container LXC2= LAMP + CMS Drupal</p></li>
+<li><p>etc &hellip; (así sucesivamente)</p></li>
+</ul>
+
+
+<p><em>BONUS</em> : De paso he podido hacer una primera prueba satisfactoria con <em>Docker</em> , que me permitiría importar y exportar fácilmente aplicaciones a partir de un <em>LinuX Container</em> y bla,bla&hellip;  pero de eso quizás hablemos en otro nota de este blog más adelante&hellip;</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">jordila_</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-04T11:50:00-05:00" pubdate data-updated="true">Dec 4<sup>th</sup>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/debian/'>debian</a>, <a class='category' href='/blog/categories/devops/'>devops</a>, <a class='category' href='/blog/categories/docker/'>docker</a>, <a class='category' href='/blog/categories/lxc/'>lxc</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jordila.github.io/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii/" data-via="jordila_" data-counturl="http://jordila.github.io/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/11/24/openshift-paas/" title="Previous Post: Openshift PaaS, Drupal CMS y Git">&laquo; Openshift PaaS, Drupal CMS y Git</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash/" title="Next Post: En un principio fue la linea de comandos-...GNU/Linux-Bash">En un principio fue la linea de comandos-...GNU/Linux-Bash &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>...as in freedom</h1>
+  <a href="http://www.fsf.org/register_form?referrer=12001"><img
+src="http://static.fsf.org/nosvn/associate/fsf-12001.png" alt="[FSF
+Associate Member]" /></a>
+</section>
+
+<section>
+ <img style="margin:0px auto; display:block"  src="https://dl.dropboxusercontent.com/u/18889627/Twitter-avatar_100x.png" alt="jordila + GNU/Linux" />
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/18/minube-con-owncloud-bye/">miNube Con OwnCloud : Bye,bye Dropbox !</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash/">En Un Principio Fue La Linea De comandos-...GNU/Linux-Bash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii/">A Vueltas Con LinuX Containers (LXC) II</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/24/openshift-paas/">Openshift PaaS, Drupal CMS Y Git</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere/">Multiplica Las Posibilidades De Drupal CMS : Proyectos Sandbox (Ej.: 'Bootstrap Everywhere'</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/jordila">@jordila</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jordila',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+    - jordila_ -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Html5, | Librebits - jordila_@i-ching:~/]]></title>
+  <link href="http://jordila.github.io/blog/categories/html5/atom.xml" rel="self"/>
+  <link href="http://jordila.github.io/"/>
+  <updated>2015-06-23T18:06:26-04:00</updated>
+  <id>http://jordila.github.io/</id>
+  <author>
+    <name><![CDATA[jordila_]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Video: A Vueltas Con El Estado Del Arte en HTML5 - Formatos ...]]></title>
+    <link href="http://jordila.github.io/blog/2014/08/19/video-a-vueltas-con-el-estado-del-arte-en-html5-formatos-dot-dot-dot/"/>
+    <updated>2014-08-19T09:55:14-04:00</updated>
+    <id>http://jordila.github.io/blog/2014/08/19/video-a-vueltas-con-el-estado-del-arte-en-html5-formatos-dot-dot-dot</id>
+    <content type="html"><![CDATA[<p>Recientemente estoy haciendo unas pruebas con nuestro propio servidor de video en Internet&hellip; Comparto algunas reflexiones acá.</p>
+
+<h3>Previa</h3>
+
+<p>Tras barajar varias opciones</p>
+
+<ul>
+<li><em>Drupal 7 CMS</em></li>
+<li><em>MediaGoblin</em> ( tu &lsquo;Twitter + Instagram +  Youtube&rsquo; auspiciado por la Free Software Foundation, muy atractivo )</li>
+</ul>
+
+
+<p>la facilidad que proporciona HTML5 para el manejo de video me hace decantar por el concepto <em>KISS ( Hazlo Sencillo Éstupido !)</em></p>
+
+<p>Estas son mis conclusiones (nunca definitivas), en cuanto a como degustar la sopa de letras de formatos <em>habidos y por haber</em> :</p>
+
+<h3>Video HTML5: <em>Estado del Arte</em></h3>
+
+<p><em>Los códecs comprendidos por HTML5, y de futuro son, por este orden</em></p>
+
+<ul>
+<li><em>WebM</em> (formato abierto &lsquo;open&rsquo;,apoyado por Google) , lo cual es definitivo</li>
+<li><em>OGV</em> (format libre), de hecho, emparentado técnicamente con el anterior. Mi <em>preferido</em> .</li>
+<li><em>MP4 &ndash; H.264</em> , apoyado por Apple, a respetar por cuestiones históricas</li>
+</ul>
+
+
+<p>Hay que tener en cuenta que ninguno de ellos es soportado por la mayoría de los principales navegadores web en todos los casos (Firefox, Opera, Chrome&hellip; y el decadente y propietario IExplorer de WinBugs)</p>
+
+<p>Creo que estos son los formatos a tener en cuenta EN adelante, preferiblemente WebM, que es la &lsquo;inversión&rsquo; técnica pragmática. Habrá que promover OGV como estándar alineado con la filosofía del <em>software libre</em> : por motivos obvios&hellip; ( y sí &ldquo;Evil&rdquo; Google un día le da por apropiarse y <em>cerrar</em> el tan cacareado <em>WebM</em> ? Mmmhh&hellip; :&ndash;/ )</p>
+
+<p>Así pues, después de investigar un poco, y (re)aprender la potencia (una vez más) de <em>GNU/Linux</em> desde la línea de comandos, en este caso para procesos de <em>transcodificación</em> de formatos video. Por no aburrir&hellip; bla,bla&hellip;los <a href="https://github.com/jordila/Patagonia-Images-Gallery/wiki/VIDEO">detalles acá</a>.</p>
+
+<h3>Balbuceos de nuestro <em>Video Streaming</em></h3>
+
+<p>Los archivos de video originales que vamos a transmitir, de divulgación de la maravillos riqueza natural de la Patagonia, están codificados en formato .MOV 720p (via Apple, codec H.264), es decir en HD (alta definición). Hemos transcodificado a los (más arriba)  mencionados formatos. Las apreciaciones y diferencias en cuanto a calidad son muy sutiles&hellip; y subjetivas. Pero en lo objetivo y práctico, podemos deducir.En cualquiera de los tres formatos, en cuanto al tamaño del (&lsquo;frame&rsquo; &ndash; marco) del v</p>
+
+<ul>
+<li><p>720p : ofrece la mejor experiencia de visionado, Exige un potente hardware (actualizado) en el que correr el navegador web y buena velocidad de conexión (estable y superior a 1Mbps, de forma óptima)</p></li>
+<li><p>480p : ofrece menos calidad,pero responde a un abanico más amplio de dispositivo receptor, prestaciones y ancho de banda. Más &lsquo;universal&rsquo;</p></li>
+<li><p>parece que entorno 360p sería el más adecuado para Smartphones y/o conexiones lentas&hellip; si bien no he podido probar mucho aún.</p></li>
+</ul>
+
+
+<p>NOTA: hay que tener en cuanta que, por ejemplo 720p hace realmente referencia a 1280p x <em>720p</em> (HD). 640 x <em>480p</em> (VGA) etc&hellip;</p>
+
+<p>Feliz <em>transcodificación</em> y <em>streaming</em></p>
+
+<p>Beso</p>
+
+<p>KISS &ndash;<em>Keep It Simple Stupid !</em></p>
+]]></content>
+  </entry>
+  
+</feed>

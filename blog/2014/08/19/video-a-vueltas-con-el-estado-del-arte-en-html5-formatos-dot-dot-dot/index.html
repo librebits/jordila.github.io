@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Video: A Vueltas Con El Estado Del Arte en HTML5 - Formatos ... - Librebits - jordila_@i-ching:~/</title>
+  <meta name="author" content="jordila_">
+
+  
+  <meta name="description" content="Recientemente estoy haciendo unas pruebas con nuestro propio servidor de video en Internet&hellip; Comparto algunas reflexiones acá. Previa Tras &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jordila.github.io/blog/2014/08/19/video-a-vueltas-con-el-estado-del-arte-en-html5-formatos-dot-dot-dot">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Librebits - jordila_@i-ching:~/" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Librebits - jordila_@i-ching:~/</a></h1>
+  
+    <h2>Bits aleatorios de Software Libre / Libre Software ...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Video: A Vueltas Con El Estado Del Arte en HTML5 - Formatos ...</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-19T09:55:14-04:00" pubdate data-updated="true">Aug 19<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Recientemente estoy haciendo unas pruebas con nuestro propio servidor de video en Internet&hellip; Comparto algunas reflexiones acá.</p>
+
+<h3>Previa</h3>
+
+<p>Tras barajar varias opciones</p>
+
+<ul>
+<li><em>Drupal 7 CMS</em></li>
+<li><em>MediaGoblin</em> ( tu &lsquo;Twitter + Instagram +  Youtube&rsquo; auspiciado por la Free Software Foundation, muy atractivo )</li>
+</ul>
+
+
+<p>la facilidad que proporciona HTML5 para el manejo de video me hace decantar por el concepto <em>KISS ( Hazlo Sencillo Éstupido !)</em></p>
+
+<p>Estas son mis conclusiones (nunca definitivas), en cuanto a como degustar la sopa de letras de formatos <em>habidos y por haber</em> :</p>
+
+<h3>Video HTML5: <em>Estado del Arte</em></h3>
+
+<p><em>Los códecs comprendidos por HTML5, y de futuro son, por este orden</em></p>
+
+<ul>
+<li><em>WebM</em> (formato abierto &lsquo;open&rsquo;,apoyado por Google) , lo cual es definitivo</li>
+<li><em>OGV</em> (format libre), de hecho, emparentado técnicamente con el anterior. Mi <em>preferido</em> .</li>
+<li><em>MP4 &ndash; H.264</em> , apoyado por Apple, a respetar por cuestiones históricas</li>
+</ul>
+
+
+<p>Hay que tener en cuenta que ninguno de ellos es soportado por la mayoría de los principales navegadores web en todos los casos (Firefox, Opera, Chrome&hellip; y el decadente y propietario IExplorer de WinBugs)</p>
+
+<p>Creo que estos son los formatos a tener en cuenta EN adelante, preferiblemente WebM, que es la &lsquo;inversión&rsquo; técnica pragmática. Habrá que promover OGV como estándar alineado con la filosofía del <em>software libre</em> : por motivos obvios&hellip; ( y sí &ldquo;Evil&rdquo; Google un día le da por apropiarse y <em>cerrar</em> el tan cacareado <em>WebM</em> ? Mmmhh&hellip; :&ndash;/ )</p>
+
+<p>Así pues, después de investigar un poco, y (re)aprender la potencia (una vez más) de <em>GNU/Linux</em> desde la línea de comandos, en este caso para procesos de <em>transcodificación</em> de formatos video. Por no aburrir&hellip; bla,bla&hellip;los <a href="https://github.com/jordila/Patagonia-Images-Gallery/wiki/VIDEO">detalles acá</a>.</p>
+
+<h3>Balbuceos de nuestro <em>Video Streaming</em></h3>
+
+<p>Los archivos de video originales que vamos a transmitir, de divulgación de la maravillos riqueza natural de la Patagonia, están codificados en formato .MOV 720p (via Apple, codec H.264), es decir en HD (alta definición). Hemos transcodificado a los (más arriba)  mencionados formatos. Las apreciaciones y diferencias en cuanto a calidad son muy sutiles&hellip; y subjetivas. Pero en lo objetivo y práctico, podemos deducir.En cualquiera de los tres formatos, en cuanto al tamaño del (&lsquo;frame&rsquo; &ndash; marco) del v</p>
+
+<ul>
+<li><p>720p : ofrece la mejor experiencia de visionado, Exige un potente hardware (actualizado) en el que correr el navegador web y buena velocidad de conexión (estable y superior a 1Mbps, de forma óptima)</p></li>
+<li><p>480p : ofrece menos calidad,pero responde a un abanico más amplio de dispositivo receptor, prestaciones y ancho de banda. Más &lsquo;universal&rsquo;</p></li>
+<li><p>parece que entorno 360p sería el más adecuado para Smartphones y/o conexiones lentas&hellip; si bien no he podido probar mucho aún.</p></li>
+</ul>
+
+
+<p>NOTA: hay que tener en cuanta que, por ejemplo 720p hace realmente referencia a 1280p x <em>720p</em> (HD). 640 x <em>480p</em> (VGA) etc&hellip;</p>
+
+<p>Feliz <em>transcodificación</em> y <em>streaming</em></p>
+
+<p>Beso</p>
+
+<p>KISS &ndash;<em>Keep It Simple Stupid !</em></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">jordila_</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-19T09:55:14-04:00" pubdate data-updated="true">Aug 19<sup>th</sup>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/html5/'>html5,</a>, <a class='category' href='/blog/categories/ogv/'>ogv</a>, <a class='category' href='/blog/categories/streaming/'>streaming,</a>, <a class='category' href='/blog/categories/video/'>video,</a>, <a class='category' href='/blog/categories/webm/'>webm,</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jordila.github.io/blog/2014/08/19/video-a-vueltas-con-el-estado-del-arte-en-html5-formatos-dot-dot-dot/" data-via="jordila_" data-counturl="http://jordila.github.io/blog/2014/08/19/video-a-vueltas-con-el-estado-del-arte-en-html5-formatos-dot-dot-dot/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/08/17/git-un-sencillo-flujo-de-trabajo-workflow-ii/" title="Previous Post: Git: un sencillo flujo de trabajo (workflow) II">&laquo; Git: un sencillo flujo de trabajo (workflow) II</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/08/20/git-diff/" title="Next Post: Git : diff y deshacer cambios recientes fácilmente">Git : diff y deshacer cambios recientes fácilmente &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>...as in freedom</h1>
+  <a href="http://www.fsf.org/register_form?referrer=12001"><img
+src="http://static.fsf.org/nosvn/associate/fsf-12001.png" alt="[FSF
+Associate Member]" /></a>
+</section>
+
+<section>
+ <img style="margin:0px auto; display:block"  src="https://dl.dropboxusercontent.com/u/18889627/Twitter-avatar_100x.png" alt="jordila + GNU/Linux" />
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/18/minube-con-owncloud-bye/">miNube Con OwnCloud : Bye,bye Dropbox !</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash/">En Un Principio Fue La Linea De comandos-...GNU/Linux-Bash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii/">A Vueltas Con LinuX Containers (LXC) II</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/24/openshift-paas/">Openshift PaaS, Drupal CMS Y Git</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere/">Multiplica Las Posibilidades De Drupal CMS : Proyectos Sandbox (Ej.: 'Bootstrap Everywhere'</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/jordila">@jordila</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jordila',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+    - jordila_ -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

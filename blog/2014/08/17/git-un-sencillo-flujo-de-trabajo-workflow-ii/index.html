@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Git: Un Sencillo Flujo De Trabajo (Workflow) II - Librebits - jordila_@i-ching:~/</title>
+  <meta name="author" content="jordila_">
+
+  
+  <meta name="description" content="Hace un tiempo, compartíamos un sencillo flujo de trabajo Git, para pequeños proyectos. Bien retomando el hilo&hellip; Parecía que ya empezamos a &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jordila.github.io/blog/2014/08/17/git-un-sencillo-flujo-de-trabajo-workflow-ii">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Librebits - jordila_@i-ching:~/" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Librebits - jordila_@i-ching:~/</a></h1>
+  
+    <h2>Bits aleatorios de Software Libre / Libre Software ...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Git: Un Sencillo Flujo De Trabajo (Workflow) II</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-17T03:55:00-04:00" pubdate data-updated="true">Aug 17<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Hace un tiempo, compartíamos <a href="http://jordila.github.io/blog/2014/07/24/git-un-sencillo-flujo-de-trabajo-workflow/">un sencillo flujo de trabajo Git, para pequeños proyectos</a>. Bien retomando el hilo&hellip;</p>
+
+<p>Parecía que ya empezamos a manejar el sistema de control de versiones <em>Git</em> , en sus tres comandos básicos&hellip;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git  add .
+</span><span class='line'>  
+</span><span class='line'>$ git commit -m "blabla"
+</span><span class='line'>
+</span><span class='line'>$ git push  ...</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>y ahora empezamos a tratar de ordenar un poco nuestra forma de desarrollo con git</em></p>
+
+<p>Es fundamental, para sacar el máximo provecho a Git  organizar el flujo de trabajo (&lsquo;workflow&rsquo;), adaptándolo a nuestras necesidades.</p>
+
+<ul>
+<li><p>mediante el uso ramas (&lsquo;branch&rsquo;)</p></li>
+<li><p>desarrollando estructura de árbol de desarrollo simple y flexible a la vez</p></li>
+<li><p>uso de <em>Tags</em> o etiquetas para versionado&hellip;</p></li>
+<li><p>&hellip; y mucho más</p></li>
+</ul>
+
+
+<p>En mi caso, decía,  es bien sencillo, uso dos ramas :</p>
+
+<ul>
+<li><p><em>master</em>   // que contiene el código &lsquo;estable&rsquo; , se actualiza con menos frecuencia</p></li>
+<li><p><em>developement</em>  // código en desarrollo, actualizándola con mayor frecuencia</p></li>
+</ul>
+
+
+<p>y eventualmente una tercera :</p>
+
+<ul>
+<li><em>myfeature</em>    // que deriva de developement, donde transcurre el (micro)desarrollo</li>
+</ul>
+
+
+<p>que aparece y desaparece&hellip; según la necesidad. La borro con frecuencia de una vez, tras hacer <em>merge</em> a &lsquo;developement&rsquo;. Veamos :</p>
+
+<ul>
+<li><p>terminé el microdesarrollo en la rama <em>myfeature</em> actual y lo incorporo ( <em>merge</em> ) a <em>master</em></p></li>
+<li><p>la idea-microdesarrollo resultó que no era acertada&hellip; , marchá atrás.</p></li>
+</ul>
+
+
+<p> Este simple paso de <em>deshacer lo andado</em> &hellip; nos facilita <em>saltar con red</em> y una libertad absoluta en las ideas a desarrollar. Sabemos que en el rama <em>developement</em> de vuelta, por muchos ensayos y errores que cometamos, nos espera el último estado del código <em>funcionando</em> exactamente como lo dejamos. Siempre y cuando respetemos el flujo de trabajo. Obviamente.</p>
+
+<p>Así pues, por ejemplo, quiero desarrollar la cabecera (Header de mi página web). Partiendo de la rama <em>master</em> actual, recién iniciado el repositorio Git.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>\\inicio el repositorio , con la rama master por defecto
+</span><span class='line'>$ git init
+</span><span class='line'>\\creo la rama developement -b , a la cual cambio : 'checkout'
+</span><span class='line'>$ git checkout -b developement</span></code></pre></td></tr></table></div></figure>
+
+
+<p>&hellip;en este punto, decido aventurarme a crear una cabecera de página más <em>innovadora</em> , pero no quiero <em>perder</em> lo hecho hasta ahora. Ello transcurrirá en una nueva rama, derivada de la desarrollo :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>\\creo la rama que deriva de la de _developement_ _-b_ , a la cual cambio : _checkout_
+</span><span class='line'>$ git checkout -b micabecera</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Acá realizó, <em>con red</em> todas la pruebas que quiera ! Una vez satisfecho con los resultados, si decido <em>fundirlos</em> con mi estado actual de desarrollo, tan sencillo como :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>\\de vuelta a la rama 'developement' , a la cual cambio con  'checkout'
+</span><span class='line'>$ git checkout developement
+</span><span class='line'>\\ 'merge' sin fast-forward:  'fundo' los cambios hechos en la rama 'micabecera' de la que provengo, conservando el 'histórico'
+</span><span class='line'>$ git merge --no-ff micabecera
+</span><span class='line'>\\ elimino la rama que acabo de fundir en la rama 'developement', pues ya no la necesito más...
+</span><span class='line'>$ git branch -d micabecera
+</span><span class='line'>\\ en caso de tener configurado el repositorio remoto, en Github por ejemplo
+</span><span class='line'>$ git push origin developement</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Así hemos incorporado los cambios que realizamos en <em>micabecera</em> a la rama de desarrollo. En local y en remoto.</p>
+
+<p>En un futuro <em>post</em> hablaremos de incluir la rama master en el proceso, y de una forma sencilla de <em>publicar</em> mediante ella el desarrollo actual en nuestro servidor web.</p>
+
+<p>KISS : Keep-it-simple-stupid</p>
+
+<p>Fuentes :</p>
+
+<ul>
+<li><p>IMPRESCINDIBLE  <a href="http://nvie.com/posts/a-successful-git-branching-model/">&ldquo;A succesful Git branching model&rdquo; </a></p></li>
+<li><p><a href="http://2013.drupalcamp.es/git-flow-workshop">Video tutoriales de la DrupalCamp de Cáceres</a></p></li>
+</ul>
+
+
+<p><em>Thanks</em> nvie y DrupalCamp ES</p>
+
+<p><em>Bonus</em>:</p>
+
+<p>// para hacer &lsquo;push&rsquo; de todo el árbol (y sus ramas) de trabajo, sin distinción</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git push --all -u</span></code></pre></td></tr></table></div></figure>
+
+
+<p>en un workflow sencillo como este,y así no hay que precuparse de concretar la rama, ni de saber en la que estamos, bla&hellip;</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">jordila_</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-17T03:55:00-04:00" pubdate data-updated="true">Aug 17<sup>th</sup>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/git/'>git</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jordila.github.io/blog/2014/08/17/git-un-sencillo-flujo-de-trabajo-workflow-ii/" data-via="jordila_" data-counturl="http://jordila.github.io/blog/2014/08/17/git-un-sencillo-flujo-de-trabajo-workflow-ii/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/08/07/gnu-como-escoger-una-licencia-para-tu-propia-obra/" title="Previous Post: GNU: 'Como escoger una licencia para tu propia obra ?' v2 ">&laquo; GNU: 'Como escoger una licencia para tu propia obra ?' v2 </a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/08/19/video-a-vueltas-con-el-estado-del-arte-en-html5-formatos-dot-dot-dot/" title="Next Post: Video: a vueltas con el estado del arte en HTML5 - formatos ...">Video: a vueltas con el estado del arte en HTML5 - formatos ... &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>...as in freedom</h1>
+  <a href="http://www.fsf.org/register_form?referrer=12001"><img
+src="http://static.fsf.org/nosvn/associate/fsf-12001.png" alt="[FSF
+Associate Member]" /></a>
+</section>
+
+<section>
+ <img style="margin:0px auto; display:block"  src="https://dl.dropboxusercontent.com/u/18889627/Twitter-avatar_100x.png" alt="jordila + GNU/Linux" />
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/18/minube-con-owncloud-bye/">miNube Con OwnCloud : Bye,bye Dropbox !</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash/">En Un Principio Fue La Linea De comandos-...GNU/Linux-Bash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii/">A Vueltas Con LinuX Containers (LXC) II</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/24/openshift-paas/">Openshift PaaS, Drupal CMS Y Git</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere/">Multiplica Las Posibilidades De Drupal CMS : Proyectos Sandbox (Ej.: 'Bootstrap Everywhere'</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/jordila">@jordila</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jordila',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+    - jordila_ -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

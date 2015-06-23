@@ -1,0 +1,1152 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Librebits - jordila_@i-ching:~/</title>
+  <meta name="author" content="jordila_">
+
+  
+  <meta name="description" content="En los inicios de mis desarrollos con Drupal CMS , mi flujo de trabajo (Workflow) era bien rudimentario. Se basaba en, de forma iterativa, ir &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jordila.github.io/posts/2">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Librebits - jordila_@i-ching:~/" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Librebits - jordila_@i-ching:~/</a></h1>
+  
+    <h2>Bits aleatorios de Software Libre / Libre Software ...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/09/09/de-desarrollo-drupal-colaborativo/">De Desarrollo Drupal Colaborativo, Git, PaaS .. Y Otros</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-09T06:43:19-04:00" pubdate data-updated="true">Sep 9<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>En los inicios de mis desarrollos con <em>Drupal CMS</em> , mi flujo de trabajo (Workflow) era bien rudimentario. Se basaba en, de forma iterativa, ir ensayando las diferentes funcionalidades requeridas, generando así múltiples maquetas que se iban acumulando en mi disco duro.</p>
+
+<p>El hecho de que <em>Drupal</em> tiene el defecto de no hacer una distinción práctica de código, configuración y datos (estos últimos comparten la base de datos) complica más las cosas. La buena noticia es que esto parece cambiar con la nueva versión 8, que sería liberada en unos meses.</p>
+
+<p>Todo ello resultaba en un galimatías monumental, en el que, por no mezclar configuraciones&hellip;acaba teniendo decenas de maquetas, en las que se contenía UNA funcionalidad específica&hellip; Para colmo, a veces las distintas funcionalidades acaban implentadas en módulos con versiones que difieren entre las maquetas.</p>
+
+<p>Decidido a poner fin a semejante disparate: conocí el módulo <em>Features</em> , que te permite <em>encapsular</em> una determinada funcionalidad&hellip; en otro módulo. De ahí te lo puedes llevar en el bolsillo a donde quieras, reutilizarlo&hellip; y más. Por otro lado, ya venía practicando las bondades de un sistema de versionado como <em>Git</em> (en el que se fundamenta el desarrolla el Linux Kernel ). A reorganizar la forma de trabajo se ha dicho.
+En fin, para lo específico a Drupal, os dejo sin más <a href="http://vimeo.com/54306049">con el revelador video de Ramón Vilar</a>, que un encuentro-charla reveló los entresijos y la arquitectura del workflow de un potente equipo de desarrollo <em>Drupal</em> como el suyo. Imprescindible.</p>
+
+<p>Por otro lado, ya puestos, podemos investigar un poco sobre algunas herramientas en la tan cacareada <em>nube</em> que también van en esa misma línea, facilitar la tarea al desarrollador(<em>¿ a qué precio?</em>). Vaya por delante, que pienso que el abuso del concepto <em>Cloud</em> creo que nos retrotrae a la época medieval de Internet : en la que grandes supercomputadoras (en lo general en manos de bancos y alguna universidad) abastecen de servicios a terminales <em>tontos</em> (ligeros) remotos. La verticalidad autoritaria, en detrimento de la horizontalidad autogestiva avanza. <em>¿Es esa la red de redes que queremos?</em> Pero, en fin, eso da para un debate en sí&hellip; (Atención acá al <em><a href="https://www.gnu.org/philosophy/who-does-that-server-really-serve.es.html">punto de vista de RMS sobre los peligros en particular de SaaS</a> en relación a las libertades del software) . Con las precauciones necesarias&hellip; veamos que se esconde tras las </em>nubes_ cibernéticas.</p>
+
+<h3>Pantheon</h3>
+
+<p>Volviendo a lo que nos ocupa, comentar que la comunidad Drupal ha sabido dotarse de una herramienta como <a href="http://getpantheon.com%20(que%20descubr%C3%AD%20via%20el%20inefable%20@vkane">Pantheon</a>, adaptada las necesidades de workflow Drupal. En esencia facilita el control de versiones de código y base datos; desarrollándose en tres escenarios ( test , dev y live ).</p>
+
+<p><img src="/images/myimg/Drupal-developement-workflow.png"></p>
+
+<p>Estoy haciendo algunas pruebas&hellip; Parece prometedor . Lo único que me inquieta es que, por ahora, no se ha licenciado como software libre, siendo una <em>caja negra</em> .</p>
+
+<h3>OpenShift</h3>
+
+<p>Esto último no ocurre con la plataforma <em>OpenShift</em> de Red Hat. La verdad es que impresiona la potencia de la orquestación de todos una gama de servicios puestos a disposición del desarrollador, con un interfaz Web sencillo y elegante a la vez. Hasta puedes instalar en local un paquete de herramientas para gestionar todo ello desde tu línea de comandos (CLI).</p>
+
+<p>Cubre las principales herramientas y frameworks de desarrollo actuales.Por ejemplo, instalar una nuevas instancia Drupal, gestionable con <em>Git</em> en unos pocos clicks&hellip; obteniendo gratuitamente tu dominio</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>http://miDrupal-rhcloud.com</span></code></pre></td></tr></table></div></figure>
+
+
+<p>&hellip; además, actualmente permite disponer de 3 instancias de aplicaciones <em>cloud</em> libre y gratuitamente, además de las opciones premium de pago. Parece que se están orientado claramente a la comunidad&hellip; con su canal chat <em>IRC</em> , etc&hellip;</p>
+
+<p>[ Aunque suene paradójico&hellip; ¿Bienvenidos al Cloud computing <em>libre</em> ? ]</p>
+
+<p>No termina acá. Si quieres, y puedes puedes instalar y gestionar tu RHCloud en tus propios servidores de <em>software libre</em> . El software está disponible en <em>Github.com</em> .</p>
+
+<h3>Gandi.net</h3>
+
+<p>Ah! &hellip; y sin darme cuenta, más allá de los acrónimos, vengo usando otra plataforma PaaS&hellip; donde alojo mis proyectos últimamente.<a href="http://gandi.net">Gandi.net</a>. Hasta ahora me ha dado más satisfacciones que problemas de servicio en el servidor privado virtual (VPS) que tengo contratado. Me gustan especialmente varios aspectos de este tradicional proveedor Hosting  :</p>
+
+<ul>
+<li><p>disponen de canal propio IRC para soporte&hellip; (me encanta recibir Soporte <em>chat</em> amigablemente )</p></li>
+<li><p>usan Debian GNU/Linux: dan apoyo y financiación al proyecto como tal&hellip;así como a Wikimedia (Wikipedia)</p></li>
+</ul>
+
+
+<p>&hellip; con un poco de paciencia, y con la línea de comandos, tú también puedes crearte tu propia plataforma de servicios.</p>
+
+<p><em>Bonus</em> : atención en el futuro a tecnologías como <em>LXC</em> , y servicios relacionados como <em>Docker</em>  me dicen en <em>Gandi</em></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/24/drupal-drush-instalar-una-instancia-con-una-linea-de-comando/">Drupal Drush : Instalar Una Instancia Con Una Línea De Comando</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-24T17:51:32-04:00" pubdate data-updated="true">Aug 24<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>&hellip; convengamos que el proceso de instalación de una instancia Drupal es tedioso. Hay que crear la base de datos, descargar e instalar código, configurarlo&hellip;etc.</p>
+
+<p>La potencia de <em>drush</em> nos facilita el proceso enormemente.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ drush dl drupal --drupal-project-rename=example
+</span><span class='line'>$ cd example
+</span><span class='line'>$ drush site-install standard --db-url=mysql://[db_user]:[db_pass]@localhost/[db_name] --site-name=Example</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Listo.</p>
+
+<p><em>Lo bueno, si breve, dos veces bueno</em></p>
+
+<p>Fuente:<a href="https://www.drupal.org/documentation/install/developers">&lsquo;Quick install for developers&rsquo;</a></p>
+
+<p><em>BONUS</em> : agregando</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>... --account-name=admin --account-pass=[contraseña]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>a la línea de comandos anterior dejamos configurado <em>admin / contraseña</em> para el  acceso .</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/20/git-diff/">Git : Diff Y Deshacer Cambios Recientes Fácilmente</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-20T09:49:20-04:00" pubdate data-updated="true">Aug 20<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>De forma sencilla puedo visualizar de forma coloreada, los últimos cambios introducidos, línea por línea&hellip; (atención a los signos + y &ndash; qye las preceden)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git diff
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>En la práctica. Pongamos que modifico el epígrafe/&lsquo;caption&rsquo; de una de las imágenes&hellip;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>jordi@i-ching:~/Git/www.p-i_a$ emacs -nw carousel-blueimp.html //introduzco los cambios desde Emacs
+</span><span class='line'>jordi@i-ching:~/Git/www.p-i_a$ git diff
+</span><span class='line'>diff --git a/carousel-blueimp.html b/carousel-blueimp.html
+</span><span class='line'>index 29ec038..d10e219 100644
+</span><span class='line'>--- a/carousel-blueimp.html
+</span><span class='line'>+++ b/carousel-blueimp.html
+</span><span class='line'>@@ -117,7 +117,7 @@
+</span><span class='line'>             &lt;/div&gt;
+</span><span class='line'>           &lt;/div&gt;
+</span><span class='line'>           &lt;div class="item"&gt;
+</span><span class='line'>-            &lt;img src="img/El Campo de Hielo Sur desde el Marconi_1200x800px.JPG" alt="El Campo de Hielo Sur desde el Marconi" /&gt;
+</span><span class='line'>+            &lt;img src="img/El Campo de Hielo Sur desde el Marconi_1200x800px.JPG" alt="El Campo de Hielo Sur desde el Marconi. Vista Aérea" 
+</span><span class='line'>             &lt;div class="carousel-caption"&gt;
+</span><span class='line'>                 &lt;p&gt;El Campo de Hielo Sur desde el Marconi&lt;/p&gt;
+</span><span class='line'>             &lt;/div&gt;
+</span><span class='line'>(END)
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>Y luego, por lo que sea, quiero volver a la versión anterior al cambio.
+La forma más sencilla :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$git checkout -- carousel-blueimp.php</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>NOTA : la opción &mdash; indica la permanencia en la rama (&lsquo;branch&rsquo;) actual de trabajo.</em></p>
+
+<p>Si lo que ocurre es que ya había posicionado el fichero en cuestión en el área de &lsquo;stage&rsquo; (<em>el limbo git</em>) tras un <em>commit</em> &hellip; y todo y con eso quiero deshacer los últimos cambios realizados : <em>que no cunda el pánico!</em></p>
+
+<p>Secuencia anterior con &lsquo;staging&rsquo; .</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>jordi@i-ching:~/Git/www.p-i_a$ emacs -nw carousel-blueimp.html //introduzco los cambios desde Emacs
+</span><span class='line'>jordi@i-ching:~/Git/www.p-i_a$ git diff
+</span><span class='line'>diff --git a/carousel-blueimp.html b/carousel-blueimp.html
+</span><span class='line'>index 29ec038..d10e219 100644
+</span><span class='line'>--- a/carousel-blueimp.html
+</span><span class='line'>+++ b/carousel-blueimp.html
+</span><span class='line'>@@ -117,7 +117,7 @@
+</span><span class='line'>             &lt;/div&gt;
+</span><span class='line'>           &lt;/div&gt;
+</span><span class='line'>           &lt;div class="item"&gt;
+</span><span class='line'>-            &lt;img src="img/El Campo de Hielo Sur desde el Marconi_1200x800px.JPG" alt="El Campo de Hielo Sur desde el Marconi" /&gt;
+</span><span class='line'>+            &lt;img src="img/El Campo de Hielo Sur desde el Marconi_1200x800px.JPG" alt="El Campo de Hielo Sur desde el Marconi. Vista Aérea" 
+</span><span class='line'>             &lt;div class="carousel-caption"&gt;
+</span><span class='line'>                 &lt;p&gt;El Campo de Hielo Sur desde el Marconi&lt;/p&gt;
+</span><span class='line'>             &lt;/div&gt;
+</span><span class='line'>(END)
+</span><span class='line'>
+</span><span class='line'>jordi@i-ching:~/Git/www.p-i_a$ git commit -am carousel-blueimp.html "introduzco los cambios en el área 'staging'"
+</span><span class='line'>
+</span><span class='line'>jordi@i-ching:~/Git/www.p-i_a$ git status
+</span><span class='line'>On branch master
+</span><span class='line'>Changes to be committed:
+</span><span class='line'>  (use "git reset HEAD &lt;file&gt;..." to unstage)
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Si leemos atentamente, cosa que no suele ocurrir con frecuencia en la línea de comandos, nos percataremos de que Git se anticipa a la siguiente acción :</p>
+
+<ul>
+<li>para extraer el fichero modificado del área de &lsquo;staging&rsquo;, usar _git reset</li>
+</ul>
+
+
+<p>Se puede desandar lo andado faćilmente, como nos indican :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>jordi@i-ching:~/Git/www.p-i_a$ git reset HEAD -- carousel-blueimp.html </span></code></pre></td></tr></table></div></figure>
+
+
+<p>Voilà! Volvimos a la situación anterior: recordemos que los cambios desaparecieron del área &lsquo;staging&rsquo; de Git, pero siguen presentes en el área de trabajo. Si queremos deshacer por completo el cambio, volviendo el fichero a su estado original: no tenemos más que ejecutar la operativa mencionada al principio de este post.</p>
+
+<p>KISS <em>&lsquo;Keep-It-Simple-Stupid&rsquo;</em></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/19/video-a-vueltas-con-el-estado-del-arte-en-html5-formatos-dot-dot-dot/">Video: A Vueltas Con El Estado Del Arte en HTML5 - Formatos &#8230;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-19T09:55:14-04:00" pubdate data-updated="true">Aug 19<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Recientemente estoy haciendo unas pruebas con nuestro propio servidor de video en Internet&hellip; Comparto algunas reflexiones acá.</p>
+
+<h3>Previa</h3>
+
+<p>Tras barajar varias opciones</p>
+
+<ul>
+<li><em>Drupal 7 CMS</em></li>
+<li><em>MediaGoblin</em> ( tu &lsquo;Twitter + Instagram +  Youtube&rsquo; auspiciado por la Free Software Foundation, muy atractivo )</li>
+</ul>
+
+
+<p>la facilidad que proporciona HTML5 para el manejo de video me hace decantar por el concepto <em>KISS ( Hazlo Sencillo Éstupido !)</em></p>
+
+<p>Estas son mis conclusiones (nunca definitivas), en cuanto a como degustar la sopa de letras de formatos <em>habidos y por haber</em> :</p>
+
+<h3>Video HTML5: <em>Estado del Arte</em></h3>
+
+<p><em>Los códecs comprendidos por HTML5, y de futuro son, por este orden</em></p>
+
+<ul>
+<li><em>WebM</em> (formato abierto &lsquo;open&rsquo;,apoyado por Google) , lo cual es definitivo</li>
+<li><em>OGV</em> (format libre), de hecho, emparentado técnicamente con el anterior. Mi <em>preferido</em> .</li>
+<li><em>MP4 &ndash; H.264</em> , apoyado por Apple, a respetar por cuestiones históricas</li>
+</ul>
+
+
+<p>Hay que tener en cuenta que ninguno de ellos es soportado por la mayoría de los principales navegadores web en todos los casos (Firefox, Opera, Chrome&hellip; y el decadente y propietario IExplorer de WinBugs)</p>
+
+<p>Creo que estos son los formatos a tener en cuenta EN adelante, preferiblemente WebM, que es la &lsquo;inversión&rsquo; técnica pragmática. Habrá que promover OGV como estándar alineado con la filosofía del <em>software libre</em> : por motivos obvios&hellip; ( y sí &ldquo;Evil&rdquo; Google un día le da por apropiarse y <em>cerrar</em> el tan cacareado <em>WebM</em> ? Mmmhh&hellip; :&ndash;/ )</p>
+
+<p>Así pues, después de investigar un poco, y (re)aprender la potencia (una vez más) de <em>GNU/Linux</em> desde la línea de comandos, en este caso para procesos de <em>transcodificación</em> de formatos video. Por no aburrir&hellip; bla,bla&hellip;los <a href="https://github.com/jordila/Patagonia-Images-Gallery/wiki/VIDEO">detalles acá</a>.</p>
+
+<h3>Balbuceos de nuestro <em>Video Streaming</em></h3>
+
+<p>Los archivos de video originales que vamos a transmitir, de divulgación de la maravillos riqueza natural de la Patagonia, están codificados en formato .MOV 720p (via Apple, codec H.264), es decir en HD (alta definición). Hemos transcodificado a los (más arriba)  mencionados formatos. Las apreciaciones y diferencias en cuanto a calidad son muy sutiles&hellip; y subjetivas. Pero en lo objetivo y práctico, podemos deducir.En cualquiera de los tres formatos, en cuanto al tamaño del (&lsquo;frame&rsquo; &ndash; marco) del v</p>
+
+<ul>
+<li><p>720p : ofrece la mejor experiencia de visionado, Exige un potente hardware (actualizado) en el que correr el navegador web y buena velocidad de conexión (estable y superior a 1Mbps, de forma óptima)</p></li>
+<li><p>480p : ofrece menos calidad,pero responde a un abanico más amplio de dispositivo receptor, prestaciones y ancho de banda. Más &lsquo;universal&rsquo;</p></li>
+<li><p>parece que entorno 360p sería el más adecuado para Smartphones y/o conexiones lentas&hellip; si bien no he podido probar mucho aún.</p></li>
+</ul>
+
+
+<p>NOTA: hay que tener en cuanta que, por ejemplo 720p hace realmente referencia a 1280p x <em>720p</em> (HD). 640 x <em>480p</em> (VGA) etc&hellip;</p>
+
+<p>Feliz <em>transcodificación</em> y <em>streaming</em></p>
+
+<p>Beso</p>
+
+<p>KISS &ndash;<em>Keep It Simple Stupid !</em></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/17/git-un-sencillo-flujo-de-trabajo-workflow-ii/">Git: Un Sencillo Flujo De Trabajo (Workflow) II</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-17T03:55:00-04:00" pubdate data-updated="true">Aug 17<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Hace un tiempo, compartíamos <a href="http://jordila.github.io/blog/2014/07/24/git-un-sencillo-flujo-de-trabajo-workflow/">un sencillo flujo de trabajo Git, para pequeños proyectos</a>. Bien retomando el hilo&hellip;</p>
+
+<p>Parecía que ya empezamos a manejar el sistema de control de versiones <em>Git</em> , en sus tres comandos básicos&hellip;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git  add .
+</span><span class='line'>  
+</span><span class='line'>$ git commit -m "blabla"
+</span><span class='line'>
+</span><span class='line'>$ git push  ...</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>y ahora empezamos a tratar de ordenar un poco nuestra forma de desarrollo con git</em></p>
+
+<p>Es fundamental, para sacar el máximo provecho a Git  organizar el flujo de trabajo (&lsquo;workflow&rsquo;), adaptándolo a nuestras necesidades.</p>
+
+<ul>
+<li><p>mediante el uso ramas (&lsquo;branch&rsquo;)</p></li>
+<li><p>desarrollando estructura de árbol de desarrollo simple y flexible a la vez</p></li>
+<li><p>uso de <em>Tags</em> o etiquetas para versionado&hellip;</p></li>
+<li><p>&hellip; y mucho más</p></li>
+</ul>
+
+
+<p>En mi caso, decía,  es bien sencillo, uso dos ramas :</p>
+
+<ul>
+<li><p><em>master</em>   // que contiene el código &lsquo;estable&rsquo; , se actualiza con menos frecuencia</p></li>
+<li><p><em>developement</em>  // código en desarrollo, actualizándola con mayor frecuencia</p></li>
+</ul>
+
+
+<p>y eventualmente una tercera :</p>
+
+<ul>
+<li><em>myfeature</em>    // que deriva de developement, donde transcurre el (micro)desarrollo</li>
+</ul>
+
+
+<p>que aparece y desaparece&hellip; según la necesidad. La borro con frecuencia de una vez, tras hacer <em>merge</em> a &lsquo;developement&rsquo;. Veamos :</p>
+
+<ul>
+<li><p>terminé el microdesarrollo en la rama <em>myfeature</em> actual y lo incorporo ( <em>merge</em> ) a <em>master</em></p></li>
+<li><p>la idea-microdesarrollo resultó que no era acertada&hellip; , marchá atrás.</p></li>
+</ul>
+
+
+<p> Este simple paso de <em>deshacer lo andado</em> &hellip; nos facilita <em>saltar con red</em> y una libertad absoluta en las ideas a desarrollar. Sabemos que en el rama <em>developement</em> de vuelta, por muchos ensayos y errores que cometamos, nos espera el último estado del código <em>funcionando</em> exactamente como lo dejamos. Siempre y cuando respetemos el flujo de trabajo. Obviamente.</p>
+
+<p>Así pues, por ejemplo, quiero desarrollar la cabecera (Header de mi página web). Partiendo de la rama <em>master</em> actual, recién iniciado el repositorio Git.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>\\inicio el repositorio , con la rama master por defecto
+</span><span class='line'>$ git init
+</span><span class='line'>\\creo la rama developement -b , a la cual cambio : 'checkout'
+</span><span class='line'>$ git checkout -b developement</span></code></pre></td></tr></table></div></figure>
+
+
+<p>&hellip;en este punto, decido aventurarme a crear una cabecera de página más <em>innovadora</em> , pero no quiero <em>perder</em> lo hecho hasta ahora. Ello transcurrirá en una nueva rama, derivada de la desarrollo :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>\\creo la rama que deriva de la de _developement_ _-b_ , a la cual cambio : _checkout_
+</span><span class='line'>$ git checkout -b micabecera</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Acá realizó, <em>con red</em> todas la pruebas que quiera ! Una vez satisfecho con los resultados, si decido <em>fundirlos</em> con mi estado actual de desarrollo, tan sencillo como :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>\\de vuelta a la rama 'developement' , a la cual cambio con  'checkout'
+</span><span class='line'>$ git checkout developement
+</span><span class='line'>\\ 'merge' sin fast-forward:  'fundo' los cambios hechos en la rama 'micabecera' de la que provengo, conservando el 'histórico'
+</span><span class='line'>$ git merge --no-ff micabecera
+</span><span class='line'>\\ elimino la rama que acabo de fundir en la rama 'developement', pues ya no la necesito más...
+</span><span class='line'>$ git branch -d micabecera
+</span><span class='line'>\\ en caso de tener configurado el repositorio remoto, en Github por ejemplo
+</span><span class='line'>$ git push origin developement</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Así hemos incorporado los cambios que realizamos en <em>micabecera</em> a la rama de desarrollo. En local y en remoto.</p>
+
+<p>En un futuro <em>post</em> hablaremos de incluir la rama master en el proceso, y de una forma sencilla de <em>publicar</em> mediante ella el desarrollo actual en nuestro servidor web.</p>
+
+<p>KISS : Keep-it-simple-stupid</p>
+
+<p>Fuentes :</p>
+
+<ul>
+<li><p>IMPRESCINDIBLE  <a href="http://nvie.com/posts/a-successful-git-branching-model/">&ldquo;A succesful Git branching model&rdquo; </a></p></li>
+<li><p><a href="http://2013.drupalcamp.es/git-flow-workshop">Video tutoriales de la DrupalCamp de Cáceres</a></p></li>
+</ul>
+
+
+<p><em>Thanks</em> nvie y DrupalCamp ES</p>
+
+<p><em>Bonus</em>:</p>
+
+<p>// para hacer &lsquo;push&rsquo; de todo el árbol (y sus ramas) de trabajo, sin distinción</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git push --all -u</span></code></pre></td></tr></table></div></figure>
+
+
+<p>en un workflow sencillo como este,y así no hay que precuparse de concretar la rama, ni de saber en la que estamos, bla&hellip;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/07/gnu-como-escoger-una-licencia-para-tu-propia-obra/">GNU: &#8216;Como Escoger Una Licencia Para Tu Propia Obra ?&#8217; V2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-07T17:24:28-04:00" pubdate data-updated="true">Aug 7<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><em>Traducción para el</em> <strong>Proyecto GNU</strong></p>
+
+<p><em>original</em> : <a href="https://gnu.org/licenses/license-recommendations.html">https://gnu.org/licenses/license-recommendations.html</a></p>
+
+<h2>Como escoger una licencia para tu propia obra?</h2>
+
+<p>El Free Software Foundation&rsquo;s Licensing and Compliance Lab. mantiene esta página. Puedes dar apoyo a nuestro esfuerzo mediante una donación a la FSF. ¿Quedó acá alguna pregunta si responder al respecto? Comprueba algunos de nuestros recursos sobre licencias o contacta al Compliance Lab en <a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#58;&#108;&#105;&#x63;&#101;&#x6e;&#x73;&#x69;&#x6e;&#x67;&#x40;&#x66;&#x73;&#102;&#46;&#111;&#114;&#103;">&#108;&#105;&#x63;&#101;&#x6e;&#x73;&#105;&#110;&#103;&#64;&#x66;&#x73;&#x66;&#x2e;&#x6f;&#x72;&#x67;</a></p>
+
+<h3>Introducción</h3>
+
+<p>A menudo nos preguntan que licencia recomendamos para usar en un determinado proyecto. Hemos escrito públicamente sobre esta cuestión con anterioridad, pero la información está diseminada en varios documentos, FAQ y comentarios sobre licencias. Este artículo recolecta toda esa información en única fuente, para simplicar el acceso a ella y facilitar su referenciado a la comunidad.
+Estas recomendaciones se orientan a obras diseñadas para la realización de tareas prácticas. Incluyendo software, documentación y más. Obras artísticas, o que promuevan un punto de vista son cuestiones de diferente ámbito; el Proyecto GNU no tiente una postura general de como deberían publicarse   más allá de que deberían ser todas utilizables sin software que no sea libre (particularmente libre de DRM). Sin embargo, puede resultar útil seguir estas recomendaciones para obras artísticas que acompañen a un determinado programa.</p>
+
+<p>Las recomendaciones aplican a la licenciamiento de una obra creada por tí—tanto si es una modificación de una obra existente, o una nueva obra original. No cubren el caso en que se combina material existente bajo diferentes licencias. Si buscas ayuda en este aspecto, por favor consulta nuestra GPL FAQ.
+Después de ver nuestras recomendaciones, si quieres asesoramiento, puedes escribir a <a href="&#109;&#97;&#105;&#x6c;&#x74;&#x6f;&#58;&#108;&#x69;&#x63;&#x65;&#x6e;&#x73;&#x69;&#x6e;&#x67;&#64;&#x67;&#110;&#117;&#x2e;&#111;&#114;&#x67;">&#108;&#x69;&#99;&#x65;&#x6e;&#x73;&#105;&#x6e;&#x67;&#64;&#103;&#x6e;&#117;&#x2e;&#x6f;&#x72;&#103;</a>. Resaltar que probablemente tome varias semanas la respuesta por parte del equipo de licenciamiento; si en un mes no recibiste respuesta, por favor, escríbenos de nuevo.</p>
+
+<p>Contribuyendo a un nuevo proyecto
+Al contribuir a un proyecto existente, deberías habitualmente publicar las modificaciones realizadas bajo la misma licencia que la obra original. Es positivo cooperar con los que mantienen el proyecto, y usar una licencia diferente para tus modificaciones a menudo convierte la cooperación en algo muy dificultoso. Deberías hacer eso únicamente por motivos de fuerza mayor.
+Un caso en el que puede justificarse el uso de una licencia diferente es cuando realizas cambios en una obra que no es copyleft. Si la versión creada es considerablemente más útil que la original, entonces merece la pena hacer tu obra copyleft. Si te encuentras en esta situación, por favor sigue las recomendaciones más abajo para el licenciamiento de un nuevo proyecto.
+Si eliges licenciar tus contribuciones bajo una licencia diferente, por el motivo que sea, debes comprobar antes que la licencia original permite el uso de material bajo tu licencia de elección. Para minimizar el posible impacto en otros,  muestra explicitamente que partes de la obra están bajo que licencia.</p>
+
+<h3>Software</h3>
+
+<p>Recomendamos diferentes licencias para diferentes proyectos, dependiendo principalmente en el propósito del software. Generalmente, recomendamos usar la licencia más restrictiva que no interfiera con dicho propósito. Nuestro ensayo &ldquo;Qué es el copyleft?&rdquo; explica el concepto de copyleft en más detalle, y porque es de forma general la mejor estrategia de publicación.
+Hay sólo un par de tipos de proyectos en los que pensamos sería mejor no usar copyleft de ningún tipo. El primero es en proyectos muy pequeños. Usamos 300 líneas como umbral: cuando  el código fuente es menor que esto, los beneficios generados por el copyleft son usualmente inapreciables para justificar  la inconveniencia de asegurarse de que una copia de la licencia siempre acompañe al software.
+El segundo caso es en proyectos que implementan estándares que están en confrontación con estándares propietarios, como Ogg Vorbis (que compite con el audio MP3) y WebM (que compite frente a video MPEG-4). Para estos proyectos, extender el uso del código es vital para avanzar en la causa del software libre, y en si mismo hace mucho más que el copyleft del código del proyecto pudiera hacer.
+En estas situaciones especiales en las que el copyleft es inapropiado, recomendamos usar la Apache License 2.0 . Está es una licencia software no copyleft que incluye términos para prevenir denuncias de infracción de patentes por parte de distribuidores y contribuyentes. Ello no inmuniza al software de las amenazas de las patentes, pero impide que los que ostentan las patentes establezcan la dinámica de publicar ese software en términos libres para luego requerir a los receptores un acuerdo en términos no libres en una licencia de patente (licencia laxa,&ldquo;bait and switch&rdquo;).</p>
+
+<p>En todos los otros casos, recomendamos alguna forma de copyleft. Si tu proyecto es una librería, y los desarrolladores ya están usando un librería alternativa establecida publicada bajo una licencia no libre o una licencia laxa como la mencionada anteriormente, entonces recomendamos usar la GNU Lesser General Public License (LGPL). Al contrario que en el caso discutido anteriormente, en el que el proyecto implementa un estándar, acá la adopción por si misma no alcanza ningún objetivo particular, por lo que no hay motivo para evitar el copyleft por completo, Sin embargo, si requieres a los desarrolladores que usan tu librería para publicar su obra bajo una licencia enteramente copyleft, simplemente usarán una de las alternativas disponibles, y ello no permitirá avanzar tampoco en nuestra causa. La Lesser GPL fue diseñada para cubrir el término medio entre ambos casos, permitiendo a los desarrolladores de software propietario usar la librería cubierta, pero proporcionando cierto beneficio copyleft que revierta en los usuarios en su caso. Para saber más sobre el razonamiento subyacente en estos casos, lee &ldquo; “Why you shouldn&rsquo;t use the Lesser GPL for your next library”
+Si tu proyecto pudiera ser ejecutado en un servidor después de haber sido mejorado por otros, interactuando con sus usuarios a través de una red, y te preocupa que se reduzca el número de desarrolladores contribuyendo a las versiones publicadas  como resultado, recomendamos la GNU Affero General Public License (AGPL). Los términos de la AGPL son prácticamente idénticos a los de la GPL; la única diferencia sustancial es que se agrega una condición extra para asegurar que aquellos que usen el software en red tendrán la facilidad de obtener su código fuente. Esta condición no resuelve todos los problemas que pueden derivar cuando los usuarios realizan su computación en un servidor—no evitará que los usuarios se vean afectados por el Software como Servicio—por cumple con todo aquello que puede cumplir una licencia. Para saber más sobre estas cuestiones, lee &#8220;Why the Affero GPL&rdquo;. En cualquier otro caso, recomendamos que uses la versión más reciente de la GNU General Public License (GPL) para tu proyecto. Su restrictivo copyleft es apropiado para cualquier tipo de software, incluyendo numerosas protecciones para la libertad de los usuarios.</p>
+
+<h3>Documentación</h3>
+
+<p>Recomendamos la GNU Free Documentation License (GFDL) para tutoriales, manuales de referencia y otros complejas obras de documentación. Es una restrictiva licencia copyleft para obras educativas, inicialmente escritas como manuales de software, incluyendo términos que espefícamente resuelven cuestiones típicas que derivan de la distribución y modificación de estas obras.
+En pocas palabras, en obras de documentación derivadas, como tarjetas de referencia,  es mejor el uso de una licencia GNU permisiva, ya que la copua de GFDL difícilmente podría abarcar una tarjeta de referencia. No uses CC-BY, puesto que es incompatible con la GFDL.
+Para páginas de manual, recomendamos la GFDL si la página es larga, y la licencia GNU permisiva si es una página corta.
+Cierta documentación incluye código fuente. Por ejemplo, un manual para un lenguaje de programación podría incluir ejemplos para seguir por parte de  los lectores. Deberías incluir estos en el manual bajo términos FDL, y publicarlos bajo otra licencia apropiada para el software. Al hacerlo, se facilita el uso del código en otros proyectos. Recomendamos que dediques pequeñas piezas de software al dominio público usando CC0, y distribuir piezas más amplias bajo la misma licencia que usa el proyecto software asociado.</p>
+
+<h2>Otros datos para programas</h2>
+
+<p>Esta sección trata el resto de obras para uso práctico que pudieras incluir con el software. Para darte algunos ejemplos, ello incluiría iconos y otros gráficos, fuentes, y datos geográficos funcionales o útiles. También se podría aplicar a artes, a pesar de que no se criticaría el hecho de no hacerlo.
+Si estás creando estas obras específicamente para usar en un proyecto software, generalmente recomendamos que publiques tu obra bajo la misma licencia que el software. No hay problema ninguno en hacerlo con las licencias recomendadas : GPLv3, LGLPv3, AGPLv3, y GPLv2 pueden ser aplicadas a cualquier tipo de obra—no únicamente software—susceptible de copyright y que denote claramente la predisposición a la modificación. Al usar la misma licencia que el software facilitará el cumplimiento por parte de los distribuidores, y evita cualquier duda sobre potenciales cuestiones de compatibilidad. El uso de una licencia libre diferente podría ser apropiado si provee de algún beneficio práctico específico, como una mejor cooperación con otros proyectos libres.
+Si tu obra no se crea para el uso en un proyecto software específico, o si pudiera ser inapropiado usar la misma licencia que el proyecto, entonces únicamente recomendamos la elección de una licencia copyleft apropiada para tu obra. Algunas de ellas se muestran en nuestra lista de licencias. Si ninguna licencia parece especialmente apropiada, la licencia Creative Commons Atribution-ShareAlike es una licencia copyleft que puede ser usada para una variedad de obras.</p>
+
+<p> #license:CC-by-nd-3.0</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/05/debian-gnu-slash-linux-reflexiones-en-cuanto-a-re-instalacion-y-mantenimiento-dot-dot-dot/">Debian GNU/Linux: Reflexiones en Cuanto a (Re)instalación Y Mantenimiento&#8230;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-05T11:26:35-04:00" pubdate data-updated="true">Aug 5<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Recientemente incurrí en un garrafal error en mi <em>Debian GNU/Linux</em> &hellip; que me llevó a &lsquo;pisar&rsquo; con otros archivos, ni más ni menos que el directorio raíz : sí, sí&hellip; <strong>/</strong> .</p>
+
+<p>En fin, de todo se aprende&hellip; como <em>via rapida</em> de solución decidí optar por hacer <em>backup</em> y reinstalar la partición de sistema. Estoy en el curso de un desarrollo que no puede demorar&hellip; Acá van mis reflexiones tras casi dos día de vaivenes en mis sistemas. Vaya, en mis herramientas de trabajo.</p>
+
+<h3>Nunca hagas en el sistema nada crítico en un estado anímico/físico bajo&hellip;</h3>
+
+<p>Un amigo una vez me comentó en una ocasión&hellip;</p>
+
+<p><em>&ndash; Nunca discutas con tu pareja bajo situación de cansancio, falta de sueño&hellip;.El resultado puede ser explosivo!</em></p>
+
+<p>Efectivamente, con el tiempo uno aprende que es mejor una <em>retirada</em> que una victoria <em>pírrica</em> en esos instantes. Nuestro estado en ese momento no puede más que derivar en un círculo vicioso de irritabilidad, que nos llevá a una mayor irascibilidad, que nos llevá a los gritos&hellip; y vuelta a empezar.</p>
+
+<p>En síntesis, eso me ocurrió ayer&hellip; no con mi pareja, sino con mi compañera de trabajo : mi computadora. <em>[me ahorro los detalles]</em></p>
+
+<p>El caso es que en 48h fui capaza de tumbar yo solito las 2 computadoras que usamos en casa&hellip; Voilà!</p>
+
+<h3>Operación Ave Fénix</h3>
+
+<p>Tras los momentos de desesperación&hellip; es importante revertir la situación. Recuperar el estado de ánimo es crucial para ser capaz de <em>levantar los sistemas</em> en la mayor brevedad de tiempo. Y sobre todo, dejar de autoinculparse. Eso nos meterría en otro circulo vicioso. <em>Resiliencia</em> es la palabra.</p>
+
+<p>En adelante, más que dar los detalles, simplemente haré un par de consideraciones que a mí me sirvieron para que el proceso fuera lo más ágil y menos traumático posible.</p>
+
+<ul>
+<li>crucial: tener copia de las credenciales de seguridad / encriptación : llaves <em>SSH</em> y <em>GPG</em> . Lo contrario es jugar con fuego. Digo una obviedad&hellip;</li>
+<li>el hecho de tener diferenciadas las partciones de <em>sistema</em> y <em>datos</em> (pongamos <strong>/</strong> y <strong>home</strong> &hellip; hay quén añade otras&hellip; <strong>/var</strong> ) ayudó mucho, como se verá &hellip;</li>
+<li>lo anterior me permitió que, sin necesidad de <em>backup</em> en el momento, al reinstalar el sistema de nuevo en <strong>/</strong>, y re-ubicando <strong>/home</strong> en el lugar correspondiente, avisando al instalador ( <em>mantener datos, no borrar</em>), las aplicaciones volvieran a funcionar como antes sin esfuerzo.</li>
+</ul>
+
+
+<p>La explicación del último punto: para volver a sentirse uno de nuevo como en su &ldquo;ciber-casa&rdquo; cuanto antes es que por ejemplo el navegador Firefox guarda los parámetros particulares en una carpeta <em>oculta</em> , precedida con un <strong>.</strong> como corresponde a su condiciçon <em>oculta</em> :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>jordi@i-ching:~/.mozilla$ 
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>y así sucesivamente la mayoría de las aplicaciones. Ello permite que, tras la reinstalación, se retomen por parte de la aplicación determinada su correspondiente carpeta de parámetros del usuario en esa apliación particular (en este caso marcadores, plugins, etc&hellip; )</p>
+
+<p>Para acabar, sistemas operativos como <em>Arch Linux</em> o su alternativa  <a href="https://en.wikipedia.org/wiki/Parabola_Linux">Parábola Linux-Libre</a> usan una filosofía que difiere de la de <em>Ubuntu</em> o su <em>padre, Debian</em> . En vez de publicar <em>releases</em> cada determinado tiempo (LTS, etc&hellip;), basta con actualizar regularmente los paquetes&hellip; y rara vez vas a tener necesidad de re-instalar por completo el sistema. Siempre y cuando no seas tan bruto y torpe a la vez, como conté al principio&hellip; !</p>
+
+<p>KISS : Keep It Simple</p>
+
+<p><em>Bonus</em> : en mis sistema aproveché la ocasión para volver al entorno de escritorio (<em>desktop</em>) <a href="https://es.wikipedia.org/wiki/Xfce">Xfce</a>&hellip; tras un tiempo con  <a href="https://es.wikipedia.org/wiki/Xfce">Lxde</a>. Si bien este último es el más liviano que nunca he probado, por un inapreciable mayor consumo de  capacidad del procesador tienes un entorno mucho más versátil. Con el tiempo se ha convertido en mi preferido. &hellip; Que le pregunten a <em>Linus Torvalds</em> .</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/02/git-comparar-cambios-con-diff/">Git: Comparar Cambios Con Diff</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-02T03:11:55-04:00" pubdate data-updated="true">Aug 2<sup>nd</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><em>¿cómo veo el detalle de los últimos cambios introducidos, de forma comparativa?</em></p>
+
+<p>&hellip; gracias al comando <em>diff</em> , de la familia <em>Unix</em>, aplicado a <em>Git</em> .</p>
+
+<p>Veamos la secuencia de cambios, en el fichero  <em>primero.txt</em> , en el que acabo de añadir la línea de texto &lsquo; <em>viene antes que los otros</em> &rsquo;  :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>jordi@i-ching:~/Git/test$ git status
+</span><span class='line'># On branch master
+</span><span class='line'># Changes not staged for commit:
+</span><span class='line'>#   (use "git add &lt;file&gt;..." to update what will be committed)
+</span><span class='line'>#   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+</span><span class='line'>#
+</span><span class='line'># modified:   primero.txt
+</span><span class='line'>#
+</span><span class='line'>no changes added to commit (use "git add" and/or "git commit -a")
+</span><span class='line'>jordi@i-ching:~/Git/test$ git diff
+</span><span class='line'>diff --git a/primero.txt b/primero.txt
+</span><span class='line'>index b5e2b8f..49e8234 100644
+</span><span class='line'>--- a/primero.txt
+</span><span class='line'>+++ b/primero.txt
+</span><span class='line'>@@ -1,3 +1,5 @@
+</span><span class='line'> hola
+</span><span class='line'> 
+</span><span class='line'> este es primero
+</span><span class='line'>+viene antes que los otros
+</span><span class='line'>+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>Si en cambio uso el comando con el parámetro &hellip;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>jordi@i-ching:~/Git/test$ git diff --staged</span></code></pre></td></tr></table></div></figure>
+
+
+<p>&hellip; me mostraría las diferencias en los archivos en los que se hizo <em>commit</em> . Es decir, a los que se les aplicó el comando <em>git add <archivo1> <archivo2></em> &hellip;</p>
+
+<p>Como habrás visto, <em>git status</em> nos da el &lsquo;estado de situación&rsquo;, avisándonos de cambios en el flujo de trabajo <em>git</em> , y proponiendo los siguientes pasos&hellip;</p>
+
+<p><em>Bonus</em> : si usas la opción <em>colorear</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git diff --color-words </span></code></pre></td></tr></table></div></figure>
+
+
+<p>&hellip;podrás tener una visualización de los cambios más inmediata y atractiva. Prueba :&ndash;)</p>
+
+<p>KISS : Keep It Simple</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/07/31/gnu-slash-linux-a-vueltas-con-el-espacio-en-disco/">GNU/Linux: A Vueltas Con El Espacio en Disco, Y Su Liberación</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-31T02:34:15-04:00" pubdate data-updated="true">Jul 31<sup>st</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Mmhhh&hellip;</h3>
+
+<p><em>¿qué cuanto espacio en disco me queda?</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ df
+</span><span class='line'>
+</span><span class='line'>$ df -h</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Salida de ejemplo</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>jordi@i-ching:~$ df -h
+</span><span class='line'>Filesystem                                              Size  Used Avail Use% Mounted on
+</span><span class='line'>rootfs                                                  8.9G  8.2G  193M  98% /
+</span><span class='line'>udev                                                     10M     0   10M   0% /dev
+</span><span class='line'>tmpfs                                                   201M  900K  200M   1% /run
+</span><span class='line'>/dev/disk/by-uuid/1e7fdf9f-7123-43f4-8ec9-32c4b19057c5  8.9G  8.2G  193M  98% /
+</span><span class='line'>tmpfs                                                   5.0M     0  5.0M   0% /run/lock
+</span><span class='line'>tmpfs                                                   811M     0  811M   0% /run/shm
+</span><span class='line'>/dev/sda5                                                12G   11G  543M  96% /home
+</span><span class='line'>/dev/sda3                                                88G   80G  4.0G  96% /media/DATA
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p><em>:&ndash;/ estoy agotando el espacio en la partición de sistema&hellip;(!)</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get autoclean
+</span><span class='line'>
+</span><span class='line'>$ sudo apt-get clean
+</span><span class='line'>
+</span><span class='line'>// comandos que eliminan paquetes sin usar o en caché..., con varios matices
+</span><span class='line'>
+</span><span class='line'>$ sudo apt-get autoremove
+</span><span class='line'>
+</span><span class='line'>// eliminando  paquetes de dependencias que quedaron sin usar
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Ecología : el espacio en disco duro es un bien escaso&hellip;</p>
+
+<p><em>Bonus</em>: más elaborada es la eliminación de paquetes <em>huérfanos</em> en caso de <em>Debian</em> <a href="http://www.waveguide.se/?article=how-to-quickly-remove-all-unused-packages-under-debian">mediante <em>deborphan</em> y un script</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/07/29/git-sacando-partido-al-archivo-log/">Git: Sacando Partido Al Archivo Log</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-29T14:37:55-04:00" pubdate data-updated="true">Jul 29<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><em>Mmmh&hellip;¿qué es lo que diablos hice?¿como llegué a esta situación?</em></p>
+
+<p>Veamos&hellip; para hacer una autopsia de lo sucedido, el archivo log <em>es tu amigo</em>.
+Más allá veremos la potencia de de <em>git</em> en sinergia con <em>GNU/Linux</em> , gracias al comando de este último para buscar expresiones en archivos ( <em>grep</em> )</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git log
+</span><span class='line'>
+</span><span class='line'>//muestra el archivo log de los _commits_ realizados, en sentido cronológico...
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>¿Y si quiero ser más concreto en mi búsqueda en el log ?</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git log -n 4
+</span><span class='line'>
+</span><span class='line'>//muestra la información relativa a los 4 (n) últimos _commits_</span></code></pre></td></tr></table></div></figure>
+
+
+<p>¿y si lo que quiero es buscar <em>commits</em> relacionados con la expresión &lsquo;index.php&rsquo;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git log --grep="index.php"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>sencillo y elegante a la vez.</p>
+
+<p><em>KISS : Keep it simple</em></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/3">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/index.html">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>&#8230;as in freedom</h1>
+  <a href="http://www.fsf.org/register_form?referrer=12001"><img
+src="http://static.fsf.org/nosvn/associate/fsf-12001.png" alt="[FSF
+Associate Member]" /></a>
+</section>
+
+<section>
+ <img style="margin:0px auto; display:block"  src="https://dl.dropboxusercontent.com/u/18889627/Twitter-avatar_100x.png" alt="jordila + GNU/Linux" />
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/18/minube-con-owncloud-bye/">miNube Con OwnCloud : Bye,bye Dropbox !</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash/">En Un Principio Fue La Linea De comandos-&#8230;GNU/Linux-Bash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii/">A Vueltas Con LinuX Containers (LXC) II</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/24/openshift-paas/">Openshift PaaS, Drupal CMS Y Git</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere/">Multiplica Las Posibilidades De Drupal CMS : Proyectos Sandbox (Ej.: &#8216;Bootstrap Everywhere&#8217;</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jordila">@jordila</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jordila',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+    - jordila_ -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

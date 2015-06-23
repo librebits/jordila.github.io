@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Searchengine | Librebits - jordila_@i-ching:~/]]></title>
+  <link href="http://jordila.github.io/blog/categories/searchengine/atom.xml" rel="self"/>
+  <link href="http://jordila.github.io/"/>
+  <updated>2015-06-23T18:06:26-04:00</updated>
+  <id>http://jordila.github.io/</id>
+  <author>
+    <name><![CDATA[jordila_]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[¿Un Buscador Para Mi Sitio Web (Estático)?]]></title>
+    <link href="http://jordila.github.io/blog/2014/10/03/un-buscador-para-mi-sitio-web-estatico/"/>
+    <updated>2014-10-03T09:31:57-04:00</updated>
+    <id>http://jordila.github.io/blog/2014/10/03/un-buscador-para-mi-sitio-web-estatico</id>
+    <content type="html"><![CDATA[<p>Cuando inicié mi último proyecto me decanté por el reto de desarrollar un sitio Web estático para un fondo audivisual de 20 videos y 400 bellas imágenes de la Patagonia.
+Sopesé los pros y contras, frente alternativas CMS como Drupal. De hecho estuve varios meses desarrollando maquetas en ese completo CMS. Completo y complejo.
+Con el tiempo y el conocimiento de los últimos avances en <em>HTML5 y CSS3</em>&hellip; decidí apostar por la filosofía no-CMS. &lsquo;Delegando&rsquo; en servicios Web o pre-desarrollo en mi sistema GNU/Linux las capacidades que mi &lsquo;CMS no-CMS&rsquo; iba a echar en falta.</p>
+
+<p>En (casi) todos los aspectos, el desarrollo salió ganando&hellip; El Video y la imagen se manejan con gran sencillez en <em>HTML5</em> . Puedes armar tu &lsquo;YouTuVe&rsquo; y Flickr con facilidad. Una hermosa galería / carousel por acá&hellip; y Voilà!</p>
+
+<p>Obviamente la contrapartida es el procesado, indexado de las imágenes etc&hellip; Nada que un script <em>GNU/Linux</em> y alguna buena librería como <em>FFMPEG</em> no pueda solventar.</p>
+
+<p>Reconozco que no evalué bien el aspecto del buscador de contenidos propio del sitio. Obviamente el sitio web estático no puede beneficiarse de la potencia (a cambio de mayor complejidad) de una base de datos que indexe el contenido a medida que se <em>sube</em> &hellip;</p>
+
+<p>Llegados a ese punto, la primera y poco elaborada alternativa es usar, como decíamos servicios de terceros.</p>
+
+<p><em>Google Custom Search</em> &hellip; desde luego es el mejor buscador. Si bien, como es sabido en la era &ldquo;Post Snowden&rdquo;, poco o nada respetuoso con la privacidad. Ofrecen un servicio en el que (a partir de ) 100 U$S retiran la insidiosa publicidad de los resultados de búsqueda. Pasemos página</p>
+
+<p>El buscador <a href="https://duckduckgo.com/search_box">DuckDuckGo</a> ofrece acá la alternativa en el sentido de la privacidad. Principalmeente, por lo que entiendo, se nutre de resultados de búsqueda de <em>Bing</em> y <em>Yahoo!</em> principalmente &hellip; &lsquo;anonimizando&rsquo; la búsqeda.
+Tras algunas pruebas, resulta muy sencillo re-utilizar este simpático buscador. Pero los resultados no son los esperados&hellip;
+( en su #IRC me dicen que es cuestión de &lsquo;moverse&rsquo; por las diferentes redes sociales.. para que así los mencionados motores de búsqueda acaben &lsquo;encontrándonos&rsquo;).</p>
+
+<p>Así pues, si no queremos depender tanto de terceros&hellip; tendremos que ser más imaginativos&hellip;</p>
+
+<p>Buscando, buscando&hellip; por los caminos del <em>software-libre</em> encontré  <a href="http://www.tipue.com/search/">TipueSearch</a> &hellip; ¿será lo que necesitamos?</p>
+]]></content>
+  </entry>
+  
+</feed>

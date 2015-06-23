@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>miNube Con OwnCloud : Bye,bye Dropbox ! - Librebits - jordila_@i-ching:~/</title>
+  <meta name="author" content="jordila_">
+
+  
+  <meta name="description" content="En una anterior nota técnica en este blog hablábamos de La fanfarria del Cloud Computing o la última trending technology &hellip;
+Convengamos que ese &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jordila.github.io/blog/2015/06/18/minube-con-owncloud-bye">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Librebits - jordila_@i-ching:~/" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Librebits - jordila_@i-ching:~/</a></h1>
+  
+    <h2>Bits aleatorios de Software Libre / Libre Software ...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">miNube Con OwnCloud : Bye,bye Dropbox !</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-06-18T12:08:27-04:00" pubdate data-updated="true">Jun 18<sup>th</sup>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>En una anterior nota técnica en este blog hablábamos de <em>La fanfarria del Cloud Computing o la última trending technology</em> &hellip;
+Convengamos que ese mismo concepto que criticamos constructivamente ha facilitado una mejor conviencia entre dispositivos computacionales de diferente naturaleza ( PC, Tablet, teléfono <em>smartphone</em> , etc&hellip; )</p>
+
+<p>El objetivo de este artículo es, desde lo paráctico, desmitificar la idea de <em>la nube</em> como algo etéreo e  <em>inasible</em> . Bajándolo a la tierra. Veremos lo sencillo que resulta liberarnos de servicios que pueden atentar contra la <a href="https://owncloud.com/why-on-premise/">seguridad  y privacidad de nuestros datos</a>, como es el caso de <em>Dropbox</em> , el servicio de computación <em>cloud</em>  más popular.</p>
+
+<p>Como reza Wikipedia <a href="https://es.wikipedia.org/wiki/Owncloud">OwnCloud</a> es una aplicación de <em>software libre</em> del tipo Servicio de alojamiento de archivos, que permite el almacenamiento en línea y aplicaciones en línea (cloud computing)</p>
+
+<p>Vayamos con las manos a la masa, y tratemos de instalar <em>nuestra nube</em> en nuestro propio servidor Debian GNU / Linux :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'># Descargamos primero la llave asociada al software  ownCloud :
+</span><span class='line'>
+</span><span class='line'>wget http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_7.0/Release.key</span></code></pre></td></tr></table></div></figure>
+
+
+<p>(NOTA: Interesante sinergia acá, entre openSuse y Debian, en este caso&hellip; en la familia <em>Linux</em> )</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Agregamos la llave a apt para que pueda validar los ficheros :
+</span><span class='line'>sudo apt-key add - &lt; Release.key
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'># añadimos los  repositorios ownCloud al servicio de builds de openSUSE  a nuestro apt _source lists_ al teclear :
+</span><span class='line'>
+</span><span class='line'>echo 'deb http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_7.0/ /' | sudo tee -a /etc/apt/sources.list.d/owncloud.list</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Finalmente, actualizamos la base de datos de paquetes e instalamos ownCloud y MySQL:
+</span><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get install owncloud mysql-server
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Configuración MySQL</h3>
+
+<p>Vamos a configurar nuestro servidor ownCloud para que disfrute de una base de datos MySQL más robusta, en vez de la implementación SQLite por defecto. Para ello debemos configurar MySQL en primera instancia.</p>
+
+<p>Teclear los siguientes comando para inicializar la base de datos y hacer más seguro el sistema:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo mysql_install_db
+</span><span class='line'>sudo mysql_secure_installation</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Deberás introducir la clave de administración seleccionada durante la instalación de MySQL. Entonces se te preguntará por los ajustes de seguridad. Presiona <em>Enter</em> y selecciona <em>yes</em> para todos los parámetros excepto el primero (relativo a cambiar de nuevo la contraseña <em>root</em>)</p>
+
+<p>Ahora, identificate en  MySQL como usuario <em>root</em> tecleando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql -u root -p</span></code></pre></td></tr></table></div></figure>
+
+
+<p>De nuevo, serás preguntado por la contraseña de administración MySQL.</p>
+
+<p>Crea una base de datos mediante el comando :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>CREATE DATABASE owncloud;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Crea y asigna privilegios al nuevo usuario MySQL para manejar la base de datos de operaciones de  ownCloud:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>GRANT ALL ON owncloud.* to 'owncloud'@'localhost' IDENTIFIED BY 'select_database_password';</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Salir de MySQL tecleando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>exit</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Sólo queda proceder a la instalación guiada, accediendo a la carpeta ( <em>DocumentRoot</em> ) que alberga <em>tu nube</em> ownCloud</p>
+
+<p>Que lo disfrutes libremente y sin chusmeos.</p>
+
+<h3>Recursos :</h3>
+
+<ul>
+<li><p>Documentación en <a href="http://owncloud.com">Owncloud</a></p></li>
+<li><p><a href="https://www.digitalocean.com/community/tutorials/how-to-install-owncloud-and-configure-owncloud-apps-on-an-ubuntu-12-04-vps">How To Install OwnCloud and Configure OwnCloud Apps on an Ubuntu 12.04 VPS</a></p></li>
+</ul>
+
+
+<h3>Bonus:</h3>
+
+<p>No nos queda más que instalar certificados SSL (si no lo habíamos hecho ya) que nos faciliten un diálogo seguro con nuestro servidor OwnCloud, mediante <em>https</em> &hellip; pero eso ya será probablemente motivo de otro post / nota técnica en este mismo blog.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">jordila_</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-06-18T12:08:27-04:00" pubdate data-updated="true">Jun 18<sup>th</sup>, 2015</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cloud/'>cloud</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jordila.github.io/blog/2015/06/18/minube-con-owncloud-bye/" data-via="jordila_" data-counturl="http://jordila.github.io/blog/2015/06/18/minube-con-owncloud-bye/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash/" title="Previous Post: En un principio fue la linea de comandos-...GNU/Linux-Bash">&laquo; En un principio fue la linea de comandos-...GNU/Linux-Bash</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>...as in freedom</h1>
+  <a href="http://www.fsf.org/register_form?referrer=12001"><img
+src="http://static.fsf.org/nosvn/associate/fsf-12001.png" alt="[FSF
+Associate Member]" /></a>
+</section>
+
+<section>
+ <img style="margin:0px auto; display:block"  src="https://dl.dropboxusercontent.com/u/18889627/Twitter-avatar_100x.png" alt="jordila + GNU/Linux" />
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/18/minube-con-owncloud-bye/">miNube Con OwnCloud : Bye,bye Dropbox !</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash/">En Un Principio Fue La Linea De comandos-...GNU/Linux-Bash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii/">A Vueltas Con LinuX Containers (LXC) II</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/24/openshift-paas/">Openshift PaaS, Drupal CMS Y Git</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere/">Multiplica Las Posibilidades De Drupal CMS : Proyectos Sandbox (Ej.: 'Bootstrap Everywhere'</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/jordila">@jordila</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jordila',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+    - jordila_ -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

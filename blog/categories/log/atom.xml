@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Log | Librebits - jordila_@i-ching:~/]]></title>
+  <link href="http://jordila.github.io/blog/categories/log/atom.xml" rel="self"/>
+  <link href="http://jordila.github.io/"/>
+  <updated>2015-06-23T18:06:26-04:00</updated>
+  <id>http://jordila.github.io/</id>
+  <author>
+    <name><![CDATA[jordila_]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Git: Sacando Partido Al Archivo Log]]></title>
+    <link href="http://jordila.github.io/blog/2014/07/29/git-sacando-partido-al-archivo-log/"/>
+    <updated>2014-07-29T14:37:55-04:00</updated>
+    <id>http://jordila.github.io/blog/2014/07/29/git-sacando-partido-al-archivo-log</id>
+    <content type="html"><![CDATA[<p><em>Mmmh&hellip;¿qué es lo que diablos hice?¿como llegué a esta situación?</em></p>
+
+<p>Veamos&hellip; para hacer una autopsia de lo sucedido, el archivo log <em>es tu amigo</em>.
+Más allá veremos la potencia de de <em>git</em> en sinergia con <em>GNU/Linux</em> , gracias al comando de este último para buscar expresiones en archivos ( <em>grep</em> )</p>
+
+<p>```
+$ git log</p>
+
+<p>//muestra el archivo log de los <em>commits</em> realizados, en sentido cronológico&hellip;</p>
+
+<p>```</p>
+
+<p>¿Y si quiero ser más concreto en mi búsqueda en el log ?</p>
+
+<p>```
+$ git log -n 4</p>
+
+<p>//muestra la información relativa a los 4 (n) últimos <em>commits</em>
+```</p>
+
+<p>¿y si lo que quiero es buscar <em>commits</em> relacionados con la expresión &lsquo;index.php&rsquo;</p>
+
+<p><code>
+$ git log --grep="index.php"
+</code></p>
+
+<p>sencillo y elegante a la vez.</p>
+
+<p><em>KISS : Keep it simple</em></p>
+]]></content>
+  </entry>
+  
+</feed>

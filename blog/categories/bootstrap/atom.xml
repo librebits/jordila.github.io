@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Bootstrap | Librebits - jordila_@i-ching:~/]]></title>
+  <link href="http://jordila.github.io/blog/categories/bootstrap/atom.xml" rel="self"/>
+  <link href="http://jordila.github.io/"/>
+  <updated>2015-06-23T18:06:26-04:00</updated>
+  <id>http://jordila.github.io/</id>
+  <author>
+    <name><![CDATA[jordila_]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Multiplica Las Posibilidades De Drupal CMS : Proyectos Sandbox (Ej.: 'Bootstrap Everywhere']]></title>
+    <link href="http://jordila.github.io/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere/"/>
+    <updated>2014-11-11T08:30:29-05:00</updated>
+    <id>http://jordila.github.io/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere</id>
+    <content type="html"><![CDATA[<h3>Intro</h3>
+
+<p>Lo maravilloso de la mundial y activa comunidad Drupal son cosas como las que siguen&hellip;</p>
+
+<p>Estamos iniciando un proyecto <em>Drupal7</em> en el que <em>Bootstrap</em> theme  puede servirnos
+Hay otros temas más <em>propios</em> de <em>Drupal</em> como <em>Omega</em> , <em>Zen</em> , etc&hellip; que bien podrían servirnos.</p>
+
+<p>Lo interesante de Bootstrap en este caso es, entre otras cosas, que lo hemos manejado en el equipo en otros contextos, y facilita un <em>lenguaje</em> <em>común</em> para las tareas de <em>Theming</em> .</p>
+
+<p> En las que, desde el principio, queremos que nuestro Tema elegido mantenga compatibilidad con módulos <em>Panels</em> y <em>Panel</em> <em>Everywhere</em> .</p>
+
+<p>Pero&hellip; ay! Parece que Bootstrap no la ofrece.</p>
+
+<p>Acudimos entonces a la contribución de <em>mpv</em> , que elaboró una <em>Sandbox</em> para solventar precisamente esta cuestión : <a href="https://www.drupal.org/sandbox/mpv/1719916">Bootstrap Everywhere</a></p>
+
+<p>(un proyecto <em>Sandbox</em> no es más que código Drupal alternativo, que no ha sido empaquetado en un <em>módulo</em> como tal )</p>
+
+<p>Veamos si somos capaces de encajar la piezas del <em>puzzle</em> &hellip;</p>
+
+<h3>Dev</h3>
+
+<p>Drupal 7 Bootstrap Everyhwere sandbox](<a href="https://www.drupal.org/project/1719916">https://www.drupal.org/project/1719916</a>)</p>
+
+<p>by mpv</p>
+
+<p>0.&ndash; En nuestro caso, los pre-requisitos son disponer de <a href="https://www.drupal.org/project/Bootstrap">Bootstrap 2 theme,(ojo, no la v3!)</a> instalado previemente, que es con el cual el proyecto <em>Sandbox</em> _Bootstrap es compatible.</p>
+
+<p>1.&ndash; Así pues  Bootstrap theme   ( las versiones se alinean con las del popular <em>framework</em> , ej.: 7.x-2.2 &lt;&mdash;> Bootstrap 2.3.2 )
+  (activamos &mdash;> default theme , o creamos un sub-theme)</p>
+
+<p>2.&ndash;  habilitamos los módulos <em>Panels</em> y <em>Panels</em> <em>Everywhere</em>  cómodamente via &lsquo;drush dl <module>&rsquo; y &lsquo;drush en <module>&rsquo;</p>
+
+<p>// así tenemos un sitio &lsquo;operativo&rsquo; con contenido aleatorio para test, previamente instalado el módulo <em>devel</em>
+3.&ndash; drush devel generate 20</p>
+
+<p>3.&ndash; seguimos las indicaciones de mpv para instalar, como un tema más,<a href="https://www.drupal.org/sandbox/mpv/1719916">Bootstrap Everywhere</a>
+básicamente el comando &lsquo;git clone &lt;&hellip;>&rsquo;</p>
+
+<h3>Epílogo</h3>
+
+<p>El extenso y rico ecosistema de software y módulos de <em>Drupal</em> <em>CMS</em> se ve multiplicado por los proyectos <em>Sandbox</em> . De esta forma, el Content Management Systema se construye por capas :</p>
+
+<p>1.&ndash; core  &ndash; núcleo  ( <em>Do no hack the core!</em> )
+2.&ndash; contrib modules ( los más populares, como <em>Views</em> acaban integrándose en el core )
+3.&ndash; proyectos Sandbox , &lsquo;no modularizados&rsquo;&hellip; que acaban multiplicando las posibilidades</p>
+
+<p>Gracias <em>mpv</em></p>
+]]></content>
+  </entry>
+  
+</feed>

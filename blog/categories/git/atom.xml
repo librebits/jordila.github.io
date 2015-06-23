@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Git, | Librebits - jordila_@i-ching:~/]]></title>
+  <link href="http://jordila.github.io/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://jordila.github.io/"/>
+  <updated>2015-06-23T18:06:26-04:00</updated>
+  <id>http://jordila.github.io/</id>
+  <author>
+    <name><![CDATA[jordila_]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Git : Diff Y Deshacer Cambios Recientes Fácilmente]]></title>
+    <link href="http://jordila.github.io/blog/2014/08/20/git-diff/"/>
+    <updated>2014-08-20T09:49:20-04:00</updated>
+    <id>http://jordila.github.io/blog/2014/08/20/git-diff</id>
+    <content type="html"><![CDATA[<p>De forma sencilla puedo visualizar de forma coloreada, los últimos cambios introducidos, línea por línea&hellip; (atención a los signos + y &ndash; qye las preceden)</p>
+
+<p>```
+$ git diff</p>
+
+<p>```</p>
+
+<p>En la práctica. Pongamos que modifico el epígrafe/&lsquo;caption&rsquo; de una de las imágenes&hellip;</p>
+
+<p>```
+jordi@i-ching:~/Git/www.p-i_a$ emacs -nw carousel-blueimp.html //introduzco los cambios desde Emacs
+jordi@i-ching:~/Git/www.p-i_a$ git diff
+diff &mdash;git a/carousel-blueimp.html b/carousel-blueimp.html
+index 29ec038..d10e219 100644
+&mdash;&ndash; a/carousel-blueimp.html
++++ b/carousel-blueimp.html
+@@ -117,7 +117,7 @@</p>
+
+<pre><code>         &lt;/div&gt;
+       &lt;/div&gt;
+       &lt;div class="item"&gt;
+</code></pre>
+
+<ul>
+<li><pre><code>     &lt;img src="img/El Campo de Hielo Sur desde el Marconi_1200x800px.JPG" alt="El Campo de Hielo Sur desde el Marconi" /&gt;
+</code></pre></li>
+<li><pre><code>     &lt;img src="img/El Campo de Hielo Sur desde el Marconi_1200x800px.JPG" alt="El Campo de Hielo Sur desde el Marconi. Vista Aérea" 
+     &lt;div class="carousel-caption"&gt;
+         &lt;p&gt;El Campo de Hielo Sur desde el Marconi&lt;/p&gt;
+     &lt;/div&gt;
+</code></pre>
+
+<p>(END)</p></li>
+</ul>
+
+
+<p>```</p>
+
+<p>Y luego, por lo que sea, quiero volver a la versión anterior al cambio.
+La forma más sencilla :</p>
+
+<p><code>
+$git checkout -- carousel-blueimp.php
+</code></p>
+
+<p><em>NOTA : la opción &mdash; indica la permanencia en la rama (&lsquo;branch&rsquo;) actual de trabajo.</em></p>
+
+<p>Si lo que ocurre es que ya había posicionado el fichero en cuestión en el área de &lsquo;stage&rsquo; (<em>el limbo git</em>) tras un <em>commit</em> &hellip; y todo y con eso quiero deshacer los últimos cambios realizados : <em>que no cunda el pánico!</em></p>
+
+<p>Secuencia anterior con &lsquo;staging&rsquo; .</p>
+
+<p>```
+jordi@i-ching:~/Git/www.p-i_a$ emacs -nw carousel-blueimp.html //introduzco los cambios desde Emacs
+jordi@i-ching:~/Git/www.p-i_a$ git diff
+diff &mdash;git a/carousel-blueimp.html b/carousel-blueimp.html
+index 29ec038..d10e219 100644
+&mdash;&ndash; a/carousel-blueimp.html
++++ b/carousel-blueimp.html
+@@ -117,7 +117,7 @@</p>
+
+<pre><code>         &lt;/div&gt;
+       &lt;/div&gt;
+       &lt;div class="item"&gt;
+</code></pre>
+
+<ul>
+<li><pre><code>     &lt;img src="img/El Campo de Hielo Sur desde el Marconi_1200x800px.JPG" alt="El Campo de Hielo Sur desde el Marconi" /&gt;
+</code></pre></li>
+<li><pre><code>     &lt;img src="img/El Campo de Hielo Sur desde el Marconi_1200x800px.JPG" alt="El Campo de Hielo Sur desde el Marconi. Vista Aérea" 
+     &lt;div class="carousel-caption"&gt;
+         &lt;p&gt;El Campo de Hielo Sur desde el Marconi&lt;/p&gt;
+     &lt;/div&gt;
+</code></pre>
+
+<p>(END)</p></li>
+</ul>
+
+
+<p>jordi@i-ching:~/Git/www.p-i_a$ git commit -am carousel-blueimp.html &ldquo;introduzco los cambios en el área &lsquo;staging&rsquo;&rdquo;</p>
+
+<p>jordi@i-ching:~/Git/www.p-i_a$ git status
+On branch master
+Changes to be committed:
+  (use &ldquo;git reset HEAD <file>&hellip;&rdquo; to unstage)</p>
+
+<p>```
+Si leemos atentamente, cosa que no suele ocurrir con frecuencia en la línea de comandos, nos percataremos de que Git se anticipa a la siguiente acción :</p>
+
+<ul>
+<li>para extraer el fichero modificado del área de &lsquo;staging&rsquo;, usar _git reset</li>
+</ul>
+
+
+<p>Se puede desandar lo andado faćilmente, como nos indican :</p>
+
+<p><code>
+jordi@i-ching:~/Git/www.p-i_a$ git reset HEAD -- carousel-blueimp.html
+</code></p>
+
+<p>Voilà! Volvimos a la situación anterior: recordemos que los cambios desaparecieron del área &lsquo;staging&rsquo; de Git, pero siguen presentes en el área de trabajo. Si queremos deshacer por completo el cambio, volviendo el fichero a su estado original: no tenemos más que ejecutar la operativa mencionada al principio de este post.</p>
+
+<p>KISS <em>&lsquo;Keep-It-Simple-Stupid&rsquo;</em></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git: Comparar Cambios Con Diff]]></title>
+    <link href="http://jordila.github.io/blog/2014/08/02/git-comparar-cambios-con-diff/"/>
+    <updated>2014-08-02T03:11:55-04:00</updated>
+    <id>http://jordila.github.io/blog/2014/08/02/git-comparar-cambios-con-diff</id>
+    <content type="html"><![CDATA[<p><em>¿cómo veo el detalle de los últimos cambios introducidos, de forma comparativa?</em></p>
+
+<p>&hellip; gracias al comando <em>diff</em> , de la familia <em>Unix</em>, aplicado a <em>Git</em> .</p>
+
+<p>Veamos la secuencia de cambios, en el fichero  <em>primero.txt</em> , en el que acabo de añadir la línea de texto &lsquo; <em>viene antes que los otros</em> &rsquo;  :</p>
+
+<p>```
+jordi@i-ching:~/Git/test$ git status</p>
+
+<h1>On branch master</h1>
+
+<h1>Changes not staged for commit:</h1>
+
+<h1>(use &ldquo;git add <file>&hellip;&rdquo; to update what will be committed)</h1>
+
+<h1>(use &ldquo;git checkout &mdash; <file>&hellip;&rdquo; to discard changes in working directory)</h1>
+
+<p>#</p>
+
+<h1>modified:   primero.txt</h1>
+
+<p>#
+no changes added to commit (use &ldquo;git add&rdquo; and/or &ldquo;git commit -a&rdquo;)
+jordi@i-ching:~/Git/test$ git diff
+diff &mdash;git a/primero.txt b/primero.txt
+index b5e2b8f..49e8234 100644
+&mdash;&ndash; a/primero.txt
++++ b/primero.txt
+@@ -1,3 +1,5 @@
+ hola</p>
+
+<p> este es primero
++viene antes que los otros
++
+```</p>
+
+<p>Si en cambio uso el comando con el parámetro &hellip;</p>
+
+<p><code>
+jordi@i-ching:~/Git/test$ git diff --staged
+</code></p>
+
+<p>&hellip; me mostraría las diferencias en los archivos en los que se hizo <em>commit</em> . Es decir, a los que se les aplicó el comando <em>git add <archivo1> <archivo2></em> &hellip;</p>
+
+<p>Como habrás visto, <em>git status</em> nos da el &lsquo;estado de situación&rsquo;, avisándonos de cambios en el flujo de trabajo <em>git</em> , y proponiendo los siguientes pasos&hellip;</p>
+
+<p><em>Bonus</em> : si usas la opción <em>colorear</em></p>
+
+<p><code>
+$ git diff --color-words
+</code></p>
+
+<p>&hellip;podrás tener una visualización de los cambios más inmediata y atractiva. Prueba :&ndash;)</p>
+
+<p>KISS : Keep It Simple</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git: Sacando Partido Al Archivo Log]]></title>
+    <link href="http://jordila.github.io/blog/2014/07/29/git-sacando-partido-al-archivo-log/"/>
+    <updated>2014-07-29T14:37:55-04:00</updated>
+    <id>http://jordila.github.io/blog/2014/07/29/git-sacando-partido-al-archivo-log</id>
+    <content type="html"><![CDATA[<p><em>Mmmh&hellip;¿qué es lo que diablos hice?¿como llegué a esta situación?</em></p>
+
+<p>Veamos&hellip; para hacer una autopsia de lo sucedido, el archivo log <em>es tu amigo</em>.
+Más allá veremos la potencia de de <em>git</em> en sinergia con <em>GNU/Linux</em> , gracias al comando de este último para buscar expresiones en archivos ( <em>grep</em> )</p>
+
+<p>```
+$ git log</p>
+
+<p>//muestra el archivo log de los <em>commits</em> realizados, en sentido cronológico&hellip;</p>
+
+<p>```</p>
+
+<p>¿Y si quiero ser más concreto en mi búsqueda en el log ?</p>
+
+<p>```
+$ git log -n 4</p>
+
+<p>//muestra la información relativa a los 4 (n) últimos <em>commits</em>
+```</p>
+
+<p>¿y si lo que quiero es buscar <em>commits</em> relacionados con la expresión &lsquo;index.php&rsquo;</p>
+
+<p><code>
+$ git log --grep="index.php"
+</code></p>
+
+<p>sencillo y elegante a la vez.</p>
+
+<p><em>KISS : Keep it simple</em></p>
+]]></content>
+  </entry>
+  
+</feed>

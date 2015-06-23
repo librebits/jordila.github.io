@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Paas | Librebits - jordila_@i-ching:~/]]></title>
+  <link href="http://jordila.github.io/blog/categories/paas/atom.xml" rel="self"/>
+  <link href="http://jordila.github.io/"/>
+  <updated>2015-06-23T18:06:26-04:00</updated>
+  <id>http://jordila.github.io/</id>
+  <author>
+    <name><![CDATA[jordila_]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[De Desarrollo Drupal Colaborativo, Git, PaaS .. Y Otros]]></title>
+    <link href="http://jordila.github.io/blog/2014/09/09/de-desarrollo-drupal-colaborativo/"/>
+    <updated>2014-09-09T06:43:19-04:00</updated>
+    <id>http://jordila.github.io/blog/2014/09/09/de-desarrollo-drupal-colaborativo</id>
+    <content type="html"><![CDATA[<p>En los inicios de mis desarrollos con <em>Drupal CMS</em> , mi flujo de trabajo (Workflow) era bien rudimentario. Se basaba en, de forma iterativa, ir ensayando las diferentes funcionalidades requeridas, generando así múltiples maquetas que se iban acumulando en mi disco duro.</p>
+
+<p>El hecho de que <em>Drupal</em> tiene el defecto de no hacer una distinción práctica de código, configuración y datos (estos últimos comparten la base de datos) complica más las cosas. La buena noticia es que esto parece cambiar con la nueva versión 8, que sería liberada en unos meses.</p>
+
+<p>Todo ello resultaba en un galimatías monumental, en el que, por no mezclar configuraciones&hellip;acaba teniendo decenas de maquetas, en las que se contenía UNA funcionalidad específica&hellip; Para colmo, a veces las distintas funcionalidades acaban implentadas en módulos con versiones que difieren entre las maquetas.</p>
+
+<p>Decidido a poner fin a semejante disparate: conocí el módulo <em>Features</em> , que te permite <em>encapsular</em> una determinada funcionalidad&hellip; en otro módulo. De ahí te lo puedes llevar en el bolsillo a donde quieras, reutilizarlo&hellip; y más. Por otro lado, ya venía practicando las bondades de un sistema de versionado como <em>Git</em> (en el que se fundamenta el desarrolla el Linux Kernel ). A reorganizar la forma de trabajo se ha dicho.
+En fin, para lo específico a Drupal, os dejo sin más <a href="http://vimeo.com/54306049">con el revelador video de Ramón Vilar</a>, que un encuentro-charla reveló los entresijos y la arquitectura del workflow de un potente equipo de desarrollo <em>Drupal</em> como el suyo. Imprescindible.</p>
+
+<p>Por otro lado, ya puestos, podemos investigar un poco sobre algunas herramientas en la tan cacareada <em>nube</em> que también van en esa misma línea, facilitar la tarea al desarrollador(<em>¿ a qué precio?</em>). Vaya por delante, que pienso que el abuso del concepto <em>Cloud</em> creo que nos retrotrae a la época medieval de Internet : en la que grandes supercomputadoras (en lo general en manos de bancos y alguna universidad) abastecen de servicios a terminales <em>tontos</em> (ligeros) remotos. La verticalidad autoritaria, en detrimento de la horizontalidad autogestiva avanza. <em>¿Es esa la red de redes que queremos?</em> Pero, en fin, eso da para un debate en sí&hellip; (Atención acá al <em><a href="https://www.gnu.org/philosophy/who-does-that-server-really-serve.es.html">punto de vista de RMS sobre los peligros en particular de SaaS</a> en relación a las libertades del software) . Con las precauciones necesarias&hellip; veamos que se esconde tras las </em>nubes_ cibernéticas.</p>
+
+<h3>Pantheon</h3>
+
+<p>Volviendo a lo que nos ocupa, comentar que la comunidad Drupal ha sabido dotarse de una herramienta como <a href="http://getpantheon.com%20(que%20descubr%C3%AD%20via%20el%20inefable%20@vkane">Pantheon</a>, adaptada las necesidades de workflow Drupal. En esencia facilita el control de versiones de código y base datos; desarrollándose en tres escenarios ( test , dev y live ).</p>
+
+<p><img src="/images/myimg/Drupal-developement-workflow.png"></p>
+
+<p>Estoy haciendo algunas pruebas&hellip; Parece prometedor . Lo único que me inquieta es que, por ahora, no se ha licenciado como software libre, siendo una <em>caja negra</em> .</p>
+
+<h3>OpenShift</h3>
+
+<p>Esto último no ocurre con la plataforma <em>OpenShift</em> de Red Hat. La verdad es que impresiona la potencia de la orquestación de todos una gama de servicios puestos a disposición del desarrollador, con un interfaz Web sencillo y elegante a la vez. Hasta puedes instalar en local un paquete de herramientas para gestionar todo ello desde tu línea de comandos (CLI).</p>
+
+<p>Cubre las principales herramientas y frameworks de desarrollo actuales.Por ejemplo, instalar una nuevas instancia Drupal, gestionable con <em>Git</em> en unos pocos clicks&hellip; obteniendo gratuitamente tu dominio
+<code>
+http://miDrupal-rhcloud.com
+</code>
+&hellip; además, actualmente permite disponer de 3 instancias de aplicaciones <em>cloud</em> libre y gratuitamente, además de las opciones premium de pago. Parece que se están orientado claramente a la comunidad&hellip; con su canal chat <em>IRC</em> , etc&hellip;</p>
+
+<p>[ Aunque suene paradójico&hellip; ¿Bienvenidos al Cloud computing <em>libre</em> ? ]</p>
+
+<p>No termina acá. Si quieres, y puedes puedes instalar y gestionar tu RHCloud en tus propios servidores de <em>software libre</em> . El software está disponible en <em>Github.com</em> .</p>
+
+<h3>Gandi.net</h3>
+
+<p>Ah! &hellip; y sin darme cuenta, más allá de los acrónimos, vengo usando otra plataforma PaaS&hellip; donde alojo mis proyectos últimamente.<a href="http://gandi.net">Gandi.net</a>. Hasta ahora me ha dado más satisfacciones que problemas de servicio en el servidor privado virtual (VPS) que tengo contratado. Me gustan especialmente varios aspectos de este tradicional proveedor Hosting  :</p>
+
+<ul>
+<li><p>disponen de canal propio IRC para soporte&hellip; (me encanta recibir Soporte <em>chat</em> amigablemente )</p></li>
+<li><p>usan Debian GNU/Linux: dan apoyo y financiación al proyecto como tal&hellip;así como a Wikimedia (Wikipedia)</p></li>
+</ul>
+
+
+<p>&hellip; con un poco de paciencia, y con la línea de comandos, tú también puedes crearte tu propia plataforma de servicios.</p>
+
+<p><em>Bonus</em> : atención en el futuro a tecnologías como <em>LXC</em> , y servicios relacionados como <em>Docker</em>  me dicen en <em>Gandi</em></p>
+]]></content>
+  </entry>
+  
+</feed>
